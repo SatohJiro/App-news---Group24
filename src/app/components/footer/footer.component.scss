@@ -1,0 +1,13 @@
+.footer{
+  &__box .title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__box .address {
+    margin-top: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #454545;
+  }
+}
