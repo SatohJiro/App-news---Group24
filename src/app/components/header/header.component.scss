@@ -1,26 +1,105 @@
-.topic {
-  ul > li {
-    cursor: pointer;
-  }
-  ul > li > i {
-    font-size: 18px;
-  }
-}
+
 .header {
-  &__menu-item:hover{
-    background-color: rgba(0,0,0,0.2);
-  }
-  &__menu-item {
+  //top
+  &__top {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  &__menu-link{
-    display: block;
-    padding: 4px 6px;
+    justify-content: space-between;
     font-size: 11px;
     font-weight: 600;
+  }
+  &__hotline,&__social {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    text-transform: uppercase;
+  }
+//  content
+  &__content {
+    display: flex;
+  justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+//  logo
+  &__logo {
+  font-weight: 800;
+    font-size: 40px;
+    color: rgba(234, 34, 34, 0.92);
+    text-transform: uppercase;
+  }
+  //menu
+  &__menu {
+    background-color: #0959ab;
+  }
+  //ads
+  &__ads {
+    padding: 20px 0;
+  }
+
+}
+//social
+.social {
+  &__send {
+    border-left: 1px solid #ddd;
+    border-right :1px solid #ddd;
+    padding: 0 4px;
+  }
+  &__send i,&__facebook i {
+    color:#1266f1;
+  }
+  &__youtube i {
+    color: rgba(234, 34, 34, 0.92);
+  }
+  &__rss img{
+    width: 35px;
+    height: 15px;
+    margin-top: -4px;
+  }
+ &__icon {
+   font-size: 14px;
+ }
+  &__icon:first-child {
+    margin-right: 4px;
+  }
+}
+//topics
+.topics {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4px;
+  }
+  &__icon {
+    font-size: 14px;
+  }
+}
+//  menu
+.menu {
+ &__list {
+   display: flex;
+   align-items: center;
+
+ }
+  &__link {
+    display: inline-block;
+    padding: 6px 10px;
+    color: #fff;
+  }
+  &__link:hover {
+    background-color: rgba(0,0,0,0.3);
+  }
+  &__item {
+    font-size: 11px;
+    font-weight: bold;
     text-transform: uppercase;
   }
 }

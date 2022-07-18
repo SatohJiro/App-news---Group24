@@ -13,3 +13,23 @@
 @import '~mdb-angular-treeview/scss/treeview.scss';
 @import '~mdb-angular-transfer/scss/transfer.scss';
 @import '~mdb-angular-mention/scss/mention.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+//colors
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+ul, ol {
+  padding: 0;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  color: unset;
+}
+li {
+  list-style-type: none;
+}
