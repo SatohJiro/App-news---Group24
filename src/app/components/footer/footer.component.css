@@ -1,13 +1,110 @@
-.footer__box .title {
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
+.footer {
+  background-color: #F8F8F9;
 }
-.footer__box .address {
-  margin-top: 30px;
+.footer .menu-container {
+  background-color: #E9E9E9;
+}
+.footer .menu-container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.footer .menu-container ul li {
+  padding-left: 10px;
+}
+.footer .menu-container ul li .menu-home-href {
+  padding-left: 5px;
+  display: flex;
+  margin-top: 5px;
+}
+.footer .menu-container ul li .menu-home-href span {
+  background-image: url(https://static.mediacdn.vn/nld/web_images/spritesV8.png);
+  display: block;
+  background-repeat: no-repeat;
+  background-position: -10px -134px;
+  width: 15px;
+  height: 13px;
+}
+.footer .menu-container ul li a {
+  font-family: Roboto-Bold;
   font-size: 13px;
-  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding-right: 15px;
+  border-right: solid #a1a1a1 1px;
+}
+.footer .menu-container ul li:hover {
+  background-color: #BABABA;
+}
+.footer .footer-container .footer-content {
+  color: #222;
+  font: normal 13px/normal Roboto-Medium;
+  line-height: 20px;
+  display: flex;
+}
+.footer .footer-container .footer-content .box-footer {
+  margin: 10px;
+  width: 600px;
+  border-right: 1px dotted #d2d2d3;
+}
+.footer .footer-container .footer-content .box-footer .box-footer__title {
+  font-weight: bold;
+}
+.footer .footer-container .footer-content .box-footer .box-footer__title .title {
+  font-size: 15px;
+}
+.footer .footer-container .footer-content .box-footer .box-footer__title .sapo {
+  font-size: 10px;
+}
+.footer .footer-container .footer-content .box-footer .box-footer__des {
+  display: flex;
+}
+.footer .footer-container .footer-content .box-footer .box-footer__des .certification {
+  width: 200px;
+  margin-right: 30px;
+}
+.footer .footer-container .footer-content .box-footer .clearfix .div-download-app {
+  display: flex;
+  margin-top: 10px;
+  font-family: "Roboto-Bold";
+  align-items: center;
+  color: #222;
+}
+.footer .footer-container .footer-content .box-footer .clearfix .btn-download-app-ios, .footer .footer-container .footer-content .box-footer .clearfix .btn-download-app-android {
+  display: flex;
+  align-items: center;
   color: #454545;
+  margin-left: 16px;
+  color: #222;
+}
+.footer .footer-container .footer-content .box-footer .clearfix .btn-download-app-ios img {
+  width: 125px;
+}
+.footer .footer-container .footer-content .box-footer .clearfix .btn-download-app-android img {
+  width: 150px;
+}
+.footer .footer-container .footer-content .box-footer .clearfix .btn-download-app-ios {
+  margin-left: 28px;
+}
+.footer .footer-container .footer-content .box-address {
+  width: 330px;
+}
+.footer .footer-container .footer-content .box-contact-ads {
+  width: 400px;
+}
+.footer .footer-container .footer-content .box-contact-ads .box-contact-ads__content {
+  display: flex;
+}
+.footer .footer-container .footer-content .box-contact-ads .box-contact-ads__content .link-ads {
+  width: 100px;
+  height: 50px;
+  background-image: url(https://static.mediacdn.vn/nld/web_images/spritesV8.png);
+  background-repeat: no-repeat;
+  background-position: -7px -159px;
+}
+.footer .footer-container .footer-content .box-contact-ads .box-contact-ads__content .address {
+  margin-top: 8px;
 }
 
 /*# sourceMappingURL=footer.component.css.map */
