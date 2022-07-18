@@ -6,6 +6,7 @@
     justify-content: space-between;
     font-size: 11px;
     font-weight: 600;
+
   }
   &__hotline,&__social {
     display: flex;
@@ -24,6 +25,29 @@
   &__logo {
     font-weight: 800;
     font-size: 40px;
+    text-transform: uppercase;
+  }
+
+
+  }
+  &__hotline,&__social {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    text-transform: uppercase;
+  }
+  //  content
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  //  logo
+  &__logo {
+    font-weight: 800;
+    font-size: 40px;
+    color: rgba(234, 34, 34, 0.92);
     text-transform: uppercase;
   }
 
@@ -46,10 +70,17 @@
   }
   &__send i,&__facebook i {
     color:#1266f1;
+
   }
   &__youtube i {
     color: rgba(234, 34, 34, 0.92);
   }
+
+  }
+  &__youtube i {
+    color: rgba(234, 34, 34, 0.92);
+  }
+
   &__rss img{
     width: 35px;
     height: 15px;
@@ -73,6 +104,7 @@
     text-transform: uppercase;
   }
   &__link {
+
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -89,6 +121,24 @@
     align-items: center;
 
   }
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4px;
+  }
+  &__icon {
+    font-size: 14px;
+  }
+}
+//  menu
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+
+  }
+
   &__link {
     display: inline-block;
     padding: 6px 10px;
