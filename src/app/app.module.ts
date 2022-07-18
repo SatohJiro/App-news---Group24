@@ -46,9 +46,11 @@ import { MdbTransferModule } from 'mdb-angular-transfer';
 import { MdbMentionModule } from 'mdb-angular-mention';
 import { MdbCookiesManagementService } from 'mdb-angular-cookies-management';
 import { MdbStorageManagementService } from 'mdb-angular-storage-management';
+import { WeatherPanelComponent } from './weather-panel/weather-panel.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WeatherPanelComponent, FooterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
