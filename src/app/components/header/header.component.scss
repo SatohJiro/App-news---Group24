@@ -24,9 +24,9 @@
   &__logo {
     font-weight: 800;
     font-size: 40px;
-    color: rgba(234, 34, 34, 0.92);
     text-transform: uppercase;
   }
+
   //menu
   &__menu {
     background-color: #0959ab;
@@ -102,4 +102,8 @@
     font-weight: bold;
     text-transform: uppercase;
   }
+}
+//logo
+.logo__img {
+  color: rgba(234, 34, 34, 0.92);
 }
