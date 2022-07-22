@@ -1,0 +1,23 @@
+.menu__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__link {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #000;
+}
+.menu__link:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.menu__item {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.menu__item:last-of-type {
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=menu.component.css.map */

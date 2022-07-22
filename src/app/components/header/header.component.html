@@ -54,13 +54,7 @@
     </div>
   </div>
   <div class="header__menu">
-    <div class="container">
-      <div class="menu menu__header">
-        <ul class="menu__list" >
-          <li class="menu__item" *ngFor="let data of datas"><a routerLink="/{{data.path}}" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link">{{data.title}}</a></li>
-        </ul>
-      </div>
-    </div>
+          <app-menu></app-menu>
   </div>
   <div class="header__ads">
     <div class="ads">
