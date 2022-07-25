@@ -80,7 +80,7 @@ import { BoxCateContentComponent } from './components/home/box-cate-content/box-
     MenuComponent,
 
       HotNewsComponent,
-
+    BoxCateContentComponent,
       NewsRowComponent,
         VietlottComponent,
   ],
@@ -129,6 +129,7 @@ import { BoxCateContentComponent } from './components/home/box-cate-content/box-
     MdbTransferModule,
     MdbMentionModule,
     AppRoutingModule,
+
   ],
   providers: [MdbCookiesManagementService, MdbStorageManagementService],
   bootstrap: [AppComponent],
