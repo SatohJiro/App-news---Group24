@@ -1,3 +1,92 @@
-
+.weather_panel {
+  display: flex;
+  border: #6c757d 1px solid;
+  height: 80px;
+  background-color: #F8F8F9;
+}
+.weather_panel .weather_item {
+  border-right: #6c757d 1px solid;
+  align-items: center;
+  padding-right: 18px;
+  margin: 10px;
+}
+.weather_panel .weather_content {
+  width: 220px;
+  display: flex;
+}
+.weather_panel .weather_content .weather_selection p {
+  font-size: 17px;
+  font-weight: bold;
+}
+.weather_panel .weather_content .weather_selection .weather_select select {
+  border: none;
+}
+.weather_panel .weather_content .weather_data {
+  display: flex;
+}
+.weather_panel .weather_content .weather_data .weather_icon {
+  width: 30px;
+}
+.weather_panel .weather_content .weather_data .temperature {
+  font-weight: bold;
+  margin-top: 7px;
+  margin-left: 10px;
+}
+.weather_panel .weather_content .weather_data .temperature p {
+  font-size: 10px;
+}
+.weather_panel .gold_data {
+  display: flex;
+  width: 150px;
+}
+.weather_panel .gold_data .gold_title {
+  font-weight: bold;
+  font-size: 17px;
+  margin-right: 5px;
+}
+.weather_panel .gold_data .gold_currency {
+  margin: 8px;
+  text-align: center;
+}
+.weather_panel .gold_data .gold_currency {
+  margin-top: 20px;
+}
+.weather_panel .gold_data .gold_VND .gold_vnd_icon {
+  content: "";
+  background-image: url(https://static.mediacdn.vn/nld/web_images/spritesV8.png);
+  display: block;
+  background-repeat: no-repeat;
+  background-position: -184px -84px;
+  width: 19px;
+  height: 19px;
+  margin: 0 auto;
+}
+.weather_panel .stock_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.weather_panel .Lottery_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.weather_panel .Lottery_content .Lottery_icon {
+  display: flex;
+  align-items: center;
+}
+.weather_panel .Lottery_content .Lottery_icon a {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+.weather_panel .Lottery_market {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.weather_panel .Lottery_market .Lottery_market_content img {
+  width: 100px;
+}
 
 /*# sourceMappingURL=weather-panel.component.css.map */
