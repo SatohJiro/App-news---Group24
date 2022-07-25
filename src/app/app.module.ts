@@ -53,6 +53,9 @@ import { HomeComponent } from './components/home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { NewsComponent } from './components/news/news.component';
 
+import { MenuComponent } from './components/menu/menu.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +64,9 @@ import { NewsComponent } from './components/news/news.component';
     HeaderComponent,
     HomeComponent,
     NewsComponent,
+
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
