@@ -54,7 +54,11 @@ import {AppRoutingModule} from "./app-routing.module";
 import { NewsComponent } from './components/news/news.component';
 
 import { MenuComponent } from './components/menu/menu.component';
+
+import { HotNewsComponent } from './components/home/hot-news/hot-news.component';
+
 import { NewsRowComponent } from './components/news-row/news-row.component';
+
 
 
 
@@ -69,7 +73,11 @@ import { NewsRowComponent } from './components/news-row/news-row.component';
     NewsComponent,
 
     MenuComponent,
+
+      HotNewsComponent,
+
       NewsRowComponent,
+
 
 
 
