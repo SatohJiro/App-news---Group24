@@ -1,0 +1,122 @@
+.weather_panel {
+  display: flex;
+  border: #6c757d 1px solid;
+  height: 80px;
+  background-color: #F8F8F9;
+
+  .weather_item {
+    border-right: #6c757d 1px solid;
+    align-items: center;
+    padding-right: 18px;
+    margin: 10px;
+  }
+
+  .weather_content {
+    width: 220px;
+    display: flex;
+
+
+    .weather_selection {
+      p {
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      .weather_select {
+        select {
+          border: none;
+        }
+      }
+    }
+
+    .weather_data {
+      display: flex;
+
+
+      .weather_icon {
+        width: 30px;
+      }
+
+      .temperature {
+        font-weight: bold;
+        margin-top: 7px;
+        margin-left: 10px;
+
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+
+  }
+
+  .gold_data {
+    display: flex;
+    width: 150px;
+
+
+    .gold_title {
+      font-weight: bold;
+      font-size: 17px;
+      margin-right: 5px;
+
+    }
+
+    .gold_currency {
+      margin: 8px;
+      text-align: center;
+    }
+
+    .gold_currency {
+      margin-top: 20px;
+    }
+
+    .gold_VND {
+      .gold_vnd_icon {
+        content: '';
+        background-image: url(https://static.mediacdn.vn/nld/web_images/spritesV8.png);
+        display: block;
+        background-repeat: no-repeat;
+        background-position: -184px -84px;
+        width: 19px;
+        height: 19px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .stock_data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Lottery_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .Lottery_icon {
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .Lottery_market {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    .Lottery_market_content {
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
