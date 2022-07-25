@@ -54,6 +54,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { NewsComponent } from './components/news/news.component';
 
 import { MenuComponent } from './components/menu/menu.component';
+import { HotNewsComponent } from './components/home/hot-news/hot-news.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { MenuComponent } from './components/menu/menu.component';
     NewsComponent,
 
     MenuComponent,
+      HotNewsComponent,
 
   ],
   imports: [
