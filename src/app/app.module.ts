@@ -58,6 +58,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HotNewsComponent } from './components/home/hot-news/hot-news.component';
 
 import { NewsRowComponent } from './components/news-row/news-row.component';
+import { VietlottComponent } from './components/home/vietlott/vietlott.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 
@@ -77,6 +79,8 @@ import { NewsRowComponent } from './components/news-row/news-row.component';
       HotNewsComponent,
 
       NewsRowComponent,
+        VietlottComponent,
+        CarouselComponent,
 
 
 
