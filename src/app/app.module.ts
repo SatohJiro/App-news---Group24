@@ -46,7 +46,7 @@ import { MdbTransferModule } from 'mdb-angular-transfer';
 import { MdbMentionModule } from 'mdb-angular-mention';
 import { MdbCookiesManagementService } from 'mdb-angular-cookies-management';
 import { MdbStorageManagementService } from 'mdb-angular-storage-management';
-import { WeatherPanelComponent } from './components/weather-panel/weather-panel.component';
+import { WeatherPanelComponent } from './components/home/weather-panel/weather-panel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
@@ -61,6 +61,7 @@ import { NewsRowComponent } from './components/news-row/news-row.component';
 import { BoxSubNewsComponent } from './components/box-sub-news/box-sub-news.component';
 import { BoxListNewsComponent } from './components/box-sub-news/box-list-news/box-list-news.component';
 import { BoxCateListComponent } from './components/box-sub-news/box-cate-list/box-cate-list.component';
+import { BoxCateContentComponent } from './components/home/box-cate-content/box-cate-content.component';
 
 
 
@@ -83,6 +84,7 @@ import { BoxCateListComponent } from './components/box-sub-news/box-cate-list/bo
         BoxSubNewsComponent,
         BoxListNewsComponent,
         BoxCateListComponent,
+        BoxCateContentComponent,
 
 
 
