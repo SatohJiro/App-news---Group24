@@ -19,17 +19,16 @@
     align-items: center;
     padding: 20px 0;
   }
+  //menu
+  &__menu {
+    background-color:#0959ab ;
+  }
   //  logo
   &__logo {
     font-weight: 800;
-    font-size: 40px;
     text-transform: uppercase;
   }
 
-  //menu
-  &__menu {
-    background-color: #0959ab;
-  }
   //ads
   &__ads {
     padding: 20px 0;
@@ -81,28 +80,9 @@
     font-size: 14px;
   }
 }
-//  menu
-.menu {
-  &__list {
-    display: flex;
-    align-items: center;
 
-  }
-  &__link {
-    display: inline-block;
-    padding: 6px 10px;
-    color: #fff;
-  }
-  &__link:hover {
-    background-color: rgba(0,0,0,0.3);
-  }
-  &__item {
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-}
 //logo
 .logo__img {
+  font-size: 40px;
   color: rgba(234, 34, 34, 0.92);
 }

@@ -16,13 +16,12 @@
   align-items: center;
   padding: 20px 0;
 }
-.header__logo {
-  font-weight: 800;
-  font-size: 40px;
-  text-transform: uppercase;
-}
 .header__menu {
   background-color: #0959ab;
+}
+.header__logo {
+  font-weight: 800;
+  text-transform: uppercase;
 }
 .header__ads {
   padding: 20px 0;
@@ -69,25 +68,8 @@
   font-size: 14px;
 }
 
-.menu__list {
-  display: flex;
-  align-items: center;
-}
-.menu__link {
-  display: inline-block;
-  padding: 6px 10px;
-  color: #fff;
-}
-.menu__link:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.menu__item {
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 .logo__img {
+  font-size: 40px;
   color: rgba(234, 34, 34, 0.92);
 }
 

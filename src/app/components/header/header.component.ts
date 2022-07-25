@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isMenuTop:boolean = false;
+
+public datas = [
+  {title:'',path:"",desc:""},
+  {title: "Trong nước", path:"news",desc:"lorem"},
+  {title: "Quốc tế", path:"news-international",desc:"lorem"},
+];
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

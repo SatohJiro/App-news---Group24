@@ -49,6 +49,12 @@ import { MdbStorageManagementService } from 'mdb-angular-storage-management';
 import { WeatherPanelComponent } from './components/weather-panel/weather-panel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { NewsComponent } from './components/news/news.component';
+
+import { MenuComponent } from './components/menu/menu.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +62,11 @@ import { HeaderComponent } from './components/header/header.component';
     WeatherPanelComponent,
     FooterComponent,
     HeaderComponent,
+    HomeComponent,
+    NewsComponent,
+
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -101,6 +112,7 @@ import { HeaderComponent } from './components/header/header.component';
     MdbTreeviewModule,
     MdbTransferModule,
     MdbMentionModule,
+    AppRoutingModule,
   ],
   providers: [MdbCookiesManagementService, MdbStorageManagementService],
   bootstrap: [AppComponent],

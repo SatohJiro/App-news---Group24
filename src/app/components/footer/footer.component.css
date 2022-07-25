@@ -1,8 +1,11 @@
 .footer {
   background-color: #F8F8F9;
 }
+.footer__menu {
+  background-color: #e9e9e9;
+}
 .footer .menu-container {
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
 }
 .footer .menu-container ul .container {
   display: flex;
@@ -26,10 +29,8 @@
   height: 13px;
 }
 .footer .menu-container ul .container a {
-  font-family: Roboto-Bold;
-  font-size: 11px;
   text-decoration: none;
-  color: black;
+  color: #000;
   font-weight: bold;
   padding-right: 15px;
   border-right: solid #a1a1a1 1px;
