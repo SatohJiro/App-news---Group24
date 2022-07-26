@@ -62,6 +62,7 @@ import { NewsRowComponent } from './components/news-row/news-row.component';
 import { VietlottComponent } from './components/home/vietlott/vietlott.component';
 
 
+
 import { BoxCateContentComponent } from './components/home/box-cate-content/box-cate-content.component';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
