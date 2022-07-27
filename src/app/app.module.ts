@@ -57,15 +57,15 @@ import { MenuComponent } from './components/menu/menu.component';
 
 import { HotNewsComponent } from './components/home/hot-news/hot-news.component';
 
-import { NewsRowComponent } from './components/news-row/news-row.component';
-
 import { VietlottComponent } from './components/home/vietlott/vietlott.component';
-
-
 
 import { BoxCateContentComponent } from './components/home/box-cate-content/box-cate-content.component';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
-import {BoxSubNewsComponent} from "./components/box-sub-news/box-sub-news.component";
+import {BoxSubNewsComponent} from "./components/home/box-sub-news/box-sub-news.component";
+import {NewsRowComponent} from "./components/home/news-row/news-row.component";
+import {BoxCateListComponent} from "./components/home/box-sub-news/box-cate-list/box-cate-list.component";
+import {BoxListNewsComponent} from "./components/home/box-sub-news/box-list-news/box-list-news.component";
+
 
 
 
@@ -86,6 +86,8 @@ import {BoxSubNewsComponent} from "./components/box-sub-news/box-sub-news.compon
     BoxCateContentComponent,
       NewsRowComponent,
         VietlottComponent,
+    BoxCateListComponent,
+    BoxListNewsComponent
   ],
   imports: [
     BrowserModule,
