@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoxSubNewsComponent } from './box-sub-news.component';
+import { BoxNewsComponent } from './box-news.component';
 
-describe('BoxSubNewsComponent', () => {
-  let component: BoxSubNewsComponent;
-  let fixture: ComponentFixture<BoxSubNewsComponent>;
+describe('BoxNewsComponent', () => {
+  let component: BoxNewsComponent;
+  let fixture: ComponentFixture<BoxNewsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxSubNewsComponent ]
+      declarations: [ BoxNewsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoxSubNewsComponent);
+    fixture = TestBed.createComponent(BoxNewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
