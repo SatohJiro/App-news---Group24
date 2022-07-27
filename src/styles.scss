@@ -17,11 +17,11 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-}
-*,html,body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+  html {
   font-family: Roboto;
   font-size: 11px;
   color: #222222;

@@ -46,7 +46,7 @@ import { MdbTransferModule } from 'mdb-angular-transfer';
 import { MdbMentionModule } from 'mdb-angular-mention';
 import { MdbCookiesManagementService } from 'mdb-angular-cookies-management';
 import { MdbStorageManagementService } from 'mdb-angular-storage-management';
-import { WeatherPanelComponent } from './components/weather-panel/weather-panel.component';
+import { WeatherPanelComponent } from './components/home/weather-panel/weather-panel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
@@ -58,11 +58,19 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HotNewsComponent } from './components/home/hot-news/hot-news.component';
 
 import { NewsRowComponent } from './components/news-row/news-row.component';
+
 import { BoxSubNewsComponent } from './components/box-sub-news/box-sub-news.component';
 import { BoxListNewsComponent } from './components/box-sub-news/box-list-news/box-list-news.component';
 import { BoxCateListComponent } from './components/box-sub-news/box-cate-list/box-cate-list.component';
 import { NewsItemComponent } from './components/box-sub-news/box-list-news/news-item/news-item.component';
 
+
+import { VietlottComponent } from './components/home/vietlott/vietlott.component';
+
+
+
+import { BoxCateContentComponent } from './components/home/box-cate-content/box-cate-content.component';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 
 
@@ -79,8 +87,9 @@ import { NewsItemComponent } from './components/box-sub-news/box-list-news/news-
     MenuComponent,
 
       HotNewsComponent,
-
+    BoxCateContentComponent,
       NewsRowComponent,
+
         BoxSubNewsComponent,
         BoxListNewsComponent,
         BoxCateListComponent,
@@ -88,6 +97,9 @@ import { NewsItemComponent } from './components/box-sub-news/box-list-news/news-
 
 
 
+
+
+        VietlottComponent,
 
   ],
   imports: [
@@ -135,6 +147,7 @@ import { NewsItemComponent } from './components/box-sub-news/box-list-news/news-
     MdbTransferModule,
     MdbMentionModule,
     AppRoutingModule,
+    LoadingBarRouterModule
   ],
   providers: [MdbCookiesManagementService, MdbStorageManagementService],
   bootstrap: [AppComponent],
