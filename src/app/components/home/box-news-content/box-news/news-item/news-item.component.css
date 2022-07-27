@@ -1,0 +1,23 @@
+.item {
+  width: 570px;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+}
+.item .img-show {
+  margin-right: 20px;
+  width: 170px;
+}
+.item .news-title .link1 {
+  font-weight: bold;
+  font-size: 16px;
+}
+.item .news-title ul li {
+  font-size: 12px;
+  margin-right: 20px;
+  list-style-type: circle;
+}
+
+/*# sourceMappingURL=news-item.component.css.map */

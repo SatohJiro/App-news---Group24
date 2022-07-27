@@ -59,18 +59,18 @@ import { HotNewsComponent } from './components/home/hot-news/hot-news.component'
 
 import { NewsRowComponent } from './components/news-row/news-row.component';
 
-import { BoxSubNewsComponent } from './components/box-sub-news/box-sub-news.component';
-import { BoxListNewsComponent } from './components/box-sub-news/box-list-news/box-list-news.component';
-import { BoxCateListComponent } from './components/box-sub-news/box-cate-list/box-cate-list.component';
-import { NewsItemComponent } from './components/box-sub-news/box-list-news/news-item/news-item.component';
+
+import { NewsItemComponent } from './components/home/box-news-content/box-news/news-item/news-item.component';
 
 
-import { VietlottComponent } from './components/home/vietlott/vietlott.component';
+import { VietlottComponent } from './components/home/box-news-content/box-cate-content/vietlott/vietlott.component';
 
 
 
-import { BoxCateContentComponent } from './components/home/box-cate-content/box-cate-content.component';
+import { BoxCateContentComponent } from './components/home/box-news-content/box-cate-content/box-cate-content.component';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { BoxNewsContentComponent } from './components/home/box-news-content/box-news-content.component';
+import { BoxNewsComponent } from './components/home/box-news-content/box-news/box-news.component';
 
 
 
@@ -89,17 +89,12 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
       HotNewsComponent,
     BoxCateContentComponent,
       NewsRowComponent,
-
-        BoxSubNewsComponent,
-        BoxListNewsComponent,
-        BoxCateListComponent,
         NewsItemComponent,
 
 
-
-
-
         VietlottComponent,
+                  BoxNewsContentComponent,
+                  BoxNewsComponent,
 
   ],
   imports: [
