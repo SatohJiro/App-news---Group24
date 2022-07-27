@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoxCateContentComponent } from './box-cate-content.component';
+import { NewsItemComponent } from './news-item.component';
 
-describe('BoxCateContentComponent', () => {
-  let component: BoxCateContentComponent;
-  let fixture: ComponentFixture<BoxCateContentComponent>;
+describe('NewsItemComponent', () => {
+  let component: NewsItemComponent;
+  let fixture: ComponentFixture<NewsItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxCateContentComponent ]
+      declarations: [ NewsItemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoxCateContentComponent);
+    fixture = TestBed.createComponent(NewsItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

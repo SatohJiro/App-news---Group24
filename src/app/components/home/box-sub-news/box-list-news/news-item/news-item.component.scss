@@ -1,0 +1,24 @@
+.container {
+  height: 130px;
+  .item {
+    display: flex;
+    flex-direction: row;
+   padding-bottom: 10px;
+border-bottom: 1px solid #ececec;
+
+    .img-show {
+      margin-right: 20px;
+      width: 170px;
+    }
+
+    .news-title {
+      ul {
+
+        li {
+          margin-right: 20px;
+          list-style-type: circle;
+        }
+      }
+    }
+  }
+}

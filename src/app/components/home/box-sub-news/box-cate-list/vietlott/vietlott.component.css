@@ -1,10 +1,4 @@
-.vietlott {
-  border: 1px solid rgba(116, 152, 189, 0.35);
-  border-radius: 5px;
-  width: 258px;
-}
 .vietlott__box {
-  background-image: linear-gradient(to top, transparent, rgba(240, 240, 240, 0.7));
   padding: 20px;
 }
 .vietlott__header {

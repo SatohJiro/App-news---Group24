@@ -2,7 +2,7 @@
  <section class="hot-news">
   <div class="hot-news__top">
     <div class="hot-news__time">
-      Monday, 25th July, 2022
+      {{dateTime | date:'fullDate'}}
     </div>
     <ul class="hot-news__list">
       <li class="hot-news__icon">
@@ -26,92 +26,40 @@
      <div class="hot-news__content--left">
        <div class="main-news">
          <div class="main-news__content">
-           <a href="" class="">
-             <img src="https://nld.mediacdn.vn/zoom/544_340/291774122806476800/2022/7/24/14-chot-1658671446850207511371.jpg" alt="" class="main-news__image">
-           </a>
-           <h3 class="main-news__title"><a href="" class="main-news__link">Diem chuan DH se tang o to hop xa hoi</a></h3>
+           <div *ngFor="let item of data; first as isFirst">
+             <ng-template [ngIf]="isFirst">
+             <a [href]="item.link" class="">
+               <img [src]="item.description.url" [alt]="item.description.alt">
+             </a>
+           <h3 class="main-news__title"><a href="" class="main-news__link">{{item.title}}</a></h3>
            <p class="main-news__sapo">
-             Nhiều chuyên gia tuyển sinh nhận định điểm chuẩn ĐH theo phương thức xét điểm thi tốt nghiệp THPT năm nay sẽ tăng mạnh ở các ngành xét tuyển tổ hợp văn, sử, địa...
+             {{item.description.text}}
            </p>
+             </ng-template>
+           </div>
          </div>
        </div>
        <div class="list-news-thumb">
-         <mdb-tabs>
+         <mdb-tabs [justified]="true" [style]="'padding-bottom:20px'">
            <mdb-tab title="Tin nóng">
              <ng-template mdbTabContent>
               <ul class="list-news-thumb__list">
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
+                <ng-container *ngFor="let item of data; first as isFirst">
+                <ng-template [ngIf]="!isFirst">
+                <li class="list-news-thumb__item" >
+                    <a [href]="item.link" class="list-news-thumb__link" [title]="item.title">{{item.title}}</a>
                 </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
-                <li class="list-news-thumb__item">
-                  <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-                </li>
+                </ng-template>
+                </ng-container>
               </ul>
              </ng-template>
            </mdb-tab>
            <mdb-tab title="Tin mới">
              <ng-template mdbTabContent>
                <ul class="list-news-thumb__list">
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
-               <li class="list-news-thumb__item">
-                 <a href="" class="list-news-thumb__link" title="TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ">TP HCM yêu cầu các cửa khẩu giám sát thân nhiệt người nhập cảnh, phòng ngừa bệnh đậu mùa khỉ</a>
-               </li>
+                 <li class="list-news-thumb__item" *ngFor="let item of data; first as isFirst">
+                   <a *ngIf="!isFirst" [href]="item.link" class="list-news-thumb__link" [title]="item.title">{{item.title}}</a>
+                 </li>
                </ul>
              </ng-template>
            </mdb-tab>

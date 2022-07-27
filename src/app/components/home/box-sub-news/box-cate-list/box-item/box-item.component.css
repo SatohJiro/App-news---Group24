@@ -1,0 +1,28 @@
+.box-item {
+  padding: 20px;
+}
+
+.header-cate {
+  display: flex;
+  margin-bottom: 10px;
+}
+.header-cate .title {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.header-cate .view-more {
+  margin-left: auto;
+  font-size: 11px;
+  font-style: italic;
+  color: #9d9d9d;
+  font-weight: 500;
+}
+
+h3 > a.title {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=box-item.component.css.map */
