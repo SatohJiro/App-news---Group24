@@ -1,0 +1,19 @@
+.container {
+  height: 130px;
+}
+.container .item {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+}
+.container .item .img-show {
+  margin-right: 20px;
+  width: 170px;
+}
+.container .item .news-title ul li {
+  margin-right: 20px;
+  list-style-type: circle;
+}
+
+/*# sourceMappingURL=news-item.component.css.map */
