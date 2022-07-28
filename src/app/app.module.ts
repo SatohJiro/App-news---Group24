@@ -78,6 +78,7 @@ import { BoxLocationsComponent } from './components/home/box-locations/box-locat
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,6 +102,7 @@ import { BoxLocationsComponent } from './components/home/box-locations/box-locat
                   BoxHomeNgangComponent,
                   BoxNewsItemComponent,
                   BoxLocationsComponent,
+
 
   ],
   imports: [
