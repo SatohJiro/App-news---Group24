@@ -74,6 +74,8 @@ import { BoxNewsComponent } from './components/home/box-news-content/box-news/bo
 import { BoxHomeNgangComponent } from './components/home/box-home-ngang/box-home-ngang.component';
 import { BoxNewsItemComponent } from './components/home/box-home-ngang/box-news-item/box-news-item.component';
 import { BoxLocationsComponent } from './components/home/box-locations/box-locations.component';
+import { BoxMediaComponent } from './components/home/box-media/box-media.component';
+import { ItemComponent } from './components/news-row/item/item.component';
 
 
 
@@ -102,6 +104,8 @@ import { BoxLocationsComponent } from './components/home/box-locations/box-locat
                   BoxHomeNgangComponent,
                   BoxNewsItemComponent,
                   BoxLocationsComponent,
+                  BoxMediaComponent,
+                  ItemComponent,
 
 
   ],
