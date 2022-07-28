@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  margin-bottom: 10px;
+}
+.container .item {
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=box-home-ngang.component.css.map */
