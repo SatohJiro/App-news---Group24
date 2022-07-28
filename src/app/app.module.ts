@@ -71,6 +71,8 @@ import { BoxCateContentComponent } from './components/home/box-news-content/box-
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { BoxNewsContentComponent } from './components/home/box-news-content/box-news-content.component';
 import { BoxNewsComponent } from './components/home/box-news-content/box-news/box-news.component';
+import { BoxHomeNgangComponent } from './components/home/box-home-ngang/box-home-ngang.component';
+import { BoxNewsItemComponent } from './components/home/box-home-ngang/box-news-item/box-news-item.component';
 
 
 
@@ -95,6 +97,8 @@ import { BoxNewsComponent } from './components/home/box-news-content/box-news/bo
         VietlottComponent,
                   BoxNewsContentComponent,
                   BoxNewsComponent,
+                  BoxHomeNgangComponent,
+                  BoxNewsItemComponent,
 
   ],
   imports: [
