@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.hot-news__top {
+  margin-bottom: 20px;
+}
 .hot-news__list {
   gap: 14px;
 }
@@ -25,7 +28,6 @@
 
 .main-news {
   width: 544px;
-
 }
 .main-news__title {
   padding: 10px 0px;
@@ -45,8 +47,14 @@
 
 .list-news-thumb {
   width: 258px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  overflow: hidden;
 }
 .list-news-thumb__list {
+  margin: 10px;
+  padding: 10px 10px 10px 48px;
   height: 456px;
   overflow-y: scroll;
   transition: all 0.6s linear;
@@ -82,6 +90,8 @@
 .list-news-thumb__item {
   list-style-type: circle;
   padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=hot-news.component.css.map */

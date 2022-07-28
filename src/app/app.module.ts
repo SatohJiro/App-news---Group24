@@ -71,6 +71,9 @@ import { BoxCateContentComponent } from './components/home/box-news-content/box-
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { BoxNewsContentComponent } from './components/home/box-news-content/box-news-content.component';
 import { BoxNewsComponent } from './components/home/box-news-content/box-news/box-news.component';
+
+import { BoxCateHomeComponent } from './components/home/box-cate-home/box-cate-home.component';
+
 import { BoxHomeNgangComponent } from './components/home/box-home-ngang/box-home-ngang.component';
 import { BoxNewsItemComponent } from './components/home/box-home-ngang/box-news-item/box-news-item.component';
 import { BoxLocationsComponent } from './components/home/box-locations/box-locations.component';
@@ -80,6 +83,7 @@ import { HeaderNewsDetailComponent } from './components/box-news-detail/header-n
 
 import { BoxMediaComponent } from './components/home/box-media/box-media.component';
 import { ItemComponent } from './components/news-row/item/item.component';
+
 
 
 
@@ -106,6 +110,9 @@ import { ItemComponent } from './components/news-row/item/item.component';
         VietlottComponent,
                   BoxNewsContentComponent,
                   BoxNewsComponent,
+
+                  BoxCateHomeComponent,
+
                   BoxHomeNgangComponent,
                   BoxNewsItemComponent,
                   BoxLocationsComponent,
