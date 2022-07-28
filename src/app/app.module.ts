@@ -71,6 +71,7 @@ import { BoxCateContentComponent } from './components/home/box-news-content/box-
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { BoxNewsContentComponent } from './components/home/box-news-content/box-news-content.component';
 import { BoxNewsComponent } from './components/home/box-news-content/box-news/box-news.component';
+import { BoxCateHomeComponent } from './components/home/box-cate-home/box-cate-home.component';
 
 
 
@@ -95,6 +96,7 @@ import { BoxNewsComponent } from './components/home/box-news-content/box-news/bo
         VietlottComponent,
                   BoxNewsContentComponent,
                   BoxNewsComponent,
+                  BoxCateHomeComponent,
 
   ],
   imports: [
