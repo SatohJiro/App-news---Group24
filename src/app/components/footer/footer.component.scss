@@ -52,7 +52,7 @@
     .footer-container {
       .footer-content {
         color: #222;
-        font: normal 13px/normal Roboto-Medium;
+        font-size: 13px;
         line-height: 20px;
         display: flex;
 
@@ -87,7 +87,6 @@
             .div-download-app {
               display: flex;
               margin-top: 10px;
-              font-family: 'Roboto-Bold';
               align-items: center;
               color: #222;
             }
@@ -132,7 +131,6 @@
               background-repeat: no-repeat;
               background-position: -7px -159px;
             }
-
             .address {
               margin-top: 8px;
             }

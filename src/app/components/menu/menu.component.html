@@ -1,9 +1,16 @@
 <div class="container">
-  <ul class="menu__list menu__header menu__footer" >
+  <ul class="menu__list menu__header menu__footer">
     <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast" [ngSwitch]="data.id">
-      <a *ngSwitchCase="0" routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link "><i class="fas fa-home"></i></a>
-      <a  *ngSwitchCase="datas.length-1"  routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link "><i class="fas fa-search"></i></a>
-      <a  *ngSwitchDefault  routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link ">{{data.title}}</a>
+      <ng-template [ngIf]="isMenuTop">
+        <a *ngSwitchCase="0" routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link"><i class="fas fa-home"></i></a>
+        <a  *ngSwitchCase="datas.length-1"  routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link "><i class="fas fa-search"></i></a>
+        <a  *ngSwitchDefault  routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link ">{{data.title}}</a>
+      </ng-template>
+      <ng-template [ngIf]="!isMenuTop">
+        <a *ngSwitchCase="0" routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link text-black"><i class="fas fa-home"></i></a>
+        <a  *ngSwitchCase="datas.length-1"  routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link text-black"><i class="fas fa-search"></i></a>
+        <a  *ngSwitchDefault  routerLink="/title" routerLinkActive="active" ariaCurrentWhenActive="page"class="menu__link text-black">{{data.title}}</a>
+      </ng-template>
     </li>
   </ul>
 </div>
