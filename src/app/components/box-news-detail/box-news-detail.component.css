@@ -2,5 +2,35 @@
   border: 1px solid #e2e7ec;
   border-top: 5px solid #e2e7ec;
 }
+.container .box-news-content {
+  display: flex;
+  gap: 20px;
+}
+.container .box-news-content .box--most-viewd {
+  flex-shrink: 0;
+  width: 238px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+}
+.container .box-news-content .box__title {
+  font-size: 15px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
+}
+.container .box-news-content .box__list {
+  padding: 20px;
+}
+.container .box-news-content .box__item {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.container .box-news-content .box__desc--title {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+}
 
 /*# sourceMappingURL=box-news-detail.component.css.map */
