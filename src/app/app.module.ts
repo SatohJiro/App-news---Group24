@@ -83,6 +83,7 @@ import { HeaderNewsDetailComponent } from './components/box-news-detail/header-n
 
 import { BoxMediaComponent } from './components/home/box-media/box-media.component';
 import { ItemComponent } from './components/news-row/item/item.component';
+import { NewsDetailComponent } from './components/box-news-detail/news-detail/news-detail.component';
 
 
 
@@ -122,6 +123,7 @@ import { ItemComponent } from './components/news-row/item/item.component';
 
                   BoxMediaComponent,
                   ItemComponent,
+                  NewsDetailComponent,
 
 
 

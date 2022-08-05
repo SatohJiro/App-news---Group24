@@ -1,0 +1,77 @@
+.body-news .title-content {
+  color: #252121;
+  font: bold 28px/normal Arial;
+  line-height: 33px;
+  padding-bottom: 22px;
+}
+.body-news .top-share, .body-news .bot-share {
+  padding-top: 5px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.body-news .top-share .dateandcat, .body-news .bot-share .dateandcat {
+  margin-bottom: 15px;
+}
+.body-news .top-share .dateandcat .line-middle, .body-news .bot-share .dateandcat .line-middle {
+  color: #626161;
+  padding: 0 5px;
+}
+.body-news .top-share .dateandcat .cat, .body-news .bot-share .dateandcat .cat {
+  font-weight: bold;
+}
+.body-news .top-share .fb, .body-news .bot-share .fb {
+  display: flex;
+  justify-content: space-between;
+}
+.body-news .top-share .fb .share-like, .body-news .bot-share .fb .share-like {
+  display: flex;
+  content: "";
+  justify-items: center;
+}
+.body-news .top-share .fb .share-like .button, .body-news .bot-share .fb .share-like .button {
+  text-align: right;
+  padding-right: 5px;
+  margin: 0 10px 10px 10px;
+  width: 70px;
+  height: 15px;
+  background-color: #0a58ca;
+  color: white;
+  font-weight: bold;
+}
+.body-news .top-share .fb .share-like .care-button, .body-news .bot-share .fb .share-like .care-button {
+  background-color: #0dcaf0;
+}
+.body-news .top-share .fb .share-like .print, .body-news .bot-share .fb .share-like .print {
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.body-news .top-share .fb .audio .button-radio, .body-news .bot-share .fb .audio .button-radio {
+  display: flex;
+  content: "";
+  justify-content: center;
+  align-items: center;
+}
+.body-news .top-share .fb .audio .button-radio .title, .body-news .bot-share .fb .audio .button-radio .title {
+  margin-right: 5px;
+}
+.body-news .news_title-detail {
+  color: #000;
+  font-weight: bold;
+  line-height: 24px;
+  margin: 25px 0 20px;
+}
+.body-news .news-content {
+  font: normal 16px/1.4 Arial, Helvetica, sans-serif;
+  margin-bottom: 13px;
+  line-height: 25px;
+  color: #252525;
+}
+.body-news .news-content .author {
+  display: block;
+  text-align: end;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=news-detail.component.css.map */

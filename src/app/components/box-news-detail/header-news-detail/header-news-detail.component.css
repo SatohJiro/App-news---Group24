@@ -1,3 +1,30 @@
+.line-top {
+  background-color: #e2e7ec;
+}
 
+.sub-cate-detail {
+  display: flex;
+  border-bottom: thin solid #ddd;
+  margin-bottom: 22px;
+  margin-top: 22px;
+  box-sizing: border-box;
+}
+.sub-cate-detail li {
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 20px 0px 0;
+}
+.sub-cate-detail li .active {
+  color: #0959ab;
+}
+.sub-cate-detail li .active:after {
+  content: " ";
+  width: 100%;
+  margin-top: 5px;
+  height: 3px;
+  background: #0959ab;
+  display: block;
+}
 
 /*# sourceMappingURL=header-news-detail.component.css.map */
