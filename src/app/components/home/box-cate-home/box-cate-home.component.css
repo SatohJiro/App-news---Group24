@@ -25,11 +25,15 @@
 .box-cate-home__content {
   margin-top: 25px;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
 }
 .box-cate-home__content--left {
   display: flex;
   gap: 16px;
+}
+.box-cate-home__content--right {
+  padding: 0 20px;
+  border-left: 1px solid #ddd;
 }
 
 .news-main {
