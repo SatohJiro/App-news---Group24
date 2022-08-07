@@ -10,6 +10,7 @@
   flex-direction: row;
   padding-right: 0px;
   padding-left: 15px;
+  margin-bottom: 40px;
 }
 .container .frame .content {
   display: flex;
@@ -23,10 +24,11 @@
 }
 .container .frame .content .one-news .img_show img {
   height: 220px;
-  width: 350px;
+  width: 100%;
 }
 .container .frame .content .one-news .news-title {
   width: 100%;
+  margin-top: 14px;
 }
 .container .frame .content .grid-container {
   background: #e9f4ff;
@@ -45,8 +47,9 @@
   margin-left: 10px;
 }
 .container .frame .media li {
+  text-align: center;
   padding: 40px 5px;
-  border-bottom: 1px solid #b6b6b6;
+  border-bottom: 1px solid #ddd;
 }
 
 h2 {
