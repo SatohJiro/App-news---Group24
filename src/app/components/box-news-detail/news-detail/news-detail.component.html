@@ -1,6 +1,6 @@
-<div class="body-news">
+<div class="body-news" *ngFor="let data of datas">
   <h1 class="title-content" data-field="title">
-    Vì sao Đức tạm thời chưa công nhận mẫu hộ chiếu mới của Việt Nam?
+    {{data.title}}
   </h1>
   <div class="top-share">
     <p class="dateandcat clearfix">
@@ -41,63 +41,14 @@
   </div>
 
   <h2 class="news_title-detail" >
-    (NLĐO)- Sau khi nắm được Cơ quan Nội vụ Đức tạm thời chưa công nhận mẫu hộ chiếu mới của Việt Nam, vì thiếu thông
-    tin về nơi sinh, Cục Quản lý Xuất nhập cảnh - Bộ Công an cùng Cục Lãnh sự - Bộ Ngoại giao đã trao đổi với phía Đức
-    qua con đường ngoại giao.
+    {{data.title_detail}}
   </h2>
 
   <div class="news-content">
-    <div class="contentbody" id="content-id">
-      <div class="content-news-detail old-news" >
-        <p>Ngày 28-7, đại diện Cục Quản lý Xuất nhập cảnh (Bộ Công an) đã thông tin bước đầu về việc Cơ quan Nội vụ Đức
-          tạm thời chưa công nhận mẫu <b> <a href="https://nld.com.vn/ho-chieu.html" title="hộ chiếu" target="_blank">hộ
-            chiếu</a></b> mới của Việt Nam, được cấp từ ngày 1-7, vì thiếu thông tin về nơi sinh.<br></p>
-        <div class="VCSortableInPreviewMode" type="Photo" style="">
-          <div><img src="https://nld.mediacdn.vn/thumb_w/684/291774122806476800/2022/7/28/1-1658969509454206410009.jpeg"
-                    id="img_476915494212669440" w="741" h="703"
-                    alt="Vì sao Đức tạm thời chưa công nhận mẫu hộ chiếu mới của Việt Nam? - Ảnh 1."
-                    title="Vì sao Đức tạm thời chưa công nhận mẫu hộ chiếu mới của Việt Nam? - Ảnh 1." rel="lightbox"
-                    photoid="476915494212669440" type="photo" style="max-width:100%;"
-                    data-original="https://nld.mediacdn.vn/291774122806476800/2022/7/28/1-1658969509454206410009.jpeg"
-                    width="" height=""></div>
-          <div class="PhotoCMS_Caption"><p data-placeholder="[nhập chú thích]" class="">Tài khoản Facebook của Tổng lãnh
-            sự quán Đức tại TP HCM đưa thông tin - Ảnh: Chụp màn hình</p></div>
-        </div>
-        <p>Theo đại diện Cục Quản lý Xuất nhập cảnh, ngay khi nắm bắt thông tin, đơn vị đã cùng Cục Lãnh sự, Bộ Ngoại
-          giao, trao đổi với phía Đức qua con đường ngoại giao. Ngoài ra, đại diện Cục Quản lý Xuất nhập cảnh cũng khẳng
-          định hộ chiếu phổ thông mẫu mới của Việt Nam được xây dựng trên cơ sở đúng luật, đúng quy định và đúng quy
-          chuẩn quốc tế. </p>
-        <p>Trước đó, theo thông báo của Đại sứ quán Đức ngày 27-7, Cơ quan Nội vụ Đức tạm thời chưa công nhận mẫu hộ
-          chiếu mới của Việt Nam, được cấp từ ngày 1-7, vì thiếu thông tin về nơi sinh. Cụ thể, ngày 27-7, Đại sứ quán
-          Đức tại Việt Nam công bố trên trang web chính thức, kể từ thời điểm này, cơ quan đại diện của Đức không cấp
-          thị thực vào hộ chiếu phổ thông Việt Nam theo mẫu mới màu xanh tím than, có số serial bắt đầu bằng ký tự "P".
-          Điều này có nghĩa là, công dân Việt Nam nếu sở hữu quyển hộ chiếu mẫu mới màu xanh tím than hiện sẽ không nộp
-          hồ sơ xin thị thực nhập cảnh loại C hoặc D vào Đức. </p>
-        <p>Đại sứ quán Đức cũng cảnh báo rằng, nếu công dân Việt Nam đã được cấp thị thực vào quyển hộ chiếu phổ thông
-          Việt Nam theo mẫu mới màu xanh tím than thì "không nên tới Đức" vì có nguy cơ sẽ bị từ chối nhập cảnh tại biên
-          giới. </p>
-        <p>Theo Đại sứ quán Đức, theo hướng dẫn của các cơ quan chức năng nội địa Đức, quy định nêu trên được áp dụng
-          cho đến khi có thông báo khác. Hiện thời, hồ sơ của các công dân sử dụng mẫu hộ chiếu mới màu xanh tím than sẽ
-          không được tiếp nhận cho tới khi có thông báo mới. </p>
-        <p>Đại sứ quán Đức cho biết hộ chiếu không ghi nơi sinh thì không thể xác định được rõ ràng người mang hộ chiếu,
-          đặc biệt nhiều trường hợp trùng họ. Đối với cơ quan chính quyền ở Đức, việc tìm nơi sinh thông qua số định
-          danh trong hộ chiếu là không thể thực hiện được. </p>
-        <p>Do đó, Đức sẽ không thể cấp thị thực vào những hộ chiếu thuộc mẫu mới màu xanh tím than có số series bắt đầu
-          bằng chữ "P". Người mang mẫu hộ chiếu mới sẽ không được nhập cảnh vào Đức để lưu trú ngắn hạn. </p>
-        <p>Trước đó, Cục Quản lý xuất nhập cảnh bắt đầu triển khai cấp hộ chiếu phổ thông không gắn chip theo mẫu mới
-          cho công dân Việt Nam ở trong và ngoài nước từ ngày 1-7. Mẫu hộ chiếu mới được thiết kế công phu, trên mỗi
-          trang là hình ảnh tiêu biểu về phong cảnh, hình tượng về chủ quyền quốc gia, di sản văn hóa nổi tiếng như:
-          Vịnh Hạ Long, kinh đô Huế, đền Hùng, phố cổ Hội An, thánh địa Mỹ Sơn, bến cảng Nhà Rồng, cột cờ Lũng Cú. </p>
-      </div>
-      <span class="author" >
-        Nguyễn Hưởng</span>
-      <div class="clearfix"></div>
-
-    </div>
-
+    <div [innerHTML]="data.content"></div>
+    <br>
+    <span class="author"> {{data.author}}</span>
   </div>
-
-
   <div class="bot-share">
     <div class="fb">
       <div class="share-like">
@@ -118,7 +69,6 @@
         </a>
       </div>
     </div>
-
     <div class="clear-both"></div>
     <div id="end-social"></div>
   </div>
