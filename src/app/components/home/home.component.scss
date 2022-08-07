@@ -1,0 +1,42 @@
+.box-sub-cate {
+  max-width: 208px;
+  &__title {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    padding-left: 15px;
+    text-transform: uppercase;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      transform: translateY(-1px);
+      background-color: #e02b2b;
+    }
+  }
+  &__link {
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  &__link > h3 {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    max-width: 174px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px rgba(#000,0.1) ;
+  }
+  &__sapo {
+    margin-top: 40px;
+    font-weight: 500;
+  }
+}

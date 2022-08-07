@@ -24,13 +24,18 @@
   &__content {
     margin-top: 25px;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
   }
   &__content--left {
     display: flex;
     gap: 16px;
   }
+  &__content--right {
+    padding: 0 20px;
+    border-left: 1px solid #ddd;
+  }
 }
+
 .news-main {
   width: 258px;
   &__title {

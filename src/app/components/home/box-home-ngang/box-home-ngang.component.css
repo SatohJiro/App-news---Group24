@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 .container .item {
   margin-right: 10px;

@@ -25,9 +25,19 @@ border-bottom: 1px solid #ececec;
 
         li {
           font-size: 12px;
-
-          margin-right: 20px;
-          list-style-type: circle;
+          padding-left: 10px;
+          position: relative;
+          &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translateY(-55%);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            border: 1px solid #0b3d91;
+          }
         }
       }
     }
