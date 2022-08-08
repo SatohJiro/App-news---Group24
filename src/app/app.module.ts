@@ -85,6 +85,7 @@ import { HeaderNewsDetailComponent } from './components/box-news-detail/header-n
 import { RelatedNewsComponent } from './components/box-news-detail/related-news/related-news.component';
 
 import { NewsDetailComponent } from './components/box-news-detail/news-detail/news-detail.component';
+import { FeaturedNewsComponent } from './components/box-news-detail/featured-news/featured-news.component';
 
 
 
@@ -131,6 +132,7 @@ import { NewsDetailComponent } from './components/box-news-detail/news-detail/ne
                   RelatedNewsComponent,
 
                   NewsDetailComponent,
+                    FeaturedNewsComponent,
 
 
 
