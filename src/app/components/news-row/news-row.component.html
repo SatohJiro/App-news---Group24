@@ -1,9 +1,7 @@
 <div class="container">
   <div class="news-row">
-    <app-item></app-item>
-    <app-item></app-item>
-    <app-item></app-item>
-    <app-item></app-item>
+   <div *ngFor="let data of datas">
+     <app-item [linkImage]="data.image" [description]="data.description"></app-item>
+   </div>
   </div>
-
 </div>
