@@ -1,7 +1,7 @@
 <div class="container">
-  <app-header-news-detail></app-header-news-detail>
+  <app-header-news-detail [url]="url"></app-header-news-detail>
   <div class="box-news-content">
-    <app-news-detail></app-news-detail>
+    <app-news-detail [url]="url"></app-news-detail>
     <div class="box--most-viewd">
       <div class="box__title">
         <h3>Xem nhiều</h3>
@@ -65,6 +65,6 @@
       </ul>
     </div>
   </div>
-  <app-related-news></app-related-news>
-  <app-featured-news></app-featured-news>
+  <app-related-news [url]="url"></app-related-news>
+  <app-box-same-category-news></app-box-same-category-news>
 </div>
