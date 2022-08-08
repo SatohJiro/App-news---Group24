@@ -1,0 +1,21 @@
+.container{
+  .title{
+    display: flex;
+    flex-direction: row;
+    //align-items: center;
+    margin-bottom: 15px;
+    div{
+      margin-right: 8px;
+      height: 18px;
+      width: 6px;
+      background: #ff8503;
+      margin-top:5px;
+    }
+  }
+
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
