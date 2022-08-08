@@ -86,6 +86,7 @@ import { RelatedNewsComponent } from './components/box-news-detail/related-news/
 
 import { NewsDetailComponent } from './components/box-news-detail/news-detail/news-detail.component';
 import { BoxSameCategoryNewsComponent } from './components/box-news-detail/box-same-category-news/box-same-category-news.component';
+import {ServerService} from "./services/server.service";
 
 
 
@@ -185,7 +186,7 @@ import { BoxSameCategoryNewsComponent } from './components/box-news-detail/box-s
     AppRoutingModule,
     LoadingBarRouterModule
   ],
-  providers: [MdbCookiesManagementService, MdbStorageManagementService],
+  providers: [MdbCookiesManagementService, MdbStorageManagementService,ServerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

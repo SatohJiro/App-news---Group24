@@ -7,10 +7,13 @@ import {ServerService} from "../../services/server.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  data:string[] = [];
+  // @ts-ignore
+  data:any[];
+  newsRow: string[] = [];
   constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
     this.data = this.serverService.getData('tin-moi-nhat.rss');
+    console.log(this.data);
   }
 }

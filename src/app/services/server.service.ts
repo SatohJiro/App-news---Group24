@@ -4,12 +4,22 @@ import * as cheerio from "cheerio";
 
 import * as axios from 'axios';
 import {Observable} from "rxjs";
-
 @Injectable({
   providedIn: 'root'
 })
+type News = {
+  id: number,
+  title: string,
+  link?: string,
+  guid?: string,
+  description?: {
+    url?: string,
+    alt?: string,
+    text?:string,
+  },
+  pubDate?:string,
+}
 export class ServerService {
-
   server = 'https://nld.com.vn';
   option ='tin-moi-nhat.rss';
   corsAnywhere ='https://mycorsproxy01.herokuapp.com';
@@ -128,9 +138,9 @@ export class ServerService {
     return data;
   }
 //  home - tinmoinhat rss
-  getData(option:string):any[] {
+  getData(option:string):News[] {
     this.option = option;
-    let data:any[] = [];
+    let data:News[] = [];
     const ajax = new XMLHttpRequest();
     const url= `${this.corsAnywhere}/${this.server}/${this.option}`;
     const asyns = true;
@@ -146,27 +156,52 @@ export class ServerService {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText, {xmlMode: true});
         $('item').each((i,item)=> {
-          // @ts-ignore
-
           data.push({
-              id: i,
-              title: $(item).find('title').text().trim(),
-              link: $(item).find('link').text().trim(),
-              guid: $(item).find('guid').text().trim(),
-              description: {
-                // @ts-ignore
-                url: getImg($(item).find('description').text().trim()).attr("src"),
-                alt: getImg($(item).find('description').text().trim()).attr("alt"),
-                // @ts-ignore
-                text:$(item).find('description').text().slice($(item).find('description').text().lastIndexOf(">")+1).trim(),
-              },
-              pubDate: $(item).find('pubDate').text().trim(),
-            }
-          );
+            id:i,
+            title: $(item).find('title').text().trim(),
+                link: $(item).find('link').text().trim(),
+                guid: $(item).find('guid').text().trim(),
+                description: {
+                  // @ts-ignore
+                  url: getImg($(item).find('description').text().trim()).attr("src"),
+                  alt: getImg($(item).find('description').text().trim()).attr("alt"),
+                  // @ts-ignore
+                  text:$(item).find('description').text().slice($(item).find('description').text().lastIndexOf(">")+1).trim(),
+                },
+                pubDate: $(item).find('pubDate').text().trim(),
+          })
         })
       }
     }
+    console.log(data);
     return data;
+  }
+  getDataDetail(urlInput:String):string[] {
+    const ajax = new XMLHttpRequest();
+    let topics:any[] = [];
+    // ajax.timeout = 3000;
+    const url= `${this.corsAnywhere}/${urlInput}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.nld-detail > .w520').each((i,title)=> {
+          // @ts-ignore
+          topics.push({
+            id:i,
+            title: $(title).find('h1').text(),
+            title_detail: $(title).find("h2").text(),
+            content: $(title).find("div .contentbody .content-news-detail").html(),
+            author:$(title).find("div .author").text(),
+          });
+        });
+      }
+    }
+    return topics;
   }
 
 }
