@@ -1,33 +1,13 @@
 
 <ul class="sub-cate-detail">
-  <li><a href="/ban-doc.htm" title="Bạn đọc" class="title-cate active">
-    Bạn đọc</a>
+  <li *ngFor="let item of items; let first= first">
+    <a href="/ban-doc.htm" title="Bạn đọc" class="title-cate active" *ngIf="first ; else notFirst">
+   {{item.title}}</a>
+    <ng-template #notFirst>
+      <a href="/ban-doc.htm" title="Bạn đọc" class="title-cate">
+        {{item.title}}</a>
+    </ng-template>
   </li>
-
-  <li>
-    <a href="/ban-doc/cuoc-song-nhan-ai.htm" data-status="1" data-parentid="1042" title="Cuộc sống nhân ái"
-       class="title">Cuộc sống nhân ái</a>
-  </li>
-
-  <li>
-    <a href="/ban-doc/toi-len-tieng.htm" data-status="1" data-parentid="1042" title="Tôi lên tiếng" class="title">Tôi
-      lên tiếng</a>
-  </li>
-
-  <li>
-    <a href="/ban-doc/net-dep-doi-thuong.htm" data-status="1" data-parentid="1042" title="Nét đẹp đời thường"
-       class="title">Nét đẹp đời thường</a>
-  </li>
-
-  <li>
-    <a href="/ban-doc/goc-anh-ban-doc.htm" data-status="1" data-parentid="1042" title="Góc ảnh bạn đọc" class="title">Góc
-      ảnh bạn đọc</a>
-  </li>
-
-  <li>
-    <a href="/ban-doc/du-luan.htm" data-status="1" data-parentid="1042" title="Dư luận" class="title">Dư luận</a>
-  </li>
-
 </ul>
 
 
