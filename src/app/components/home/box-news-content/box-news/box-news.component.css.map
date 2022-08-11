@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"box-news.component.css"}
+{"version":3,"sourceRoot":"","sources":["box-news.component.scss"],"names":[],"mappings":"AAGA;EACE;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAKA;EACE;EACA;;AAIA;EACE;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"box-news.component.css"}

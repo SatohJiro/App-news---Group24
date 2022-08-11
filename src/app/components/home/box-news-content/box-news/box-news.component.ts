@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServerService} from "../../../../services/server.service";
 
 @Component({
   selector: 'app-box-news',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoxNewsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private service: ServerService) { }
+data:any[] = [];
   ngOnInit(): void {
-  }
+   this.data = this.service.getBoxNews();}
 
 }

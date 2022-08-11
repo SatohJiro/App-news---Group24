@@ -2,6 +2,7 @@ import {Component, Inject, Input, OnChanges, OnInit, SimpleChanges} from '@angul
 import {DOCUMENT} from "@angular/common";
 import {ServerService} from "../../services/server.service";
 import {fromEvent, throttleTime} from "rxjs";
+import {HomeService} from "../home/home.service";
 
 @Component({
   selector: 'app-header',
@@ -18,10 +19,10 @@ export class HeaderComponent implements OnInit,OnChanges {
     {title: "Quốc tế", path:"news-international",desc:"lorem"},
   ];
   // @ts-ignore
-  constructor(@Inject(DOCUMENT) document: Document, private serverService: ServerService) {
+  constructor(@Inject(DOCUMENT) document: Document, private homeService: HomeService) {
   }
   ngOnInit(): void {
-   this.topics = this.serverService.getTopics();
+   this.topics = this.homeService.getTopics();
 
     fromEvent(window,"scroll").pipe(throttleTime(150)).subscribe((event)=> {
       // @ts-ignore

@@ -20,4 +20,8 @@
   margin-left: auto;
 }
 
+.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 /*# sourceMappingURL=menu.component.css.map */

@@ -84,8 +84,10 @@ import { BoxNewsDetailComponent } from './components/box-news-detail/box-news-de
 import { HeaderNewsDetailComponent } from './components/box-news-detail/header-news-detail/header-news-detail.component';
 import { RelatedNewsComponent } from './components/box-news-detail/related-news/related-news.component';
 
-import { NewsDetailComponent } from './components/box-news-detail/news-detail/news-detail.component';
 import { BoxSameCategoryNewsComponent } from './components/box-news-detail/box-same-category-news/box-same-category-news.component';
+import {ServerService} from "./services/server.service";
+import { NewsListComponent } from './components/news/news-list/news-list.component';
+import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
 
 
 
@@ -102,9 +104,8 @@ import { BoxSameCategoryNewsComponent } from './components/box-news-detail/box-s
     HeaderComponent,
     HomeComponent,
     NewsComponent,
-
     MenuComponent,
-
+    NewsDetailComponent,
       HotNewsComponent,
     BoxCateContentComponent,
       NewsRowComponent,
@@ -130,9 +131,8 @@ import { BoxSameCategoryNewsComponent } from './components/box-news-detail/box-s
                   ItemComponent,
 
                   RelatedNewsComponent,
-
-                  NewsDetailComponent,
                     BoxSameCategoryNewsComponent,
+                    NewsListComponent,
 
 
 
@@ -185,7 +185,7 @@ import { BoxSameCategoryNewsComponent } from './components/box-news-detail/box-s
     AppRoutingModule,
     LoadingBarRouterModule
   ],
-  providers: [MdbCookiesManagementService, MdbStorageManagementService],
+  providers: [MdbCookiesManagementService, MdbStorageManagementService,ServerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

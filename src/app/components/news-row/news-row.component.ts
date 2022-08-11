@@ -1,5 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
-import {DOCUMENT} from "@angular/common";
+import { Component, OnInit, Input } from '@angular/core';
 import {ServerService} from "../../services/server.service";
 
 @Component({
@@ -8,14 +7,12 @@ import {ServerService} from "../../services/server.service";
   styleUrls: ['./news-row.component.scss']
 })
 export class NewsRowComponent implements OnInit {
-  @Input() url: String = '';
-  datas: any[] = [];
-
-  constructor(@Inject(DOCUMENT) document: Document, private serverService: ServerService) {
-  }
+  // @ts-ignore
+  @Input() listData:string[] = [];
+  constructor(private service: ServerService) { }
 
   ngOnInit(): void {
-    this.datas = this.serverService.getDataRelatedDetail(this.url);
+    console.log(this.listData);
   }
 
 }

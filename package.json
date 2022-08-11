@@ -25,7 +25,11 @@
     "@types/axios": "^0.14.0",
     "chart.js": "^3.1.1",
     "cheerio": "^1.0.0-rc.12",
-    "fs": "^0.0.1-security",
+
+    "file-saver": "^2.0.5",
+    "file-system": "^2.2.2",
+    "fs-web": "^1.0.1",
+
     "mdb-angular-calendar": "file:mdb-angular-calendar-2.0.0.tgz",
     "mdb-angular-cookies-management": "file:mdb-angular-cookies-management-2.0.0.tgz",
     "mdb-angular-drag-and-drop": "file:mdb-angular-drag-and-drop-2.0.0.tgz",
