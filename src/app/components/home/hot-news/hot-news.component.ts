@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ServerService} from "../../../services/server.service";
+import {HomeService} from "../home.service";
 
 @Component({
   selector: 'app-hot-news',
@@ -13,11 +14,11 @@ export class HotNewsComponent implements OnInit {
   hotNewsData: any[] = [];
   @Input() data:any[] = [];
 
-  constructor(private serverService: ServerService) { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-    this.hotNewsTags = this.serverService.getHotNewsTags();
-    this.hotNewsData = this.serverService.getHotNewsData();
+    this.hotNewsTags = this.homeService.getHotNewsTags();
+    this.hotNewsData = this.homeService.getHotNewsData();
   }
 
 }

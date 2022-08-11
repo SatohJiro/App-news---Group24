@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ServerService} from "../../services/server.service";
+import {HomeService} from "./home.service";
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,9 @@ export class HomeComponent implements OnInit {
   // @ts-ignore
   data:any[];
   newsRow: string[] = [];
-  constructor(private serverService: ServerService) { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-    this.data = this.serverService.getData('tin-moi-nhat.rss');
-    console.log(this.data);
+    this.data = this.homeService.getData('tin-moi-nhat.rss');
   }
 }

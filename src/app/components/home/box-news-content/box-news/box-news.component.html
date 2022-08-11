@@ -1,8 +1,25 @@
-<app-news-item></app-news-item>
-<app-news-item></app-news-item>
-<app-news-item></app-news-item>
-<app-news-item></app-news-item>
-<app-news-item></app-news-item>
-<app-news-item></app-news-item>
+
+<app-news-item *ngFor="let item of data">
+  <div class="item">
+    <div class="img-show">
+      <a [href]="item.link">
+        <img
+        [src]="item.img">
+      </a>
+    </div>
+    <div class="news-title">
+      <div class="link1"><a [href]="item.link">{{item.title}}</a></div>
+      <ul>
+        <li>
+          <a [href]="item.subNews1.link">{{item.subNews1.title}}</a>
+        </li>
+        <li>
+          <a [href]="item.subNews2.link">{{item.subNews2.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</app-news-item>
+
 
 
