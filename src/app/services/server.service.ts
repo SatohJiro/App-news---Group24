@@ -150,5 +150,82 @@ export class ServerService {
     }
     return data;
   }
+  getDataDetail(urlInput:String):string[] {
+    const ajax = new XMLHttpRequest();
+    let topics:any[] = [];
+    // ajax.timeout = 3000;
+    const url= `${this.corsAnywhere}/${urlInput}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.nld-detail > .w520').each((i,title)=> {
+          // @ts-ignore
+          topics.push({
+            id:i,
+            title: $(title).find('h1').text(),
+            title_detail: $(title).find("h2").text(),
+            content: $(title).find("div .contentbody .content-news-detail").html(),
+            author:$(title).find("div .author").text(),
+          });
+        });
+      }
+    }
+    return topics;
+  }
+  getDataHeaderDetail(urlInput:String):string[] {
+    const ajax = new XMLHttpRequest();
+    let topics:any[] = [];
+    // ajax.timeout = 3000;
+    const url= `${this.corsAnywhere}/${urlInput}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.nld-detail  > .sub-cate-detail > li > a').each((i,title)=> {
+          // @ts-ignore
+          topics.push({
+            id:i,
+            title: $(title).text(),
+          });
+        });
+      }
+    }
+    return topics;
+  }
+
+  getDataRelatedDetail(urlInput:String):string[] {
+    const ajax = new XMLHttpRequest();
+    let topics:any[] = [];
+    // ajax.timeout = 3000;
+    const url= `${this.corsAnywhere}/${urlInput}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.nld-detail  > .boxtinnoibat > ul > li').each((i,title)=> {
+          // @ts-ignore
+          topics.push({
+            id:i,
+            image: $(title).find("a img").attr("src"),
+            description: $(title).find("a:nth-child(2)").text(),
+          });
+        });
+      }
+    }
+    return topics;
+  }
 
 }

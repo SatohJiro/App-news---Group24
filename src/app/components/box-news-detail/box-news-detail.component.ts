@@ -1,8 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {INews} from "../news/news";
-import {HomeService} from "../home/home.service";
-import {switchMap,map} from "rxjs";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-box-news-detail',
@@ -10,9 +6,11 @@ import {switchMap,map} from "rxjs";
   styleUrls: ['./box-news-detail.component.scss']
 })
 export class BoxNewsDetailComponent implements OnInit {
-  news: any;
+  url: String = 'https://nld.com.vn/chinh-tri/nguyen-chu-tich-nuoc-truong-tan-sang-nhan-huy-hieu-50-nam-tuoi-dang-20220808143125822.htm'
+  constructor() {
+  }
 
-  constructor(private activateRoute: ActivatedRoute, private homeService: HomeService) { }
+
 
   ngOnInit(): void {
   }
