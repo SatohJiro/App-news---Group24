@@ -13,10 +13,10 @@ import {NewsService} from "../news.service";
 export class NewsDetailComponent implements OnInit {
    // @ts-ignore
     news: INews;
-  constructor(private service: NewsService, private activatenRoute: ActivatedRoute) { }
+  constructor(private service: NewsService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatenRoute.paramMap.pipe(
+    this.activateRoute.paramMap.pipe(
       map(params => params.get('id')),
       switchMap(id => this.service.findNewsById(id))
       ).subscribe(news => this.news = news);
