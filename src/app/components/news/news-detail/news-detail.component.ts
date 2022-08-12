@@ -13,6 +13,7 @@ import {NewsService} from "../news.service";
 export class NewsDetailComponent implements OnInit {
    // @ts-ignore
     news: INews;
+
   constructor(private service: NewsService, private activatenRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

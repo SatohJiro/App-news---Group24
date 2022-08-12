@@ -67,7 +67,9 @@ export class NewsService {
    }
   findNewsById(id:string | null):Observable<INews> {
     const news = this.listNews.find(news => news.id === id);
+    console.log(id);
     if(news) {
+      console.log(news.id);
       return of(news).pipe(delay(50));
     }
     return throwError(new Error('404 Not Found'))
