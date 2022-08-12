@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {NewsComponent} from "./components/news/news.component";
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
 import {AdvertismentComponent} from "./components/advertisment/advertisment.component";
 import {LoginComponent} from "./components/login/login.component";
+import {ErrorComponent} from "./components/error/error.component";
 // import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'home',pathMatch:'full'},
   {path: 'home', component:HomeComponent},
   {path: 'home/:id', component:NewsDetailComponent},
-  {path: 'signup', component:LoginComponent}
+  {path: 'signup', component:LoginComponent},
+  {path: '**', component:ErrorComponent}
   // { path: 'home',
   //   component: HomeComponent,
   //   children :[
@@ -146,7 +148,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
