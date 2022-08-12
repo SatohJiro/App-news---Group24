@@ -8,6 +8,8 @@ import {HomeService} from "../home.service";
   styleUrls: ['./hot-news.component.scss']
 })
 export class HotNewsComponent implements OnInit {
+  isLoading:boolean =true;
+  isLoadingTop:boolean =true;
   list:number = 12;
   dateTime:Date = new Date();
   hotNewsTags:any[] =  [];
@@ -19,6 +21,12 @@ export class HotNewsComponent implements OnInit {
   ngOnInit(): void {
     this.hotNewsTags = this.homeService.getHotNewsTags();
     this.hotNewsData = this.homeService.getHotNewsData();
+    setTimeout(() => {
+      this.isLoadingTop = false;
+    }, 3000);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);
   }
 
 }

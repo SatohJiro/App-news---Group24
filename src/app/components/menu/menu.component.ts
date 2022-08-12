@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {ServerService} from "../../services/server.service";
 @Component({
   selector: 'app-menu',
@@ -16,4 +16,5 @@ export class MenuComponent implements OnInit {
     // @ts-ignore
     this.datas =  this.serverService.getMenuData();
   }
+
 }

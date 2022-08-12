@@ -1,5 +1,7 @@
 
-<div class="container">
+
+
+  <div class="container">
     <ul class="menu__list" *ngIf="isMenuTop; else menuBottomImpl">
       <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">
         <ng-container
@@ -9,28 +11,30 @@
         </ng-container>
       </li>
     </ul>
-</div>
-<ng-template #menuBottomImpl>
-  <ul class="menu__list">
-    <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">
-      <ng-container
-        [ngTemplateOutlet]="menuLinkTmpl"
-        [ngTemplateOutletContext]="{title: data.title, className:'text-black',isLast: isLast, isFirst:isFirst }"
-      >
-      </ng-container>
-    </li>
-  </ul>
-</ng-template>
-<ng-template
-  #menuLinkTmpl
-  let-title ="title"
-  let-className = "className"
-  let-isLast = "isLast"
-  let-isFirst = "isFirst"
->
-<a [ngClass]="['menu__link', className ? className : '']" routerLink="['','']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-  <i *ngIf="isFirst" class="fas fa-home"></i>
-  <i *ngIf="isLast" class="fas fa-search"></i>
-  {{title}}
-</a>
-</ng-template>
+  </div>
+  <ng-template #menuBottomImpl>
+    <ul class="menu__list">
+      <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: data.title, className:'text-black',isLast: isLast, isFirst:isFirst }"
+        >
+        </ng-container>
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template
+    #menuLinkTmpl
+    let-title ="title"
+    let-className = "className"
+    let-isLast = "isLast"
+    let-isFirst = "isFirst"
+  >
+    <a [ngClass]="['menu__link', className ? className : '']" routerLink="['','']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <i *ngIf="isFirst" class="fas fa-home"></i>
+      <i *ngIf="isLast" class="fas fa-search"></i>
+      {{title}}
+    </a>
+  </ng-template>
+
+
