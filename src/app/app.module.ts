@@ -89,6 +89,7 @@ import {ServerService} from "./services/server.service";
 import { NewsListComponent } from './components/news/news-list/news-list.component';
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
 import { LoginComponent } from './components/login/login.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 
@@ -135,6 +136,7 @@ import { LoginComponent } from './components/login/login.component';
                     BoxSameCategoryNewsComponent,
                     NewsListComponent,
                     LoginComponent,
+                    ErrorComponent,
 
 
 
