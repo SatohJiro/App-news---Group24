@@ -199,4 +199,30 @@ export class ServerService {
     return topics;
   }
 
+  getNewsRow(urlInput:String):string[] {
+    const ajax = new XMLHttpRequest();
+    let topics: any[] = [];
+    // ajax.timeout = 3000;
+    const url = `${this.corsAnywhere}/${urlInput}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.news-horizontal-item').each((i, el) => {
+          // @ts-ignore
+          topics.push({
+            id: i,
+            image: $(el).find("a img").attr("src"),
+            title: $(el).find(".news-horizontal-title a").text(),
+          });
+        });
+      }
+    }
+    return topics;
+    // }
+  }
 }
