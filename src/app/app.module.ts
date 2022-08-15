@@ -134,7 +134,7 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     ItemComponent,
 
 
-              
+
                     VipNewsComponent,
 
     BoxNewsDetailComponent,
@@ -199,7 +199,7 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     AppRoutingModule,
     LoadingBarRouterModule,
 
-    SwiperModule
+    SwiperModule,
 
     NgxSkeletonLoaderModule,
 
