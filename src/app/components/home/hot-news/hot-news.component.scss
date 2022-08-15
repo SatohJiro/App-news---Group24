@@ -22,7 +22,14 @@
   &__icon i {
     color: rgba(234, 34, 34, 0.92);
   }
-  &__content--left {
+  &__content {
+    display: flex;
+    gap: 20px;
+  }
+  &__content--right {
+    flex:1;
+  }
+  &__content--left{
     display: flex;
     //justify-content: space-between;
     gap: 30px;
@@ -97,3 +104,4 @@
     font-weight: bold;
   }
 }
+
