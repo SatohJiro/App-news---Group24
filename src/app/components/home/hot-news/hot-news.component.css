@@ -21,6 +21,13 @@
 .hot-news__icon i {
   color: rgba(234, 34, 34, 0.92);
 }
+.hot-news__content {
+  display: flex;
+  gap: 20px;
+}
+.hot-news__content--right {
+  flex: 1;
+}
 .hot-news__content--left {
   display: flex;
   gap: 30px;

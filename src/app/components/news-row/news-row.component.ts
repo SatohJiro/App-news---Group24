@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ServerService} from "../../services/server.service";
+import {HomeService} from "../home/home.service";
 
 @Component({
   selector: 'app-news-row',
@@ -8,11 +9,11 @@ import {ServerService} from "../../services/server.service";
 })
 export class NewsRowComponent implements OnInit {
   // @ts-ignore
-  @Input() listData:string[] = [];
-  constructor(private service: ServerService) { }
+  listSubNews:any[];
+  constructor(private service: ServerService, private homeService: HomeService) { }
 
   ngOnInit(): void {
-    console.log(this.listData);
+    this.listSubNews = this.homeService.getListSubNews();
   }
 
 }

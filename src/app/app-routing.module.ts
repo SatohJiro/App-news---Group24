@@ -9,9 +9,15 @@ import {ErrorComponent} from "./components/error/error.component";
 // import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'home',pathMatch:'full'},
-  {path: 'home', component:HomeComponent},
+  {path: '', redirectTo:'home',pathMatch:'full',
+  },
+  {path: 'home', component:HomeComponent,
+  },
   {path: 'home/:id', component:NewsDetailComponent},
+
+  {path: 'home/vip/:id', component:NewsDetailComponent},
+
+
   {path: 'signup', component:LoginComponent},
   {path: '**', component:ErrorComponent}
   // { path: 'home',

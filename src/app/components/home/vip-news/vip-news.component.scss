@@ -1,0 +1,50 @@
+.wrapper {
+  margin-top: 40px;
+}
+.vip-news {
+  &__box {
+    padding: 10px;
+  }
+  &__list {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  &__item {
+    display: flex;
+    flex: 1;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  &__link {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    img {
+      flex-shrink: 0;
+      width: 100%;
+    }
+    p {
+      flex: 1;
+    }
+
+  }
+  &__title {
+    font-size: 16px;
+    background-color: #fff;
+    font-weight: 600;
+    padding: 10px;
+  }
+}
+.paytit {
+  display: inline-block;
+  font-weight: 700;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #ddd;
+  color: #0d47a1;
+  text-transform: uppercase;
+}
