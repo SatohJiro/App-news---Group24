@@ -1,9 +1,16 @@
 import {Idata} from "./idata";
 
-export class DetailData implements  Idata{
+export class DetailData implements Idata {
   data: [] | undefined;
   url: string | undefined;
 
-  getData(): void {
+  constructor(urlInput: string) {
+    this.url = urlInput;
   }
+
+  getData(): void {
+
+  }
+
+
 }
