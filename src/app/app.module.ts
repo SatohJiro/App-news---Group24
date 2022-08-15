@@ -99,7 +99,10 @@ import {AdvertismentComponent} from "./components/advertisment/advertisment.comp
 import { VipNewsComponent } from './components/home/vip-news/vip-news.component';
 
 
-import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
+
+import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
+
+
 
 
 
@@ -134,7 +137,7 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     ItemComponent,
 
 
-              
+
                     VipNewsComponent,
 
     BoxNewsDetailComponent,
@@ -199,7 +202,9 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     AppRoutingModule,
     LoadingBarRouterModule,
 
-    SwiperModule
+
+    SwiperModule,
+
 
     NgxSkeletonLoaderModule,
 
