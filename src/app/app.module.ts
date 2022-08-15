@@ -50,6 +50,7 @@ import { WeatherPanelComponent } from './components/home/weather-panel/weather-p
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { SwiperModule } from 'swiper/angular';
 import {AppRoutingModule} from "./app-routing.module";
 import { NewsComponent } from './components/news/news.component';
 
@@ -90,23 +91,20 @@ import { NewsListComponent } from './components/news/news-list/news-list.compone
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
 import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
-
-
-
-
-
-
-
+import {AdvertismentComponent} from "./components/advertisment/advertisment.component";
+import { VipNewsComponent } from './components/home/vip-news/vip-news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdvertismentComponent,
     WeatherPanelComponent,
     FooterComponent,
     HeaderComponent,
     HomeComponent,
     NewsComponent,
     MenuComponent,
+
     NewsDetailComponent,
       HotNewsComponent,
     BoxCateContentComponent,
@@ -137,6 +135,7 @@ import { ErrorComponent } from './components/error/error.component';
                     NewsListComponent,
                     LoginComponent,
                     ErrorComponent,
+                    VipNewsComponent,
 
 
 
@@ -187,7 +186,8 @@ import { ErrorComponent } from './components/error/error.component';
     MdbTransferModule,
     MdbMentionModule,
     AppRoutingModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule,
+    SwiperModule
   ],
   providers: [MdbCookiesManagementService, MdbStorageManagementService,ServerService],
   bootstrap: [AppComponent],

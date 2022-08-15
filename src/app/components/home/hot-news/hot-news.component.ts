@@ -13,12 +13,15 @@ export class HotNewsComponent implements OnInit {
   hotNewsTags:any[] =  [];
   hotNewsData: any[] = [];
   @Input() data:any[] = [];
+  //@ts-ignore
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     this.hotNewsTags = this.homeService.getHotNewsTags();
     this.hotNewsData = this.homeService.getHotNewsData();
+
   }
+
 
 }
