@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ParentData} from "./services/parent-data";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'mdb5-angular-ui-kit-pro-advanced';
   contentLoaded:boolean=false;
+  data: [] | undefined;
+  // @ts-ignore
+  pdata:ParentData= new ParentData();
+  ngOnInit() {
+    // @ts-ignore
+    this.data=  this.pdata.getDataHome();
+  }
+
 }
