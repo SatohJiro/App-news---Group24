@@ -6,6 +6,9 @@ export class HomeData implements  Idata{
 
   getData(): void {
 
+
   }
+
+
 
 }
