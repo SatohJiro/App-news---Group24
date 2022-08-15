@@ -1,5 +1,7 @@
 
-<div class="container">
+
+
+  <div class="container">
     <ul class="menu__list" *ngIf="isMenuTop; else menuBottomImpl">
       <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">
         <ng-container
@@ -9,6 +11,7 @@
         </ng-container>
       </li>
     </ul>
+
 </div>
 <ng-template #menuBottomImpl>
   <ul class="menu__list">
@@ -34,3 +37,4 @@
   {{title}}
 </a>
 </ng-template>
+
