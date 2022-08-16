@@ -1,6 +1,5 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
-import {DOCUMENT} from "@angular/common";
-import {ServerService} from "../../../services/server.service";
+import {Component, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-header-news-detail',
@@ -8,14 +7,19 @@ import {ServerService} from "../../../services/server.service";
   styleUrls: ['./header-news-detail.component.scss']
 })
 export class HeaderNewsDetailComponent implements OnInit {
-  @Input() url:String = '';
-  items: any[] = [];
 
-  constructor(@Inject(DOCUMENT) document: Document, private serverService: ServerService) {
+  @Input() data: any[] = [];
+  @Input() headerLoading: boolean = true;
+
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.items = this.serverService.getDataHeaderDetail(this.url);
+    if (this.headerLoading) {
+      setTimeout(() => {
+        this.headerLoading = false;
+      }, 2000);
+    }
   }
 
 }
