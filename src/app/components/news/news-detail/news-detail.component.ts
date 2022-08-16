@@ -1,10 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ServerService} from "../../../services/server.service";
-import {ActivatedRoute} from "@angular/router";
-import {switchMap,map} from "rxjs";
-import {INews} from "../news";
-import {NewsService} from "../news.service";
-import {HomeService} from "../../home/home.service";
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-news-detail',
@@ -12,20 +6,18 @@ import {HomeService} from "../../home/home.service";
   styleUrls: ['./news-detail.component.scss']
 })
 export class NewsDetailComponent implements OnInit {
-   // @ts-ignore
-    news: INews;
-  // @ts-ignore
-  vipNews:INews;
+  @Input() data: any[] = [];
+  @Input() detailLoading: boolean = true;
 
-  constructor(private service: NewsService, private homeService: HomeService,private activatenRoute: ActivatedRoute) { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.findNewsById();
+    if (this.detailLoading) {
+      setTimeout(() => {
+        this.detailLoading = false;
+      }, 4000);
+    }
   }
-  findNewsById(){
-    this.activatenRoute.paramMap.pipe(
-      map(params => params.get('id')),
-      switchMap(id => this.service.findNewsById(id))
-    ).subscribe(news => this.news = news);
-  }
+
 }

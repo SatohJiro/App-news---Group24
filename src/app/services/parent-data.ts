@@ -1,35 +1,47 @@
 import {Idata} from "./idata";
 import {DetailData} from "./detail-data";
 import {HomeData} from "./home-data";
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class ParentData {
-  data: Idata[] | undefined;
-  pageData: Idata | undefined;
+  data: any[] = [];
+  pageData: Idata = new HomeData();
+
   constructor() {
-    // @ts-ignore
-    this.getDataHome();
+    this.loadDataHome();
   }
 
-// @ts-ignore
-  getDataHome(url: string): [] | undefined {
-    // @ts-ignore
-   this.pageData = new HomeData();
-    // @ts-ignore
-    this.data?.push(this.pageData?.getData());
+
+  loadDataHome(): void {
+    const homePage: HomeData = new HomeData();
+    homePage.getData();
+    this.data.push([{
+      homeData: homePage,
+    }])
   };
 
+  getHomeData() {
+    return this.data[0].homeData;
+  }
 
-  addPage(url: string) {
-    // @ts-ignore
-    for (let i = 0; i < this.data?.length; i++) {
-      // @ts-ignore
+
+  loadDataDetailPage(url: string): DetailData {
+    for (let i = 0; i < this.data.length; i++) {
       if (this.data[i].url === url) {
-        return;
+        return this.data[i];
       }
     }
-    // @ts-ignore
-    this.pageData= new DetailData(url);
-    // @ts-ignore
-    this.data?.push(this.pageData?.getData());
+    const newPage: DetailData = new DetailData(url);
+    this.data.push(newPage);
+    return newPage;
+  }
+  checkExitsURL(url: string): boolean{
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i].url === url) {
+        return true;
+      }
+    }
+    return false;
   }
 }
