@@ -1,6 +1,10 @@
-
+<ngx-skeleton-loader *ngIf="headerLoading;else headerLoaded" appearance="line" [theme]="{
+    height: '40px',
+    'border-radius': 0
+  }"></ngx-skeleton-loader>
+<ng-template #headerLoaded></ng-template>
 <ul class="sub-cate-detail">
-  <li *ngFor="let item of items; let first= first">
+  <li *ngFor="let item of data; let first= first">
     <a href="/ban-doc.htm" title="Bạn đọc" class="title-cate active" *ngIf="first ; else notFirst">
    {{item.title}}</a>
     <ng-template #notFirst>

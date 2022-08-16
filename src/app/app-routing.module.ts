@@ -6,14 +6,15 @@ import {NewsDetailComponent} from "./components/news/news-detail/news-detail.com
 import {AdvertismentComponent} from "./components/advertisment/advertisment.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ErrorComponent} from "./components/error/error.component";
-// import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
+import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
+// import {BoxNewsDetailComponent} from "./components/box-news-detail1/box-news-detail1.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'home',pathMatch:'full',
   },
   {path: 'home', component:HomeComponent,
   },
-  {path: 'home/:id', component:NewsDetailComponent},
+  {path: 'home/:link', component:BoxNewsDetailComponent},
 
   {path: 'home/vip/:id', component:NewsDetailComponent},
 

@@ -4,17 +4,14 @@ import {ParentData} from "./services/parent-data";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [ParentData]
 })
 export class AppComponent implements OnInit{
-  title = 'mdb5-angular-ui-kit-pro-advanced';
-  contentLoaded:boolean=false;
-  data: [] | undefined;
+  // title = 'mdb5-angular-ui-kit-pro-advanced';
+  dataParent:ParentData=new ParentData();
   // @ts-ignore
-  pdata:ParentData= new ParentData();
   ngOnInit() {
-    // @ts-ignore
-    this.data=  this.pdata.getDataHome();
   }
 
 }

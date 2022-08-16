@@ -140,7 +140,7 @@ export class ServerService {
             id:i,
             title: $(title).find('h1').text(),
             title_detail: $(title).find("h2").text(),
-            content: $(title).find("div .contentbody .content-news-detail").html(),
+            content: $(title).find("div .contentbody .content-news-detail1").html(),
             author:$(title).find("div .author").text(),
           });
         });
