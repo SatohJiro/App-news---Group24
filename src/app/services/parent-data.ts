@@ -1,6 +1,7 @@
 import {Idata} from "./idata";
 import {DetailData} from "./detail-data";
 import {HomeData} from "./home-data";
+
 import { Injectable } from '@angular/core';
 
 @Injectable()

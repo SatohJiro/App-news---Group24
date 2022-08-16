@@ -2,6 +2,7 @@ import {Idata} from "./idata";
 import * as cheerio from "cheerio";
 
 export class DetailData implements Idata {
+
   data: [] =[];
   url: string ='';
   server = 'https://nld.com.vn';
@@ -12,7 +13,13 @@ export class DetailData implements Idata {
     this.getData();
   }
 
+
+  constructor(urlInput: string) {
+    this.url = urlInput;
+  }
+
   getData(): void {
+
 // @ts-ignore
     this.data.push([{
       // @ts-ignore
@@ -75,6 +82,7 @@ export class DetailData implements Idata {
     }
     return detailData;
   }
+
 
 
 }
