@@ -1,9 +1,9 @@
+
 import {Component, Input, OnInit} from '@angular/core';
+
 import {ActivatedRoute} from "@angular/router";
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
-import {BoxNewsDetailService} from "./box-news-detail.service";
-// import {BoxNewsDetailComponent} from "../../box-news-detail.service.ts";
 
 @Component({
   selector: 'app-box-news-detail',
@@ -13,24 +13,24 @@ import {BoxNewsDetailService} from "./box-news-detail.service";
 export class BoxNewsDetailComponent implements OnInit {
   // @Input() dataParent: ParentData | null = null;
   dataPage: DetailData | null = null;
-  linkPage:string | null=null;
-  headerLoading:boolean=true;
-  detailLoading:boolean=true;
+
+  linkPage: string | null = null;
+  headerLoading: boolean = true;
+  detailLoading: boolean = true;
   dataHeader: [] = [];
   dataDetail: [] = [];
-  dataMostView: []=[];
+  dataRelated: [] = [];
 
 
+  constructor(private activatenRoute: ActivatedRoute, private dataParent: ParentData) {
 
-  constructor(private activatenRoute: ActivatedRoute,private dataParent: ParentData, private newsDetailService:BoxNewsDetailService) {
-    // @ts-ignore
-    this.dataMostView= newsDetailService.getMostViewed();
+
   }
 
 
   getLinkPage() {
     this.activatenRoute.paramMap.subscribe(paramMap => {
-      this.linkPage= paramMap.get('link');
+      this.linkPage = paramMap.get('link');
     })
 
   }
@@ -48,20 +48,22 @@ export class BoxNewsDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLinkPage();
-   // @ts-ignore
-    const checkURL:boolean= this.dataParent.checkExitsURL(this.linkPage);
-    console.log(checkURL);
-    if(checkURL){
-      this.headerLoading=false;
-      this.detailLoading=false;
+
+    // @ts-ignore
+    const checkURL: boolean = this.dataParent.checkExitsURL(this.linkPage);
+    if (checkURL) {
+      this.headerLoading = false;
+      this.detailLoading = false;
     }
     this.getDataPage();
-    // @ts-ignore
-    this.dataHeader = this.dataPage.data[0][0].headerData;
-    // @ts-ignore
-    this.dataDetail = this.dataPage.data[1][0].detailData;
 
-
+      // @ts-ignore
+      this.dataHeader = this.dataPage.data[0][0].headerData;
+      // @ts-ignore
+      this.dataDetail = this.dataPage.data[1][0].detailData;
+      // @ts-ignore
+      this.dataRelated=this.dataPage.data[2][0].relatedData;
+      console.log(this.dataRelated);
 
 
   }
