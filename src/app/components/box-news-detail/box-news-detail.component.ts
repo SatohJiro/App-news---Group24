@@ -56,7 +56,7 @@ export class BoxNewsDetailComponent implements OnInit {
     this.dataHeader = this.dataPage.data[0][0].headerData;
     // @ts-ignore
     this.dataDetail = this.dataPage.data[1][0].detailData;
-
+  //
 
 
 
