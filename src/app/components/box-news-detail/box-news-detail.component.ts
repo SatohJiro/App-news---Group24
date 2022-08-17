@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+
+import {Component, Input, OnInit} from '@angular/core';
+
 import {ActivatedRoute} from "@angular/router";
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
@@ -11,6 +13,7 @@ import {DetailData} from "../../services/detail-data";
 export class BoxNewsDetailComponent implements OnInit {
   // @Input() dataParent: ParentData | null = null;
   dataPage: DetailData | null = null;
+
   linkPage: string | null = null;
   headerLoading: boolean = true;
   detailLoading: boolean = true;
@@ -20,6 +23,7 @@ export class BoxNewsDetailComponent implements OnInit {
 
 
   constructor(private activatenRoute: ActivatedRoute, private dataParent: ParentData) {
+
 
   }
 
@@ -44,6 +48,7 @@ export class BoxNewsDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLinkPage();
+
     // @ts-ignore
     const checkURL: boolean = this.dataParent.checkExitsURL(this.linkPage);
     if (checkURL) {
@@ -58,6 +63,7 @@ export class BoxNewsDetailComponent implements OnInit {
       // @ts-ignore
       this.dataRelated=this.dataPage.data[2][0].relatedData;
       console.log(this.dataRelated);
+
   }
 }
 

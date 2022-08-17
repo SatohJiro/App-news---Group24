@@ -2,6 +2,7 @@ import {Idata} from "./idata";
 import * as cheerio from "cheerio";
 import {INews} from "../components/news/news";
 
+
 export class DetailData implements Idata {
 
   data: [] =[];
@@ -58,6 +59,8 @@ export class DetailData implements Idata {
     }
     return headerData;
   }
+
+
   getDataDetail():any[]{
     const ajax = new XMLHttpRequest();
     let detailData:any[] = [];
@@ -86,6 +89,7 @@ export class DetailData implements Idata {
     return detailData;
   }
 
+
   getDataForRelated():any[] {
     const ajax = new XMLHttpRequest();
     let data: any[] = [];
@@ -112,7 +116,4 @@ export class DetailData implements Idata {
     }
     return data;
   }
-
-
-
 }
