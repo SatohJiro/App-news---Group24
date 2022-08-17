@@ -14,9 +14,9 @@ export class DetailData implements Idata {
   }
 
 
-  constructor(urlInput: string) {
-    this.url = urlInput;
-  }
+  // constructor(urlInput: string) {
+  //   this.url = urlInput;
+  // }
 
   getData(): void {
 
