@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
+import {BoxNewsDetailService} from "./box-news-detail.service";
+// import {BoxNewsDetailComponent} from "../../box-news-detail.service.ts";
 
 @Component({
   selector: 'app-box-news-detail',
@@ -16,11 +18,13 @@ export class BoxNewsDetailComponent implements OnInit {
   detailLoading:boolean=true;
   dataHeader: [] = [];
   dataDetail: [] = [];
+  dataMostView: []=[];
 
 
 
-  constructor(private activatenRoute: ActivatedRoute,private dataParent: ParentData) {
-
+  constructor(private activatenRoute: ActivatedRoute,private dataParent: ParentData, private newsDetailService:BoxNewsDetailService) {
+    // @ts-ignore
+    this.dataMostView= newsDetailService.getMostViewed();
   }
 
 
@@ -56,7 +60,7 @@ export class BoxNewsDetailComponent implements OnInit {
     this.dataHeader = this.dataPage.data[0][0].headerData;
     // @ts-ignore
     this.dataDetail = this.dataPage.data[1][0].detailData;
-  //
+
 
 
 
