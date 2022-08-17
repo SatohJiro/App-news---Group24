@@ -16,8 +16,6 @@ export class DetailData implements Idata {
   }
 
 
-
-
   getData(): void {
 
 // @ts-ignore

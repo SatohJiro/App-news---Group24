@@ -56,6 +56,7 @@ export class BoxNewsDetailComponent implements OnInit {
       this.detailLoading = false;
     }
     this.getDataPage();
+
       // @ts-ignore
       this.dataHeader = this.dataPage.data[0][0].headerData;
       // @ts-ignore
@@ -63,6 +64,7 @@ export class BoxNewsDetailComponent implements OnInit {
       // @ts-ignore
       this.dataRelated=this.dataPage.data[2][0].relatedData;
       console.log(this.dataRelated);
+
 
   }
 }
