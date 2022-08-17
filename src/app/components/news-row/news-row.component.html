@@ -1,12 +1,13 @@
 <div class="container">
   <div class="news-row">
-    <div class="" *ngFor="let news of listSubNews">
+    <div class="" *ngFor="let item of data">
       <div class="news-item">
       <div class="img_show">
-        <img [src]="news.urlImg" width="500" height="600">
+        <img [src]="item.urlImg" width="500" height="600">
       </div>
-      <div class="news-title"><a [href]="news.link" [title]="news.title"><h5>{{news.title}}</h5></a></div>
+      <div class="news-title"><a [href]="item.link" [title]="item.title"><h5>{{item.title}}</h5></a></div>
     </div>
     </div>
   </div>
 </div>
+

@@ -1,5 +1,7 @@
 <div class="container">
-  <app-header-news-detail></app-header-news-detail>
+  <app-header-news-detail [data]="dataHeader" [headerLoading]="headerLoading"></app-header-news-detail>
+  <div class="news_container">
+  <app-news-detail [data]="dataDetail" [detailLoading]="detailLoading"></app-news-detail>
   <div class="box-news-content">
     <div class="box--most-viewd">
       <div class="box__title">
@@ -64,6 +66,7 @@
       </ul>
     </div>
   </div>
-  <app-related-news></app-related-news>
+  </div>
+  <app-related-news [data]="dataRelated"></app-related-news>
   <app-box-same-category-news></app-box-same-category-news>
 </div>
