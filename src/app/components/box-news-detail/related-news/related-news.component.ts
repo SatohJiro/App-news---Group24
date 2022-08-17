@@ -6,10 +6,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./related-news.component.scss']
 })
 export class RelatedNewsComponent implements OnInit {
-  @Input() url: String = '';
-  constructor() { }
+  @Input() data: [] = [];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+
   }
 
 }
