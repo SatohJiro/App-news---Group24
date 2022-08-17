@@ -1,5 +1,7 @@
 import {Idata} from "./idata";
 import * as cheerio from "cheerio";
+import {INews} from "../components/news/news";
+
 
 export class DetailData implements Idata {
 
@@ -14,9 +16,7 @@ export class DetailData implements Idata {
   }
 
 
-  constructor(urlInput: string) {
-    this.url = urlInput;
-  }
+
 
   getData(): void {
 
@@ -28,6 +28,10 @@ export class DetailData implements Idata {
     this.data.push([{
       // @ts-ignore
       detailData: this.getDataDetail(),
+    }]);
+    this.data.push([{
+      // @ts-ignore
+      relatedData: this.getDataForRelated(),
     }]);
 
   }
@@ -55,6 +59,8 @@ export class DetailData implements Idata {
     }
     return headerData;
   }
+
+
   getDataDetail():any[]{
     const ajax = new XMLHttpRequest();
     let detailData:any[] = [];
@@ -84,5 +90,30 @@ export class DetailData implements Idata {
   }
 
 
-
+  getDataForRelated():any[] {
+    const ajax = new XMLHttpRequest();
+    let data: any[] = [];
+    // ajax.timeout = 3000;
+    const url = `${this.corsAnywhere}/${this.url}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.news-relation-bottom > .list-item > .item > .img185x110').each((i, item) => {
+          // @ts-ignore
+          data.push({
+            id: i,
+            title: $(item).attr('title'),
+            link: $(item).attr('href'),
+            urlImg: $(item).find('img').attr('src')? $(item).find('img').attr('src'): $(item).find('video').attr('poster')
+          });
+        })
+      }
+    }
+    return data;
+  }
 }
