@@ -1,9 +1,9 @@
-
 import {Component, Input, OnInit} from '@angular/core';
 
 import {ActivatedRoute} from "@angular/router";
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
+import {BoxNewsDetailService} from "./box-news-detail.service";
 
 @Component({
   selector: 'app-box-news-detail',
@@ -20,10 +20,14 @@ export class BoxNewsDetailComponent implements OnInit {
   dataHeader: [] = [];
   dataDetail: [] = [];
   dataRelated: [] = [];
+  dataFirst: any = {};
+  dataSecond: any = {};
+  dataListItem: any[] = [];
+  dataMostViewed : any[]=[];
 
 
-  constructor(private activatenRoute: ActivatedRoute, private dataParent: ParentData) {
 
+  constructor(private activatenRoute: ActivatedRoute, private dataParent: ParentData, private boxNewDetail: BoxNewsDetailService) {
 
   }
 
@@ -57,15 +61,16 @@ export class BoxNewsDetailComponent implements OnInit {
     }
     this.getDataPage();
 
-      // @ts-ignore
-      this.dataHeader = this.dataPage.data[0][0].headerData;
-      // @ts-ignore
-      this.dataDetail = this.dataPage.data[1][0].detailData;
-      // @ts-ignore
-      this.dataRelated=this.dataPage.data[2][0].relatedData;
-      console.log(this.dataRelated);
+    // @ts-ignore
+    this.dataHeader = this.dataPage.data[0][0].headerData;
+    // @ts-ignore
+    this.dataDetail = this.dataPage.data[1][0].detailData;
+    // @ts-ignore
+    this.dataRelated = this.dataPage.data[2][0].relatedData;
+
 
 
   }
 }
+
 

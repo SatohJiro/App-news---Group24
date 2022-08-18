@@ -99,6 +99,7 @@ import {VipNewsComponent} from './components/home/vip-news/vip-news.component';
 
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
+import { SucKhoeComponent } from './components/suc-khoe/suc-khoe.component';
 
 
 @NgModule({
@@ -146,6 +147,7 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     NewsListComponent,
     LoginComponent,
     ErrorComponent,
+    SucKhoeComponent,
 
 
   ],

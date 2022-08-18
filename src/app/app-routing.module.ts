@@ -7,6 +7,7 @@ import {AdvertismentComponent} from "./components/advertisment/advertisment.comp
 import {LoginComponent} from "./components/login/login.component";
 import {ErrorComponent} from "./components/error/error.component";
 import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
+import {SucKhoeComponent} from "./components/suc-khoe/suc-khoe.component";
 // import {BoxNewsDetailComponent} from "./components/box-news-detail1/box-news-detail1.component";
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {path: 'home', component:HomeComponent,
   },
   {path: 'home/:link', component:BoxNewsDetailComponent},
+  {path: 'suc-khoe', component:SucKhoeComponent},
+
+  {path: 'suc-khoe/:link', component:BoxNewsDetailComponent},
+
 
   {path: 'home/vip/:id', component:NewsDetailComponent},
 
