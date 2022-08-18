@@ -1,7 +1,9 @@
 
+
 import {Component, OnInit} from '@angular/core';
 
 import {ActivatedRoute,Router} from "@angular/router";
+
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
 
@@ -18,15 +20,16 @@ export class BoxNewsDetailComponent implements OnInit  {
   linkPage: string | null = null;
   headerLoading: boolean = true;
   detailLoading: boolean = true;
+
   mostViewLoading: boolean =true;
   dataHeader: [] = [];
   dataDetail: [] = [];
   dataRelated: [] = [];
-  dataSameCategory:[]=[];
   dataMostView:any[]=[];
 
 
   constructor(private activatenRoute: ActivatedRoute,private router:Router , private dataParent: ParentData) {
+
   }
 
 
@@ -59,6 +62,7 @@ export class BoxNewsDetailComponent implements OnInit  {
     if (checkURL) {
       this.headerLoading = false;
       this.detailLoading = false;
+
       this.mostViewLoading =false;
     }
     if (this.mostViewLoading) {
@@ -67,6 +71,7 @@ export class BoxNewsDetailComponent implements OnInit  {
       }, 7000);
     }
     this.getDataPage();
+
       // @ts-ignore
       this.dataHeader = this.dataPage.data[0][0].headerData;
       // @ts-ignore

@@ -17,7 +17,6 @@ export class DetailData implements Idata {
 
 
 
-
   getData(): void {
 
 // @ts-ignore
@@ -33,10 +32,12 @@ export class DetailData implements Idata {
       // @ts-ignore
       relatedData: this.getDataForRelated(),
     }]);
+
     this.data.push([{
       // @ts-ignore
       mostViewData: this.getDataForMostView(),
     }]);
+
 
 
   }
@@ -123,6 +124,7 @@ export class DetailData implements Idata {
     return data;
   }
 
+
   getDataForMostView(): any[] {
     const ajax = new XMLHttpRequest();
     let data: any[] = [];
@@ -149,5 +151,6 @@ export class DetailData implements Idata {
     }
     return data;
   }
+
 
 }
