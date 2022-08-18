@@ -33,7 +33,7 @@
                   <a href="" class="">
                     <img [src]="item.description.url" [alt]="item.description.alt">
                   </a>
-                  <h3 class="main-news__title"><a [routerLink]="['/home',item.link]"
+                  <h3 class="main-news__title"><a [routerLink]="['/detail',item.link]"
                                                   class="main-news__link">{{item.title}}</a></h3>
                   <p class="main-news__sapo">
                     {{item.description.text}}
@@ -48,7 +48,7 @@
                 <ng-template mdbTabContent>
                   <ul class="list-news-thumb__list">
                     <li class="list-news-thumb__item" *ngFor="let item of data">
-                      <a [routerLink]="['/home',item.link]" class="list-news-thumb__link"
+                      <a [routerLink]="['/detail',item.link]" class="list-news-thumb__link"
                          [title]="item.title">{{item.title}}</a>
                     </li>
                   </ul>

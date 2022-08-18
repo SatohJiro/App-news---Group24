@@ -5,7 +5,7 @@
       <div class="img_show">
         <img [src]="item.urlImg" width="500" height="600">
       </div>
-      <div class="news-title"><a [href]="item.link" [title]="item.title"><h5>{{item.title}}</h5></a></div>
+      <div class="news-title"><a  [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" [title]="item.title"><h5>{{item.title}}</h5></a></div>
     </div>
     </div>
   </div>

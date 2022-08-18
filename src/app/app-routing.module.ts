@@ -1,26 +1,28 @@
-import { NgModule } from '@angular/core';
-import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
-import {NewsComponent} from "./components/news/news.component";
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
-import {AdvertismentComponent} from "./components/advertisment/advertisment.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ErrorComponent} from "./components/error/error.component";
 import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
+import {RedirectDetailComponent} from "./components/redirect-detail/redirect-detail.component";
 // import {BoxNewsDetailComponent} from "./components/box-news-detail1/box-news-detail1.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'home',pathMatch:'full',
+  {
+    path: '', redirectTo: 'home', pathMatch: 'full',
   },
-  {path: 'home', component:HomeComponent,
+  {
+    path: 'home', component: HomeComponent,
   },
-  {path: 'home/:link', component:BoxNewsDetailComponent},
+  {path: 'detail/:link', component: BoxNewsDetailComponent},
+  {path: 'mostView/:link', component: RedirectDetailComponent},
 
-  {path: 'home/vip/:id', component:NewsDetailComponent},
+  {path: 'home/vip/:id', component: NewsDetailComponent},
 
 
-  {path: 'signup', component:LoginComponent},
-  {path: '**', component:ErrorComponent}
+  {path: 'signup', component: LoginComponent},
+  {path: '**', component: ErrorComponent}
   // { path: 'home',
   //   component: HomeComponent,
   //   children :[
@@ -155,9 +157,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
-    preloadingStrategy: PreloadAllModules
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules,
+    scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

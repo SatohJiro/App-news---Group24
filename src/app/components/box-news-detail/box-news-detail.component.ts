@@ -1,7 +1,7 @@
 
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute,Router} from "@angular/router";
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
 
@@ -10,22 +10,25 @@ import {DetailData} from "../../services/detail-data";
   templateUrl: './box-news-detail.component.html',
   styleUrls: ['./box-news-detail.component.scss']
 })
-export class BoxNewsDetailComponent implements OnInit {
-  // @Input() dataParent: ParentData | null = null;
+export class BoxNewsDetailComponent implements OnInit  {
+
+
   dataPage: DetailData | null = null;
 
   linkPage: string | null = null;
   headerLoading: boolean = true;
   detailLoading: boolean = true;
+  mostViewLoading: boolean =true;
   dataHeader: [] = [];
   dataDetail: [] = [];
   dataRelated: [] = [];
+  dataSameCategory:[]=[];
+  dataMostView:any[]=[];
 
 
-  constructor(private activatenRoute: ActivatedRoute, private dataParent: ParentData) {
-
-
+  constructor(private activatenRoute: ActivatedRoute,private router:Router , private dataParent: ParentData) {
   }
+
 
 
   getLinkPage() {
@@ -36,7 +39,6 @@ export class BoxNewsDetailComponent implements OnInit {
   }
 
   getDataPage(): void {
-    console.log(this.linkPage);
     if (this.linkPage === null) {
       // @ts-ignore
       this.dataPage = this.dataParent.loadDataDetailPage("https://nld.com.vn/noi-thang/noi-thang-tien-o-dau-ma-ho-tiec-tung-hoanh-trang-20220814232233652.htm");
@@ -47,6 +49,9 @@ export class BoxNewsDetailComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.headerLoading = true;
+    this.detailLoading = true;
+    this.mostViewLoading =true;
     this.getLinkPage();
 
     // @ts-ignore
@@ -54,6 +59,12 @@ export class BoxNewsDetailComponent implements OnInit {
     if (checkURL) {
       this.headerLoading = false;
       this.detailLoading = false;
+      this.mostViewLoading =false;
+    }
+    if (this.mostViewLoading) {
+      setTimeout(() => {
+        this.mostViewLoading = false;
+      }, 7000);
     }
     this.getDataPage();
       // @ts-ignore
@@ -62,8 +73,11 @@ export class BoxNewsDetailComponent implements OnInit {
       this.dataDetail = this.dataPage.data[1][0].detailData;
       // @ts-ignore
       this.dataRelated=this.dataPage.data[2][0].relatedData;
-      console.log(this.dataRelated);
+    // @ts-ignore
+    this.dataMostView=this.dataPage.data[3][0].mostViewData;
+    // @ts-ignore
 
   }
+
 }
 
