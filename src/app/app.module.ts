@@ -99,6 +99,7 @@ import {VipNewsComponent} from './components/home/vip-news/vip-news.component';
 
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
+import { RedirectDetailComponent } from './components/redirect-detail/redirect-detail.component';
 
 
 @NgModule({
@@ -146,6 +147,7 @@ import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
     NewsListComponent,
     LoginComponent,
     ErrorComponent,
+    RedirectDetailComponent,
 
 
   ],

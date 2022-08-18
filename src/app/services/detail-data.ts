@@ -16,6 +16,7 @@ export class DetailData implements Idata {
   }
 
 
+
   getData(): void {
 
 // @ts-ignore
@@ -31,6 +32,13 @@ export class DetailData implements Idata {
       // @ts-ignore
       relatedData: this.getDataForRelated(),
     }]);
+
+    this.data.push([{
+      // @ts-ignore
+      mostViewData: this.getDataForMostView(),
+    }]);
+
+
 
   }
   getDataForHeaderDetail():any[]{
@@ -53,6 +61,7 @@ export class DetailData implements Idata {
             title: $(title).text(),
           });
         });
+
       }
     }
     return headerData;
@@ -114,4 +123,34 @@ export class DetailData implements Idata {
     }
     return data;
   }
+
+
+  getDataForMostView(): any[] {
+    const ajax = new XMLHttpRequest();
+    let data: any[] = [];
+    // ajax.timeout = 3000;
+    const url = `${this.corsAnywhere}/${this.url}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.boxxemnhieu ul li').each((i, item) => {
+          // @ts-ignore
+          data.push({
+            id: i,
+            title: $(item).find('a').attr('title'),
+            link: $(item).find('a').attr('href'),
+            urlImg: $(item).find('a > img').attr('src')
+          });
+        })
+      }
+    }
+    return data;
+  }
+
+
 }
