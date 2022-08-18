@@ -99,10 +99,9 @@ import {AdvertismentComponent} from "./components/advertisment/advertisment.comp
 import { VipNewsComponent } from './components/home/vip-news/vip-news.component';
 
 
-
-import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
-
-
+import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
+import { TrongNuocComponent } from './components/trong-nuoc/trong-nuoc.component';
+import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@abacritt/angularx-social-login";
 
 
 
@@ -152,6 +151,7 @@ import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
     NewsListComponent,
     LoginComponent,
     ErrorComponent,
+    TrongNuocComponent,
 
 
   ],
@@ -199,17 +199,27 @@ import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
     MdbTreeviewModule,
     MdbTransferModule,
     MdbMentionModule,
-    AppRoutingModule,
     LoadingBarRouterModule,
-
-
     SwiperModule,
-
-
     NgxSkeletonLoaderModule,
+    SocialLoginModule,
+    AppRoutingModule,
+
+
 
   ],
-  providers: [MdbCookiesManagementService, MdbStorageManagementService, ServerService],
+  providers: [{
+    provide:'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin:false,
+      providers: [
+        {
+          id:GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider('673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com')
+        }
+      ]
+    } as SocialAuthServiceConfig
+  },MdbCookiesManagementService, MdbStorageManagementService, ServerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

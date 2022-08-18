@@ -5,7 +5,8 @@ export interface  INews {
   guid?:string,
   description?: {
     imgUrl?: string,
-    text?: string
+    alt?:string,
+    text?: string,
   },
   pubDate?:string
 }

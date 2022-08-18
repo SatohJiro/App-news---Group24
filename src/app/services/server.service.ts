@@ -14,6 +14,7 @@ export class ServerService {
   option ='tin-moi-nhat.rss';
   corsAnywhere ='https://mycorsproxy01.herokuapp.com';
   listNews: INews[] = [];
+  data:any[] = [];
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,7 +22,8 @@ export class ServerService {
       'Content-Type': 'application/json'
     })
   }
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   findNewsById(id:string):Observable<INews> {
     const news = this.listNews.find(news => news.id === id);

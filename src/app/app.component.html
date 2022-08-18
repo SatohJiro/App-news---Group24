@@ -1,5 +1,8 @@
 <ngx-loading-bar [includeSpinner]="false"></ngx-loading-bar>
+<button class="scroll" (click)="scrollTop()">
+  <i class="far fa-arrow-alt-circle-up"></i>
+</button>
 <app-header></app-header>
-<router-outlet></router-outlet>
+<router-outlet (activate)="onActive()"></router-outlet>
 <app-footer></app-footer>
 

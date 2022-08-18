@@ -1,42 +1,32 @@
 import { NgModule } from '@angular/core';
-import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules, RouteReuseStrategy} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {NewsComponent} from "./components/news/news.component";
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
 import {AdvertismentComponent} from "./components/advertisment/advertisment.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ErrorComponent} from "./components/error/error.component";
+import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
+import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 // import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'home',pathMatch:'full',
+  {path: '', redirectTo:'trang-chu',pathMatch:'full',
   },
-  {path: 'home', component:HomeComponent,
+  {path: 'trang-chu', component:HomeComponent,
+
   },
-  {path: 'home/:id', component:NewsDetailComponent},
+  {path: 'trang-chu/:id', component:NewsDetailComponent,
 
-  {path: 'home/vip/:id', component:NewsDetailComponent},
+  },
+  { path: 'trong-nuoc', component:TrongNuocComponent,
+  },
+  {path: 'signup', component:LoginComponent,
+   },
+
+  {path: '**', component:ErrorComponent},
 
 
-  {path: 'signup', component:LoginComponent},
-  {path: '**', component:ErrorComponent}
-  // { path: 'home',
-  //   component: HomeComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'domestic', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
   // { path: 'international', component:NewsComponent,
   //   children :[
   //     {
@@ -157,6 +147,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes,{
     preloadingStrategy: PreloadAllModules
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{
+    provide: RouteReuseStrategy,
+    useClass: CustomRouteReuseStrategy,
+  }],
 })
 export class AppRoutingModule { }

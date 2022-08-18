@@ -1,9 +1,11 @@
-.wrapper {
-  margin-top: 40px;
-}
+
 .vip-news {
   &__box {
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
+    background: url(https://static.mediacdn.vn/nld/Images/bgboxpayment.png) no-repeat;
+    background-size: cover;
   }
   &__list {
     margin-top: 10px;
