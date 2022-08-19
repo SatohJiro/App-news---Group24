@@ -10,10 +10,12 @@ import {HomeService} from "./home.service";
 export class HomeComponent implements OnInit {
   // @ts-ignore
   data:any[];
+  women:any;
   newsRow: string[] = [];
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     this.data = this.homeService.getData('tin-moi-nhat.rss');
+    this.women = this.homeService.getWomen();
   }
 }
