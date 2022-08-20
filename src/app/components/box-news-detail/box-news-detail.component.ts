@@ -10,7 +10,9 @@ import {DetailData} from "../../services/detail-data";
   templateUrl: './box-news-detail.component.html',
   styleUrls: ['./box-news-detail.component.scss']
 })
+
 export class BoxNewsDetailComponent implements OnInit {
+
 
   dataPage: DetailData | null = null;
 
@@ -34,7 +36,6 @@ export class BoxNewsDetailComponent implements OnInit {
     this.activatenRoute.paramMap.subscribe(paramMap => {
       this.linkPage = String(paramMap.get('link'));
     })
-    console.log(this.linkPage);
   }
 
   getDataPage(): void {
@@ -59,6 +60,7 @@ export class BoxNewsDetailComponent implements OnInit {
       this.headerLoading = false;
       this.detailLoading = false;
       this.mostViewLoading = false;
+
     }
     if (this.mostViewLoading) {
       setTimeout(() => {
