@@ -14,7 +14,6 @@ import {DetailData} from "../../services/detail-data";
 })
 export class BoxNewsDetailComponent implements OnInit  {
 
-
   dataPage: DetailData | null = null;
 
   linkPage: string | null = null;
@@ -38,7 +37,7 @@ export class BoxNewsDetailComponent implements OnInit  {
     this.activatenRoute.paramMap.subscribe(paramMap => {
       this.linkPage = paramMap.get('link');
     })
-
+console.log(this.linkPage);
   }
 
   getDataPage(): void {
@@ -62,7 +61,6 @@ export class BoxNewsDetailComponent implements OnInit  {
     if (checkURL) {
       this.headerLoading = false;
       this.detailLoading = false;
-
       this.mostViewLoading =false;
     }
     if (this.mostViewLoading) {

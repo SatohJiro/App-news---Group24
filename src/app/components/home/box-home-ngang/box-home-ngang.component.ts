@@ -12,7 +12,7 @@ dataSub:any[];
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-    this.dataSub = this.homeService.getListSubContent();
+    // this.dataSub = this.homeService.getListSubContent();
     console.log(this.dataSub);
   }
 

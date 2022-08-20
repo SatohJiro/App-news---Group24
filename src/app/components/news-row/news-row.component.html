@@ -1,20 +1,28 @@
+<!--<ng-content select=".news-row">-->
+<!--  -->
+<!--</ng-content>-->
 
-//<div class="news-item">
-//<div class="img_show">
-  //<img [src]="news.description?.imgUrl" [alt]="news.description?.alt" width="500" height="600">
-//</div>
-//<div class="news-title"><a [href]="news.link" [title]="news.title"><h5>{{news.title}}</h5></a></div>
-<div class="container">
-  <div class="news-row">
-    <div class="" *ngFor="let item of data">
-      <div class="news-item">
-      <div class="img_show">
-        <img [src]="item.urlImg" width="500" height="600">
-      </div>
-      <div class="news-title"><a  [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" [title]="item.title"><h5>{{item.title}}</h5></a></div>
 
+<ng-container *ngIf="isHome; else isDetail">
+  <div class="news-item">
+    <div class="img_show">
+      <img [src]="news.description?.imgUrl" [alt]="news.description?.alt" width="500" height="600">
     </div>
+    <div class="news-title"><a [href]="news.link" [title]="news.title"><h5>{{news.title}}</h5></a></div>
+  </div>
+</ng-container>
+<ng-template #isDetail>
+  <div class="container">
+    <div class="news-row">
+      <div class="" *ngFor="let item of data">
+        <div class="news-item">
+          <div class="img_show">
+            <img [src]="item.urlImg" width="500" height="600">
+          </div>
+          <div class="news-title"><a  [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" [title]="item.title"><h5>{{item.title}}</h5></a></div>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
+</ng-template>
