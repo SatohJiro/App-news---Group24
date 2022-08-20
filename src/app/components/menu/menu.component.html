@@ -4,7 +4,7 @@
       <li class="menu__item">
         <ng-container
           [ngTemplateOutlet]="menuLinkTmpl"
-          [ngTemplateOutletContext]="{title: '', isFirst:true,router:'' }"
+          [ngTemplateOutletContext]="{title: '', isFirst:true,router:'/trang-chu' }"
         >
         </ng-container>
       </li>
@@ -12,6 +12,111 @@
         <ng-container
           [ngTemplateOutlet]="menuLinkTmpl"
           [ngTemplateOutletContext]="{title: 'Trong nước', router:'/trong-nuoc' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Quốc tế', router:'/quoc-te' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Công đoàn', router:'/cong-doan' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Bạn đọc', router:'/ban-doc' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Kinh tế', router:'/kinh-te' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Trong nước', router:'/trong-nuoc' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Sức khỏe', router:'/suc-khoe' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Giáo dục', router:'/giao-duc' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Văn nghệ', router:'/van-nghe' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Giải trí', router:'/giai-tri' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Thể thao', router:'/the-thao' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Công nghệ', router:'/cong-nghe' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Du lịch xanh', router:'/du-lich-xanh' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Phụ nữ', router:'/phu-nu' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Địa ốc', router:'/dia-oc' }"
+        >
+        </ng-container>
+      </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: '', isLast:true }"
         >
         </ng-container>
       </li>
@@ -27,10 +132,122 @@
 </div>
 <ng-template #menuBottomImpl>
   <ul class="menu__list">
-    <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">
+    <li class="menu__item">
       <ng-container
         [ngTemplateOutlet]="menuLinkTmpl"
-        [ngTemplateOutletContext]="{title: data.title, className:'text-black',isLast: isLast, isFirst:isFirst }"
+        [ngTemplateOutletContext]="{title: '', isFirst:true,router:'/trang-chu',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Trong nước', router:'/trong-nuoc',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Quốc tế', router:'/quoc-te' ,className:'text-black'}"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Công đoàn', router:'/cong-doan',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Bạn đọc', router:'/ban-doc',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Kinh tế', router:'/kinh-te',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Trong nước', router:'/trong-nuoc',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Sức khỏe', router:'/suc-khoe',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Giáo dục', router:'/giao-duc',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Văn nghệ', router:'/van-nghe',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Giải trí', router:'/giai-tri',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Thể thao', router:'/the-thao',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Công nghệ', router:'/cong-nghe',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Du lịch xanh', router:'/du-lich-xanh',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Phụ nữ', router:'/phu-nu',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: 'Địa ốc', router:'/dia-oc',className:'text-black' }"
+      >
+      </ng-container>
+    </li>
+    <li class="menu__item">
+      <ng-container
+        [ngTemplateOutlet]="menuLinkTmpl"
+        [ngTemplateOutletContext]="{title: '', isLast:true,className:'text-black' }"
       >
       </ng-container>
     </li>
