@@ -7,8 +7,7 @@ export class CustomRouteReuseStrategy extends BaseRouteReuseStrategy {
   private storedRoutes = new Map<string, DetachedRouteHandle>();
 
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
-    console.log(this.storedRoutes);
-    return route.routeConfig!.path === `home`;
+    return route.routeConfig!.path === `trang-chu`;
   }
 
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {

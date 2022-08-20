@@ -101,7 +101,17 @@ import { VipNewsComponent } from './components/home/vip-news/vip-news.component'
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
 import { TrongNuocComponent } from './components/trong-nuoc/trong-nuoc.component';
-import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@abacritt/angularx-social-login";
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider, SocialAuthService,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from "@abacritt/angularx-social-login";
+import {OAuthModule} from "angular-oauth2-oidc";
+import {HttpClientModule} from "@angular/common/http";
+import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
+import {ShareIconsModule} from "ngx-sharebuttons/icons";
+import {ShareModule} from "ngx-sharebuttons";
 
 
 
@@ -199,12 +209,18 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@
     MdbTreeviewModule,
     MdbTransferModule,
     MdbMentionModule,
+    AppRoutingModule,
     LoadingBarRouterModule,
     SwiperModule,
     NgxSkeletonLoaderModule,
+    OAuthModule.forRoot(),
+    HttpClientModule,
     SocialLoginModule,
-    AppRoutingModule,
-
+    ShareButtonsModule.withConfig({
+      debug:true
+    }),
+    ShareModule,
+    ShareIconsModule,
 
 
   ],
@@ -215,11 +231,22 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@
       providers: [
         {
           id:GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider('673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com')
+          provider: new GoogleLoginProvider(
+            '673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com'
+          )
+        },
+        {
+          id:FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider(
+            '334644398802455'
+          )
         }
-      ]
+      ],
+      onError: (err)=> {
+        console.log(err)
+      }
     } as SocialAuthServiceConfig
-  },MdbCookiesManagementService, MdbStorageManagementService, ServerService],
+  },MdbCookiesManagementService, MdbStorageManagementService, ServerService,SocialAuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

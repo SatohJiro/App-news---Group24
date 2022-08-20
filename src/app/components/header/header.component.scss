@@ -37,6 +37,11 @@
   &__ads {
     padding: 20px 0;
   }
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 }
 //social
@@ -116,4 +121,28 @@
       text-align: center;
     }
   }
+}
+.user {
+  &__info {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-right: 10px;
+    padding-bottom: 18px;
+    cursor: pointer;
+  }
+  &__name {
+    color: #0d47a1;
+  }
+  &__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+.logout {
+  text-decoration: underline;
+  padding-top: 14px;
+  cursor: pointer;
 }

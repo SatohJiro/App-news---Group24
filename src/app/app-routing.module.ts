@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   { path: 'trong-nuoc', component:TrongNuocComponent,
   },
-  {path: 'signup', component:LoginComponent,
+  {path: 'dang-nhap', component:LoginComponent,
    },
 
   {path: '**', component:ErrorComponent},
