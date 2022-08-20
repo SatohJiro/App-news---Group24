@@ -10,18 +10,28 @@ import {DOCUMENT} from "@angular/common";
 })
 
 export class NewsDetailComponent implements OnInit {
+  @Input() url:string="";
   @Input() data: any[] = [];
   @Input() detailLoading: boolean = true;
+  liked:boolean=false;
+  likeText:string="";
 
 
   constructor(@Inject(DOCUMENT) document: Document) {
   }
-
+like(){
+    this.liked=!this.liked;
+    if (this.liked){
+      this.likeText="Đã Thích"
+    }else{
+      this.likeText="";
+    }
+}
   ngOnInit(): void {
     if (this.detailLoading) {
       setTimeout(() => {
         this.detailLoading = false;
-      }, 4000);
+      }, 6000);
     }
   }
   playAudio(src:string) {
