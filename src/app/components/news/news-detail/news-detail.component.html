@@ -1,8 +1,6 @@
 <ngx-skeleton-loader *ngIf="detailLoading;else detailLoaded" appearance="line" [theme]="{
-
 width: '800px',
     height: '1000px',
-
     'border-radius': 0
   }"></ngx-skeleton-loader>
 <ng-template #detailLoaded>
@@ -52,10 +50,30 @@ width: '800px',
           <div class="clearfix"></div>
         </div>
       </div>
-
-
       <div class="bot-share">
         <div class="fb">
+
+   <!--       <div class="share-like">
+            <a title="Chia sẻ" class="share-button button">
+              <share-buttons theme="default"
+                             class="icon"
+                             [include]="['facebook']"
+                             [showIcon]="true"
+                             [showText]="false"
+                             [url]="url"
+                             description="Angular Share Buttons">
+              </share-buttons>
+              <p class="text-share">Chia sẻ</p>
+            </a>
+            <span title="Thích" class="like-button button" (click)="like()">
+              <img class="icon like-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Facebook_Thumb_icon.svg">
+              <p class="text-like">Thích</p>
+            </span>
+            <p title="like-text" class="like-text" >
+            {{likeText}}
+            </p>
+          </div> -->
+
           <button class="share-like">
             <h4><i class="fab fa-facebook"></i>Chia sẻ</h4>
             <share-buttons theme="circles-dark"
@@ -66,12 +84,11 @@ width: '800px',
             >
             </share-buttons>
           </button>
-        </div>
 
+        </div>
         <div class="clear-both"></div>
         <div id="end-social"></div>
       </div>
     </div>
-
   </ng-container>
 </ng-template>
