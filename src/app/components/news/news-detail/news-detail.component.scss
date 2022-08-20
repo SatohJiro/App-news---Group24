@@ -26,25 +26,32 @@
     .fb {
       display: flex;
       justify-content: space-between;
+      padding: 5px;
       .share-like {
         display: flex;
-        content: "";
+        width: 100px;
         justify-items: center;
+        position: relative;
+        background-color: #0d47a1;
+        border-radius: 10px;
+        h4 {
+          display: flex;
+          width: 100%;
+          justify-content: space-evenly;
+          font-size: 14px;
+          color: #fff;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          position: absolute;
+        }
         .button {
           text-align: right;
           padding-right: 5px;
           margin:0  10px 10px 10px;
-          width: 70px;
-          height: 15px;
           background-color: #0a58ca;
           color: white;
           font-weight: bold;
-          .icon{
-
-          }
-          .like-icon{
-
-          }
         }
         .care-button{
           background-color: #0dcaf0;
