@@ -30,45 +30,16 @@ export class HomeData implements  Idata, OnInit{
     }
   )
   constructor(private http: HttpClient) { }
+export class HomeData implements  Idata{
+  data: [] =[];
+  url: string ='';
+  getData(): void {
+// @ts-ignore
+    this.data.push([{
+      // @ts-ignore
+      abc:1,
+    }]);
 
-getMainNews(){
-  const url = `${this.corsAnywhere}/${this.server}`;
-  const data:[] = [];
-  //@ts-ignore
-   this.http.get<any>(url, {responseType: 'text'}).subscribe(data => this.data = data);
-   return this.data;
-}
-getListHotNews(){
-
-}
-getListNews(){
-
-}
-getSubMainNews(){
-
-}
-getListVipNews(){
-
-}
-getListNewsWithCate(){
-
-}
-  getData(): any[] {
-    this.data.push([
-      {
-        mainNews: this.getMainNews(),
-        listHotNews:this.getListHotNews(),
-        listNews:this.getListNews(),
-        listSubMainNews:this.getSubMainNews(),
-        listVipNews:this.getListVipNews(),
-        listNewsWithCate:this.getListNewsWithCate(),
-      }
-    ])
-    console.log(this.data);
-    return this.data;
-  }
-
-  ngOnInit(): void {
   }
 
 

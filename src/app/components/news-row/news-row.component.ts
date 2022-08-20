@@ -1,8 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {ServerService} from "../../services/server.service";
-import {HomeService} from "../home/home.service";
-import {INews} from "../news/news";
-
+import {Component, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'app-news-row',
   templateUrl: './news-row.component.html',
@@ -11,11 +7,16 @@ import {INews} from "../news/news";
 export class NewsRowComponent implements OnInit {
   @Input() news:INews = {};
   // @ts-ignore
-  listSubNews:any[];
-  constructor(private service: ServerService, private homeService: HomeService) { }
-
+  @Input() data: any[] = [];
+  constructor() {
+  }
   ngOnInit(): void {
-    this.listSubNews = this.homeService.getListSubNews();
+    // @ts-ignore
+    if (this.data.length === 0) {
+      setTimeout(() => {
+        this.ngOnInit();
+      }, 1000);
+    }
   }
 
 }

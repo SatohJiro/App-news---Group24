@@ -1,31 +1,27 @@
+
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules, RouteReuseStrategy} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
-import {NewsComponent} from "./components/news/news.component";
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
-import {AdvertismentComponent} from "./components/advertisment/advertisment.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ErrorComponent} from "./components/error/error.component";
+
+import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
+import {RedirectDetailComponent} from "./components/redirect-detail/redirect-detail.component";
 import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
 import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
-// import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'trang-chu',pathMatch:'full',
-  },
-  {path: 'trang-chu', component:HomeComponent,
-
-  },
-  {path: 'trang-chu/:id', component:NewsDetailComponent,
-
-  },
-  { path: 'trong-nuoc', component:TrongNuocComponent,
-  },
-  {path: 'dang-nhap', component:LoginComponent,
-   },
-
+  {path: '', redirectTo:'trang-chu',pathMatch:'full'},
+  {path: 'trang-chu', component:HomeComponent},
+  {path: 'trang-chu/:id', component:NewsDetailComponent},
+  {path: 'trong-nuoc', component:TrongNuocComponent},
+  {path: 'dang-nhap', component:LoginComponent},
   {path: '**', component:ErrorComponent},
-
+  {path: 'detail/:link', component: BoxNewsDetailComponent},
+  {path: 'mostView/:link', component: RedirectDetailComponent},
+  {path: 'signup', component: LoginComponent},
+  {path: '**', component: ErrorComponent},
 
   // { path: 'international', component:NewsComponent,
   //   children :[
@@ -144,8 +140,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
-    preloadingStrategy: PreloadAllModules
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules,
+    scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule],
   providers: [{
@@ -153,4 +150,5 @@ const routes: Routes = [
     useClass: CustomRouteReuseStrategy,
   }],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

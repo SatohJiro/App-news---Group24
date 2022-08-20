@@ -108,9 +108,7 @@ export class ServerService {
             id: i,
             title: $(item).find('a').attr('title'),
             link: $(item).find('a').attr('href'),
-            img: $(item).find('a > img').attr('src')?$(item).find
-            ('a > img').attr('src'): $(item).find('a > video').attr('poster')
-            ,
+            img: $(item).find('a > img').attr('src'),
             subNews1: {
               title:$(item).find('.news-info li:first-child>a').attr('title'),
               link:$(item).find('.news-info li:first-child>a').attr('href')
@@ -144,7 +142,7 @@ export class ServerService {
             id:i,
             title: $(title).find('h1').text(),
             title_detail: $(title).find("h2").text(),
-            content: $(title).find("div .contentbody .content-news-detail").html(),
+            content: $(title).find("div .contentbody .content-news-detail1").html(),
             author:$(title).find("div .author").text(),
           });
         });
@@ -202,6 +200,5 @@ export class ServerService {
     }
     return topics;
   }
-
 
 }
