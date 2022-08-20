@@ -31,7 +31,7 @@ like(){
     if (this.detailLoading) {
       setTimeout(() => {
         this.detailLoading = false;
-      }, 4000);
+      }, 6000);
     }
   }
   playAudio(src:string) {
