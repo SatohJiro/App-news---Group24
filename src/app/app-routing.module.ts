@@ -17,11 +17,10 @@ const routes: Routes = [
   {path: 'trang-chu/:id', component:NewsDetailComponent},
   {path: 'trong-nuoc', component:TrongNuocComponent},
   {path: 'dang-nhap', component:LoginComponent},
-  {path: '**', component:ErrorComponent},
-  {path: 'detail/:link', component: BoxNewsDetailComponent},
+  {path: 'chi-tiet/:link', component: BoxNewsDetailComponent},
   {path: 'mostView/:link', component: RedirectDetailComponent},
   {path: 'signup', component: LoginComponent},
-  {path: '**', component: ErrorComponent},
+  {path: '**', component:ErrorComponent},
 
   // { path: 'international', component:NewsComponent,
   //   children :[

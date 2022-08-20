@@ -13,4 +13,10 @@ export class AppComponent implements OnInit{
   // @ts-ignore
   ngOnInit() {
   }
+  scrollTop(){
+
+  }
+  onActive(){
+
+  }
 }

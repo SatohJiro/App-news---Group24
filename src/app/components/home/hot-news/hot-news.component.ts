@@ -20,10 +20,11 @@ export class HotNewsComponent implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-    // this.hotNewsTags = this.homeService.getHotNewsTags();
-    // this.hotNewsData = this.homeService.getHotNewsData();
-
-
+    console.log(this.isLoading)
+    setTimeout(() => {
+      this.isLoadingTop = false;
+    }, 3000);
+    console.log(this.isLoading)
   }
 
 
