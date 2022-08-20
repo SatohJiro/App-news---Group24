@@ -16,6 +16,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = this.homeService.getData('tin-moi-nhat.rss');
-    this.women = this.homeService.getWomen();
+    this.women = this.homeService.getGiaiTri();
   }
 }
