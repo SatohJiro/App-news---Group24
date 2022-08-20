@@ -1,47 +1,22 @@
 <div class="container">
   <section class="hot-news">
-    <ngx-skeleton-loader *ngIf="isLoadingTop;else topLoaded" appearance="line" [theme]="{
-    height: '30px',
-    'border-radius': 0
-  }"></ngx-skeleton-loader>
-    <ng-template #topLoaded>
-      <div class="hot-news__top">
-        <div class="hot-news__time">
-          {{dateTime | date:'fullDate'}}
-        </div>
-        <ul class="hot-news__list">
-          <li class="hot-news__icon">
-            <i class="fas fa-fire"></i>
-          </li>
-          <li class="hot-news__item" *ngFor="let tag of hotNewsTags">
-            <a [href]="tag.link" class="hot-news__link" [title]="tag.title">{{tag.name}}</a>
-          </li>
-        </ul>
-      </div>
-    </ng-template>
-    <ngx-skeleton-loader *ngIf="isLoading;else contentLoaded" appearance="line" [theme]="{
-    height: '500px',
-    'border-radius': 0
-  }"></ngx-skeleton-loader>
-    <ng-template #contentLoaded>
       <div class="hot-news__content">
         <div class="hot-news__content--left">
-          <div class="main-news">
-            <div class="main-news__content">
-              <div *ngFor="let item of data; first as isFirst">
-                <ng-template [ngIf]="isFirst">
-                  <a href="" class="">
-                    <img [src]="item.description.url" [alt]="item.description.alt">
+            <div class="main-news">
+              <div class="main-news__content">
+                <a href="" class="">
+                  <img [src]="data[0].description.url" [alt]="data[0].description.alt">
+                </a>
+                <h3 class="main-news__title">
+                  <a [routerLink]="['/detail',data[0].id]"
+                       lass="main-news__link">{{data[0].title}}
                   </a>
-                  <h3 class="main-news__title"><a [routerLink]="['/detail',item.link]"
-                                                  class="main-news__link">{{item.title}}</a></h3>
-                  <p class="main-news__sapo">
-                    {{item.description.text}}
-                  </p>
-                </ng-template>
+                   </h3>    
+                <p class="main-news__sapo">
+                  {{data[0].description.text}}
+                </p>
               </div>
             </div>
-          </div>
           <div class="list-news-thumb">
             <mdb-tabs [justified]="true" [style]="'padding-bottom:20px'">
               <mdb-tab title="Tin nóng">
@@ -72,7 +47,6 @@
       <div class="hot-news__content--right">
         <app-advertisment></app-advertisment>
       </div>
-    </ng-template>
   </section>
 </div>
 

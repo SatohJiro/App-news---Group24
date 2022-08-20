@@ -15,8 +15,6 @@ export class DetailData implements Idata {
     this.getData();
   }
 
-
-
   getData(): void {
 
 // @ts-ignore
@@ -151,6 +149,7 @@ export class DetailData implements Idata {
     }
     return data;
   }
+
 
 
 }

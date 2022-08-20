@@ -6,7 +6,6 @@ import * as cheerio from "cheerio";
 
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,4 +1,5 @@
 import {Idata} from "./idata";
+
 import {DetailData} from "./detail-data";
 import {HomeData} from "./home-data";
 
@@ -12,8 +13,6 @@ export class ParentData {
   constructor() {
     this.loadDataHome();
   }
-
-
   loadDataHome(): void {
     const homePage: HomeData = new HomeData();
     homePage.getData();

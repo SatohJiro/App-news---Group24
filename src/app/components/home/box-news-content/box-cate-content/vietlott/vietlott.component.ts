@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {HomeService} from "../../../home.service";
 
 @Component({
   selector: 'app-vietlott',
@@ -7,7 +8,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 })
 export class VietlottComponent implements OnInit{
 
-  constructor() { }
+  constructor(private homeService:HomeService) { }
 
   ngOnInit(): void {
   }

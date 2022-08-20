@@ -44,10 +44,22 @@
         </ul>
       </div>
       <div class="header__option">
-        <a routerLink="/signup" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="option-link">
-          <h5 class="signup">Đăng ký</h5>
-          <h5 class="login">Đăng nhập</h5>
-        </a>
+<!--        <ng-template *ngIf="socialAuthService.authState | async as socialUser">-->
+<!--            {{socialUser.name}} - {{socialUser.email}}-->
+<!--        </ng-template>-->
+<!--        <ng-template *ngIf="!userInfo; else userInfoTmpl">-->
+<!--          <a routerLink="/dang-nhap" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="option-link">-->
+<!--            <h5 class="signup">Đăng ký</h5>-->
+<!--            <h5 class="login">Đăng nhập</h5>-->
+<!--          </a>-->
+<!--        </ng-template>-->
+<!--          <ng-template #userInfoTmpl>-->
+<!--            <div class="user__info">-->
+<!--              <img [src]="userInfo.imgUrl" alt="" class="user__avatar">-->
+<!--              <h6 class="user__name">{{userInfo.name}}</h6>-->
+<!--            </div>-->
+<!--          </ng-template>-->
+          <h6 class="logout" (click)="logout()">Đăng xuất</h6>
       </div>
     </div>
   </div>

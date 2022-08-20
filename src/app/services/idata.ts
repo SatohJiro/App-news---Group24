@@ -1,5 +1,5 @@
 export interface Idata {
-  url:string| undefined;
-  data:[]| undefined;
-  getData():void;
+  url:string;
+  data:any[];
+  getData():any[];
 }

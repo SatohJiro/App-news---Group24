@@ -1,45 +1,28 @@
-import {NgModule} from '@angular/core';
-import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+
+import { NgModule } from '@angular/core';
+import {Routes, RouterModule, PreloadAllModules, RouteReuseStrategy} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ErrorComponent} from "./components/error/error.component";
+
 import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 import {RedirectDetailComponent} from "./components/redirect-detail/redirect-detail.component";
-// import {BoxNewsDetailComponent} from "./components/box-news-detail1/box-news-detail1.component";
+import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
+import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 
 const routes: Routes = [
-  {
-    path: '', redirectTo: 'home', pathMatch: 'full',
-  },
-  {
-    path: 'home', component: HomeComponent,
-  },
+  {path: '', redirectTo:'trang-chu',pathMatch:'full'},
+  {path: 'trang-chu', component:HomeComponent},
+  {path: 'trang-chu/:id', component:NewsDetailComponent},
+  {path: 'trong-nuoc', component:TrongNuocComponent},
+  {path: 'dang-nhap', component:LoginComponent},
+  {path: '**', component:ErrorComponent},
   {path: 'detail/:link', component: BoxNewsDetailComponent},
   {path: 'mostView/:link', component: RedirectDetailComponent},
-
-  {path: 'home/vip/:id', component: NewsDetailComponent},
-
-
   {path: 'signup', component: LoginComponent},
-  {path: '**', component: ErrorComponent}
-  // { path: 'home',
-  //   component: HomeComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'domestic', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
+  {path: '**', component: ErrorComponent},
+
   // { path: 'international', component:NewsComponent,
   //   children :[
   //     {
@@ -161,7 +144,11 @@ const routes: Routes = [
     preloadingStrategy: PreloadAllModules,
     scrollPositionRestoration: 'enabled'
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{
+    provide: RouteReuseStrategy,
+    useClass: CustomRouteReuseStrategy,
+  }],
 })
 export class AppRoutingModule {
 }

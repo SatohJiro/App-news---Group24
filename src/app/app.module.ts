@@ -99,7 +99,20 @@ import {VipNewsComponent} from './components/home/vip-news/vip-news.component';
 
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
+import { TrongNuocComponent } from './components/trong-nuoc/trong-nuoc.component';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider, SocialAuthService,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from "@abacritt/angularx-social-login";
+import {OAuthModule} from "angular-oauth2-oidc";
+import {HttpClientModule} from "@angular/common/http";
+import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
+import {ShareIconsModule} from "ngx-sharebuttons/icons";
+import {ShareModule} from "ngx-sharebuttons";
 import { RedirectDetailComponent } from './components/redirect-detail/redirect-detail.component';
+
 
 
 @NgModule({
@@ -112,43 +125,32 @@ import { RedirectDetailComponent } from './components/redirect-detail/redirect-d
     HomeComponent,
     NewsComponent,
     MenuComponent,
-
     NewsDetailComponent,
     HotNewsComponent,
     BoxCateContentComponent,
     NewsRowComponent,
     NewsItemComponent,
-
-
     VietlottComponent,
     BoxNewsContentComponent,
     BoxNewsComponent,
-
     BoxCateHomeComponent,
-
     BoxHomeNgangComponent,
     BoxNewsItemComponent,
     BoxLocationsComponent,
     BoxMediaComponent,
     ItemComponent,
-
-
     VipNewsComponent,
-
     BoxNewsDetailComponent,
     HeaderNewsDetailComponent,
-
-
     BoxMediaComponent,
     ItemComponent,
-
     RelatedNewsComponent,
     BoxSameCategoryNewsComponent,
     NewsListComponent,
     LoginComponent,
     ErrorComponent,
     RedirectDetailComponent,
-
+    TrongNuocComponent,
 
   ],
   imports: [
@@ -197,13 +199,42 @@ import { RedirectDetailComponent } from './components/redirect-detail/redirect-d
     MdbMentionModule,
     AppRoutingModule,
     LoadingBarRouterModule,
-
     SwiperModule,
-
     NgxSkeletonLoaderModule,
+    OAuthModule.forRoot(),
+    HttpClientModule,
+    SocialLoginModule,
+    ShareButtonsModule.withConfig({
+      debug:true
+    }),
+    ShareModule,
+    ShareIconsModule,
+
 
   ],
-  providers: [MdbCookiesManagementService, MdbStorageManagementService, ServerService],
+  providers: [{
+    provide:'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin:false,
+      providers: [
+        {
+          id:GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com'
+          )
+        },
+        {
+          id:FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider(
+            '334644398802455'
+          )
+        }
+      ],
+      onError: (err)=> {
+        console.log(err)
+      }
+    } as SocialAuthServiceConfig
+  },MdbCookiesManagementService, MdbStorageManagementService, ServerService,SocialAuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

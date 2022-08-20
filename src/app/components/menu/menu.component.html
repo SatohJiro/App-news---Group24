@@ -1,15 +1,27 @@
 
-
-
   <div class="container">
     <ul class="menu__list" *ngIf="isMenuTop; else menuBottomImpl">
-      <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">
+      <li class="menu__item">
         <ng-container
           [ngTemplateOutlet]="menuLinkTmpl"
-          [ngTemplateOutletContext]="{title: data.title, isLast: isLast, isFirst:isFirst }"
+          [ngTemplateOutletContext]="{title: '', isFirst:true,router:'' }"
         >
         </ng-container>
       </li>
+      <li class="menu__item">
+        <ng-container
+          [ngTemplateOutlet]="menuLinkTmpl"
+          [ngTemplateOutletContext]="{title: 'Trong nước', router:'/trong-nuoc' }"
+        >
+        </ng-container>
+      </li>
+<!--      <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">-->
+<!--        <ng-container-->
+<!--          [ngTemplateOutlet]="menuLinkTmpl"-->
+<!--          [ngTemplateOutletContext]="{title: data.title, isLast: isLast, isFirst:isFirst }"-->
+<!--        >-->
+<!--        </ng-container>-->
+<!--      </li>-->
     </ul>
 
 </div>
@@ -30,8 +42,9 @@
   let-className = "className"
   let-isLast = "isLast"
   let-isFirst = "isFirst"
+  let-router = "router"
 >
-<a [ngClass]="['menu__link', className ? className : '']" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+<a [ngClass]="['menu__link', className ? className : '']" [routerLink]="router" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
   <i *ngIf="isFirst" class="fas fa-home"></i>
   <i *ngIf="isLast" class="fas fa-search"></i>
   {{title}}

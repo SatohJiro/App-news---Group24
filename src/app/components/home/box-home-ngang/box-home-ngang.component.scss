@@ -1,7 +1,66 @@
 .container {
   display: flex;
+  gap: 20px;
   margin-bottom: 40px;
   .item {
     margin-right: 10px;
   }
 }
+.box-cate-content {
+  margin-top: 8px;
+  border: 1px solid rgba(116, 152, 189, .35);
+  border-radius: 5px;
+  width: 270px;
+  background-color: #e6e6e8;
+
+
+  .header-cate {
+    padding: 12px 20px 0 20px;
+    display: flex;
+    background-color: #f7f7f7;
+
+
+    .title {
+      background-image: url(https://static.mediacdn.vn/nld/Images/hoi-nong-dap-nhanh-ico-web.png);
+      background-repeat: no-repeat;
+      display: block;
+      width: 250px;
+      height: 50.5px;
+      background-size: 210px;
+    }
+
+
+    .view-more {
+      margin-left: auto;
+      color: #9d9d9d;
+      font-style: italic;
+      margin-top: 4px;
+    }
+  }
+
+  .news-item {
+    padding: 20px 20px 15px;
+    background-image: linear-gradient(to top, transparent, rgba(240, 240, 240, .7));
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h3 {
+      .title {
+        margin-top: 17px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .news-info {
+      .comment-outer {
+        float: left;
+      }
+    }
+  }
+}
+

@@ -1,5 +1,26 @@
 <div class="container">
-<app-box-news-item class="item"></app-box-news-item>
-<app-box-news-item class="item"></app-box-news-item>
-<app-box-news-item class="item"></app-box-news-item>
+  <div class="box-cate-content" *ngFor="let item of dataSub">
+    <div class="header-cate clearfix">
+      <div class="header-cate-content fl">
+        <a href="/tin-doc-quyen.htm" title="Tin độc quyền" class="title dq_title"></a>
+      </div>
+    </div>
+    <div class="news-item">
+      <a [href]="item.link"
+         [title]="item.title" class="img216x133"
+         data-newstype="0">
+        <img
+          [src] ="item.url"
+          class="img216x133">
+      </a>
+      <h3 style="margin-bottom: 0px;">
+        <a
+          href="/thoi-su/vi-sao-danh-sach-can-bo-ve-huu-om-nha-cong-vu-khong-duoc-cong-khai-20220718102415424.htm"
+          class="title" data-newstypetitle="0" data-newsid="20220718102415424"
+          title="">
+          {{item.title}}
+        </a>
+      </h3>
+    </div>
+  </div>
 </div>

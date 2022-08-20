@@ -9,11 +9,11 @@ import {INews} from "../../news/news";
 })
 export class VipNewsComponent implements OnInit {
   //@ts-ignore
-  listVipNews: any[];
+  listVipNews: INews[] = [];
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-    this.listVipNews = this.homeService.getListVipNews();
+     this.homeService.getListVipNews().subscribe(data => this.listVipNews = data);
   }
 
 }

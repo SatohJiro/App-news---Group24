@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ParentData} from "./services/parent-data";
 
 @Component({
@@ -13,5 +13,4 @@ export class AppComponent implements OnInit{
   // @ts-ignore
   ngOnInit() {
   }
-
 }
