@@ -151,6 +151,4 @@ export class DetailData implements Idata {
     return data;
   }
 
-
-
 }

@@ -8,9 +8,13 @@ import {ServerService} from "../../../../services/server.service";
 })
 export class BoxNewsComponent implements OnInit {
 
-  constructor(private service: ServerService) { }
-data:any[] = [];
-  ngOnInit(): void {
-   this.data = this.service.getBoxNews();}
+  constructor(private service: ServerService) {
+  }
 
+  data: any[] = [];
+
+  ngOnInit(): void {
+    // this.data = this.service.getBoxNews();}
+
+  }
 }
