@@ -100,18 +100,19 @@ import {VipNewsComponent} from './components/home/vip-news/vip-news.component';
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
 import { TrongNuocComponent } from './components/trong-nuoc/trong-nuoc.component';
-import {
-  FacebookLoginProvider,
-  GoogleLoginProvider, SocialAuthService,
-  SocialAuthServiceConfig,
-  SocialLoginModule
-} from "@abacritt/angularx-social-login";
+
 import {OAuthModule} from "angular-oauth2-oidc";
 import {HttpClientModule} from "@angular/common/http";
 import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {ShareModule} from "ngx-sharebuttons";
 import { RedirectDetailComponent } from './components/redirect-detail/redirect-detail.component';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  SocialAuthService,
+  SocialAuthServiceConfig, SocialLoginModule
+} from "@abacritt/angularx-social-login";
 
 
 
@@ -203,38 +204,34 @@ import { RedirectDetailComponent } from './components/redirect-detail/redirect-d
     NgxSkeletonLoaderModule,
     OAuthModule.forRoot(),
     HttpClientModule,
-    SocialLoginModule,
     ShareButtonsModule.withConfig({
-      debug:true
+      debug: true
     }),
     ShareModule,
     ShareIconsModule,
+    SocialLoginModule,
 
 
   ],
-  providers: [{
-    provide:'SocialAuthServiceConfig',
+  providers: [ MdbCookiesManagementService, MdbStorageManagementService, ServerService, {
+    provide: 'SocialAuthServiceConfig',
     useValue: {
-      autoLogin:false,
+      autoLogin: false,
       providers: [
         {
-          id:GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider(
-            '673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com'
-          )
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider("334644398802455")
         },
         {
-          id:FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider(
-            '334644398802455'
-          )
-        }
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com")
+        },
       ],
-      onError: (err)=> {
+      onError:(err)=> {
         console.log(err)
       }
     } as SocialAuthServiceConfig
-  },MdbCookiesManagementService, MdbStorageManagementService, ServerService,SocialAuthService],
+  }, SocialAuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

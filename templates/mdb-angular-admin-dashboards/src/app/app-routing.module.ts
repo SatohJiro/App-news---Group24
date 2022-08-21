@@ -6,9 +6,7 @@ import { ChatComponent } from './views/chat/chat.component';
 import { Ecommerce1Component } from './views/ecommerce1/ecommerce1.component';
 import { Ecommerce2Component } from './views/ecommerce2/ecommerce2.component';
 import { ErrorComponent } from './views/error/error.component';
-import { ForgotPasswordComponent } from '../../../../src/app/components/forgot-password/forgot-password.component';
 import { InvoiceComponent } from './views/invoice/invoice.component';
-import { LoginRegisterComponent } from '../../../../src/app/components/login-register/login-register.component';
 import { MailboxComponent } from './views/mailbox/mailbox.component';
 import { OrderComponent } from './views/order/order.component';
 import { ProfileComponent } from './views/profile/profile.component';
@@ -28,8 +26,6 @@ const routes: Routes = [
   { path: 'mailbox', component: MailboxComponent },
   { path: 'user-profile', component: ProfileComponent },
   { path: 'user-management', component: UserManagementComponent },
-  { path: 'login-register', component: LoginRegisterComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'error', component: ErrorComponent },
 ];

@@ -12,15 +12,13 @@ export class HomeComponent implements OnInit,OnDestroy,AfterViewInit {
   isLoading:boolean =true;
   isLoadingTop:boolean =true;
   // @ts-ignore
-  data:any[];
-  tags:any[] = [];
   dateTime:Date = new Date();
   dataHome:any = {};
   constructor(private homeService: HomeService, private serverService: ServerService) { }
   ngOnInit(): void {
-    this.data = this.homeService.getData('tin-moi-nhat.rss');
-    this.tags = this.homeService.getHotNewsTags();
-    this.dataHome.listHotNews = this.homeService.getListHotNews();
+    // this.data = this.homeService.getData('tin-moi-nhat.rss');
+    this.homeService.getHotNewsTags().subscribe(data => this.dataHome.tags = data);
+    this.homeService.getListHotNews().subscribe(data => this.dataHome.listHotNews = data);
     this.homeService.getListNews('tin-moi-nhat.rss').subscribe(data => this.dataHome.listNews = data);
     this.homeService.getListNewsRow().subscribe(data => this.dataHome.listNewsRow = data);
     this.homeService.getBoxNewsList().subscribe(data => this.dataHome.boxNewsList1 = data);

@@ -20,7 +20,7 @@ export class HomeService {
 
   }
 
-  getListHotNews(): INews[] {
+  getListHotNews(): Observable<INews[]> {
     const url = `${this.corsAnywhere}/${this.server}`;
     const ajax = new XMLHttpRequest();
     const asyns = true;
@@ -41,7 +41,7 @@ export class HomeService {
         })
       }
     }
-    return data;
+    return of(data).pipe(delay(50));
   }
 
   getListNews(option?: string): Observable<INews[]> {
@@ -127,7 +127,7 @@ export class HomeService {
             title: $(news).find('.img220x139').attr("title"),
             link: $(news).find('.img220x139').attr("href"),
             description: {
-              imgUrl: $(news).find('.img220x139 > img').attr('src'),
+              imgUrl: $(news).find('.img220x139 > img').attr('src')? $(news).find('.img220x139 > img').attr('src'): $(news).find('.img220x139 > video').attr('poster'),
               alt: $(news).find('.img220x139 > img').attr('alt'),
             },
             infor: {
@@ -301,7 +301,7 @@ export class HomeService {
             title: $(news).find('.img220x139').attr("title"),
             link: $(news).find('.img220x139').attr("href"),
             description: {
-              imgUrl: $(news).find('.img220x139 > img').attr('src'),
+              imgUrl: $(news).find('.img220x139 > img').attr('src')? $(news).find('.img220x139 > img').attr('src'): $(news).find('.img220x139 > video').attr('poster'),
               alt: $(news).find('.img220x139 > img').attr('alt'),
             },
             infor: {
@@ -318,7 +318,7 @@ export class HomeService {
   }
 
 //home - hot-news tags
-  getHotNewsTags(): string[] {
+  getHotNewsTags(): Observable<any> {
     const ajax = new XMLHttpRequest();
     let tags: any[] = [];
     // ajax.timeout = 3000;
@@ -342,7 +342,7 @@ export class HomeService {
         })
       }
     }
-    return tags;
+    return of(tags).pipe(delay(50));
   }
 
 //home - topics

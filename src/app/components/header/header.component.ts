@@ -26,15 +26,15 @@ export class HeaderComponent implements OnInit,OnChanges {
     {title: "Quốc tế", path:"news-international",desc:"lorem"},
   ];
   //@ts-ignore
-  user: SocialUser;
+  user: any;
   //@ts-ignore
   loggedIn: boolean;
   // @ts-ignore
-  constructor(@Inject(DOCUMENT) document: Document, private homeService: HomeService,private readonly googleService: GoogleApiService,private router: Router, public socialAuthService: SocialAuthService) {
+  constructor(@Inject(DOCUMENT) document: Document, private service: ServerService,private readonly googleService: GoogleApiService,private router: Router, public socialAuthService: SocialAuthService) {
 
   }
   ngOnInit(): void {
-   this.topics = this.homeService.getTopics();
+   this.service.getTopics().subscribe(data => this.topics =data);
     this.socialAuthService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);

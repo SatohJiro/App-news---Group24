@@ -12,7 +12,7 @@
       <li class="topic">
         <i class="fas fa-fire"></i>
       </li>
-      <li class="topic" *ngFor="let tag of tags">
+      <li class="topic" *ngFor="let tag of dataHome.tags">
         <a [href]="tag.link" class="topic__link" [title]="tag.title"># {{tag.title}}</a>
       </li>
     </ul>
@@ -175,7 +175,7 @@
       <!--      <div class="mutimedia"></div>-->
       <div class="box-content__body">
         <ul class="news__list">
-          <h3 class="news__label">Xem nhieu</h3>
+          <h3 class="news__label">Xem nhiều</h3>
           <li class="news__item" *ngFor="let news of dataHome.xemnhieu">
             <a href="" class="news__link">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
