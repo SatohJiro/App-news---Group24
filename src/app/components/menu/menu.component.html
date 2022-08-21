@@ -113,13 +113,13 @@
         >
         </ng-container>
       </li>
-      <li class="menu__item">
-        <ng-container
-          [ngTemplateOutlet]="menuLinkTmpl"
-          [ngTemplateOutletContext]="{title: '', isLast:true }"
-        >
-        </ng-container>
-      </li>
+<!--      <li class="menu__item">-->
+<!--        <ng-container-->
+<!--          [ngTemplateOutlet]="menuLinkTmpl"-->
+<!--          [ngTemplateOutletContext]="{title: '', isLast:true }"-->
+<!--        >-->
+<!--        </ng-container>-->
+<!--      </li>-->
 <!--      <li class="menu__item"  *ngFor="let data of datas; first as isFirst; last as isLast">-->
 <!--        <ng-container-->
 <!--          [ngTemplateOutlet]="menuLinkTmpl"-->
@@ -127,6 +127,15 @@
 <!--        >-->
 <!--        </ng-container>-->
 <!--      </li>-->
+          <li class="search">
+            <input class="search__input" type="text" placeholder="Tìm kiếm ...">
+            <div class="search__btn"  (click)="active()">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="search__btn-cancel" (click)="unActive()">
+              <i class="fas fa-times"></i>
+            </div>
+          </li>
     </ul>
 
 </div>

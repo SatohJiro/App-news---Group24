@@ -48,9 +48,7 @@ $mdb5-angular-ui-kit-pro-advanced-theme: mat.define-light-theme((
 @import '~mdb-angular-treeview/scss/treeview.scss';
 @import '~mdb-angular-transfer/scss/transfer.scss';
 @import '~mdb-angular-mention/scss/mention.scss';
-//@import '~ngx-sharebuttons/themes/modern;
-//@import '~ngx-sharebuttons/themes/modern/modern-light-theme';
-//@import '~ngx-sharebuttons/themes/circles/circles-dark-theme';
+
 *,
 *::before,
 *::after {
@@ -121,7 +119,9 @@ h6 {
   max-width: 1160px;
   margin: 0 auto;
 }
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 20px 0;
+}

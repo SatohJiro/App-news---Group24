@@ -11,6 +11,7 @@ import {RedirectDetailComponent} from "./components/redirect-detail/redirect-det
 import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
 import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 import {CanReadVipNewsGuard} from "./can-read-vip-news.guard";
+import {SearchComponent} from "./components/search/search.component";
 
 const routes: Routes = [
   {path: '', redirectTo:'trang-chu',pathMatch:'full'},
@@ -18,8 +19,10 @@ const routes: Routes = [
   {path: 'trong-nuoc', component:TrongNuocComponent},
   {path: 'dang-nhap', component:LoginComponent},
   {path: 'chi-tiet/:link', component: BoxNewsDetailComponent},
-  {path: 'chi-tiet/vip:link', component: BoxNewsDetailComponent, canActivate: [CanReadVipNewsGuard]},
+  {path: 'chi-tiet/vip/:link', component: BoxNewsDetailComponent, canActivate: [CanReadVipNewsGuard]},
   {path: 'mostView/:link', component: RedirectDetailComponent},
+  {path: 'tim-kiem', component: SearchComponent},
+
   {path: '**', component:ErrorComponent},
 
   // { path: 'international', component:NewsComponent,

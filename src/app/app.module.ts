@@ -113,6 +113,7 @@ import {
   SocialAuthService,
   SocialAuthServiceConfig, SocialLoginModule
 } from "@abacritt/angularx-social-login";
+import { SearchComponent } from './components/search/search.component';
 
 
 
@@ -152,6 +153,7 @@ import {
     ErrorComponent,
     RedirectDetailComponent,
     TrongNuocComponent,
+    SearchComponent,
 
   ],
   imports: [
