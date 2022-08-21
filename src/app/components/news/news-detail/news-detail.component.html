@@ -24,14 +24,14 @@ width: '800px',
              <share-buttons theme="circles-dark"
                             [include]="['facebook']"
                             [showIcon]="false"
-                            [url]="item.url"
+                            [url]="url"
                             class="d-flex"
              >
              </share-buttons>
            </button>
          </div>
          <div class="audio">
-           <button class="audio__btn" (click)="playAudio(item.url)">Nghe tin bài<i class="fas fa-microphone"></i></button>
+           <button class="audio__btn" (click)="playAudio('item.url')">Nghe tin bài<i class="fas fa-microphone"></i></button>
          </div>
        </div>
         <div class="clear-both"></div>
@@ -61,7 +61,7 @@ width: '800px',
             <share-buttons theme="circles-dark"
                            [include]="['facebook']"
                            [showIcon]="false"
-                           url="https://mdbootstrap.com/docs/angular/content-styles/icons/"
+                           [url]="url"
                            class="d-flex"
             >
             </share-buttons>
