@@ -20,7 +20,7 @@ export class RedirectDetailComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getLinkPage();
-    this.router.navigate(['detail/', this.linkPage])
+    this.router.navigate(['chi-tiet/', this.linkPage])
 
   }
 
