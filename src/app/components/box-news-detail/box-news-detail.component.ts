@@ -25,6 +25,7 @@ export class BoxNewsDetailComponent implements OnInit {
   dataDetail: [] = [];
   dataRelated: [] = [];
   dataMostView: any[] = [];
+  dataComment:[] =[]
 
 
   constructor(private activatenRoute: ActivatedRoute, private router: Router, private dataParent: ParentData) {
@@ -78,8 +79,17 @@ export class BoxNewsDetailComponent implements OnInit {
     // @ts-ignore
     this.dataMostView = this.dataPage.data[3][0].mostViewData;
     // @ts-ignore
+    this.dataComment=this.dataPage.comments;
 
   }
+  sendComment(){
+    let user ={
+      name:"Satoh Jiro",
+      comment:(document.getElementById("textArea_comment") as HTMLInputElement).value
+    }
+    this.dataParent.addCommentByUrl(this.linkPage,user);
+
+}
 
 }
 
