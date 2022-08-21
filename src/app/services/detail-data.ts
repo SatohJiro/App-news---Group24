@@ -1,15 +1,15 @@
 import {Idata} from "./idata";
 import * as cheerio from "cheerio";
-import {INews} from "../components/news/news";
 
 
 export class DetailData implements Idata {
 
-  data: [] =[];
-  url: string ='';
-  comments:[{}]=[{}];
+  data: [] = [];
+  url: string = '';
+  comments: [{}] = [{}];
   server = 'https://nld.com.vn';
-  corsAnywhere ='https://mycorsproxy01.herokuapp.com';
+  corsAnywhere = 'https://mycorsproxy01.herokuapp.com';
+  datatest: any[] = [];
 
   constructor(urlInput: string) {
     this.url = urlInput;
@@ -17,7 +17,6 @@ export class DetailData implements Idata {
   }
 
   getData(): void {
-
 // @ts-ignore
     this.data.push([{
       // @ts-ignore
@@ -38,25 +37,25 @@ export class DetailData implements Idata {
     }]);
 
 
-
   }
-  getDataForHeaderDetail():any[]{
+
+  getDataForHeaderDetail(): any[] {
     const ajax = new XMLHttpRequest();
-    let headerData:any[] = [];
+    let headerData: any[] = [];
     // ajax.timeout = 3000;
-    const url= `${this.corsAnywhere}/${this.url}`;
+    const url = `${this.corsAnywhere}/${this.url}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
     // @ts-ignore
-    ajax.onreadystatechange = function() {
+    ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.nld-detail  > .sub-cate-detail > li > a').each((i,title)=> {
+        $('.nld-detail  > .sub-cate-detail > li > a').each((i, title) => {
           // @ts-ignore
           headerData.push({
-            id:i,
+            id: i,
             title: $(title).text(),
           });
         });
@@ -67,27 +66,27 @@ export class DetailData implements Idata {
   }
 
 
-  getDataDetail():any[]{
+  getDataDetail(): any[] {
     const ajax = new XMLHttpRequest();
-    let detailData:any[] = [];
+    let detailData: any[] = [];
     // ajax.timeout = 3000;
-    const url= `${this.corsAnywhere}/${this.url}`;
+    const url = `${this.corsAnywhere}/${this.url}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
     // @ts-ignore
-    ajax.onreadystatechange = function() {
+    ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.nld-detail > .w520').each((i,title)=> {
+        $('.nld-detail > .w520').each((i, title) => {
           // @ts-ignore
           detailData.push({
-            id:i,
+            id: i,
             title: $(title).find('h1').text(),
             title_detail: $(title).find("h2").text(),
             content: $(title).find("div .contentbody .content-news-detail").html(),
-            author:$(title).find("div .author").text(),
+            author: $(title).find("div .author").text(),
           });
         });
       }
@@ -96,7 +95,7 @@ export class DetailData implements Idata {
   }
 
 
-  getDataForRelated():any[] {
+  getDataForRelated(): any[] {
     const ajax = new XMLHttpRequest();
     let data: any[] = [];
     // ajax.timeout = 3000;
@@ -115,7 +114,7 @@ export class DetailData implements Idata {
             id: i,
             title: $(item).attr('title'),
             link: $(item).attr('href'),
-            urlImg: $(item).find('img').attr('src')? $(item).find('img').attr('src'): $(item).find('video').attr('poster')
+            urlImg: $(item).find('img').attr('src') ? $(item).find('img').attr('src') : $(item).find('video').attr('poster')
           });
         })
       }
@@ -150,5 +149,4 @@ export class DetailData implements Idata {
     }
     return data;
   }
-
 }
