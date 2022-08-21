@@ -8,23 +8,32 @@
               <form>
                 <div class="text-center mb-3">
                   <p>Đăng nhập bằng:</p>
-                  <button
-                    type="button"
-                    class="btn btn-primary btn-floating mx-1"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </button>
-                  <asl-google-signin-button>
-                  <button
-                    type="button"
-                    class="btn btn-primary btn-floating mx-1"
-                    (click) = "signInWithGoogle()"
-                  >
-                    <i class="fab fa-google"></i>
-                  </button>
+                  <div class="d-flex gap-2 justify-content-evenly align-items-center">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-floating mx-1"
+                      (click)="signInWithFb()"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                      Facebook
+                    </button>
+                    <asl-google-signin-button class="d-flex justify-content-center">
+                      <div id="g_id_onload"
+                           data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                           data-login_uri="https://your.domain/your_login_endpoint"
+                           data-auto_prompt="false">
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-floating mx-1"
+                        (click) = "signInWithGoogle()"
+                      >
+                        <i class="fab fa-google"></i>
+                        Google
+                      </button>
                     </asl-google-signin-button>
-                  {{user.name}}
-                </div>
+                  </div>
+                 </div>
                 <p class="text-center">Hoặc:</p>
                 <!-- Email input -->
                 <mdb-form-control class="mb-4 p-2">
