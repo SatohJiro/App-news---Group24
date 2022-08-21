@@ -8,7 +8,7 @@
                 <img [src]="data[0].description.url" [alt]="data[0].description.alt">
               </a>
               <h3 class="main-news__title">
-                <a [routerLink]="['/detail',data[0].id]"
+                <a [routerLink]="['/chi-tiet',data[0].id]"
                    lass="main-news__link">{{data[0].title}}
                 </a>
               </h3>
@@ -23,7 +23,7 @@
                 <ng-template mdbTabContent>
                   <ul class="list-news-thumb__list">
                     <li class="list-news-thumb__item" *ngFor="let item of data">
-                      <a [routerLink]="['/detail',item.link]" class="list-news-thumb__link"
+                      <a [routerLink]="['/chi-tiet',item.link]" class="list-news-thumb__link"
                          [title]="item.title">{{item.title}}</a>
                     </li>
                   </ul>
@@ -33,7 +33,7 @@
                 <ng-template mdbTabContent>
                   <ul class="list-news-thumb__list">
                     <li class="list-news-thumb__item" *ngFor="let item of hotNewsData">
-                      <a [routerLink]="['/home',item.id]" class="list-news-thumb__link"
+                      <a [routerLink]="['/chi-tiet',item.link]" class="list-news-thumb__link"
                          [title]="item.title">{{item.title}}</a>
                     </li>
                   </ul>
