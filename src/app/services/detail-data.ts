@@ -7,6 +7,7 @@ export class DetailData implements Idata {
 
   data: [] =[];
   url: string ='';
+  comments:[{}]=[{}];
   server = 'https://nld.com.vn';
   corsAnywhere ='https://mycorsproxy01.herokuapp.com';
 
@@ -149,7 +150,5 @@ export class DetailData implements Idata {
     }
     return data;
   }
-
-
 
 }
