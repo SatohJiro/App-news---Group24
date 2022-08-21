@@ -12,10 +12,28 @@ export class ParentData {
   }
 
 
-  addCommentByUrl(url: string, comment:{}) {
+  addCommentByUrl(url: string, comment: {}) {
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i].url === url) {
         this.data[i].comments.push(comment);
+      }
+    }
+  }
+
+  addLoveToCommentById(url: string, idComment: string, love: boolean) {
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i].url === url) {
+        for (let j = 0; j < this.data[i].comments.length; j++) {
+          if (this.data[i].comments[j].idComment === idComment) {
+            if (love) {
+              this.data[i].comments[j].love += 1;
+            } else {
+              if (this.data[i].comments[j].love > 0)
+                this.data[i].comments[j].love -= 1;
+            }
+            return;
+          }
+        }
       }
     }
   }

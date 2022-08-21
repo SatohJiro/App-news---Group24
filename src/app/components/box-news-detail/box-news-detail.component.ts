@@ -25,7 +25,7 @@ export class BoxNewsDetailComponent implements OnInit {
   dataDetail: [] = [];
   dataRelated: [] = [];
   dataMostView: any[] = [];
-  dataComment:[] =[]
+  dataComment: [] = [];
 
 
   constructor(private activatenRoute: ActivatedRoute, private router: Router, private dataParent: ParentData) {
@@ -79,17 +79,35 @@ export class BoxNewsDetailComponent implements OnInit {
     // @ts-ignore
     this.dataMostView = this.dataPage.data[3][0].mostViewData;
     // @ts-ignore
-    this.dataComment=this.dataPage.comments;
+    this.dataComment = this.dataPage.comments;
 
   }
-  sendComment(){
-    let user ={
-      name:"Satoh Jiro",
-      comment:(document.getElementById("textArea_comment") as HTMLInputElement).value
-    }
-    this.dataParent.addCommentByUrl(this.linkPage,user);
 
-}
+  sendComment() {
+    let time = new Date();
+    let user = {
+      idComment: this.makeid(6),
+      name: "Satoh Jiro",
+      timeComment: time.toLocaleString(),
+      comment: (document.getElementById("textArea_comment") as HTMLInputElement).value,
+      love: 0
+    };
+    this.dataParent.addCommentByUrl(this.linkPage, user);
+    (document.getElementById("textArea_comment") as HTMLInputElement).value = "";
+  }
 
+  makeid(length: number): string {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < length; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  }
+
+  love(idComment: string, loved: boolean) {
+    const love = !loved;
+    this.dataParent.addLoveToCommentById(this.linkPage, idComment, love);
+  }
 }
 
