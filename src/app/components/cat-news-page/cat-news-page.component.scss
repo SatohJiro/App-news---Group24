@@ -1,0 +1,17 @@
+.cat li{
+  display: inline;
+
+}
+
+ul{ list-style-type:circle;}
+.list-category{
+  margin-top: 10px;
+  border-bottom: solid 1px #afafaf;
+}
+
+
+.list-category > ul > li{
+  margin-right: 15px;
+  font-weight: bold;
+
+}

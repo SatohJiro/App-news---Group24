@@ -112,6 +112,13 @@ import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {ShareModule} from "ngx-sharebuttons";
 import { RedirectDetailComponent } from './components/redirect-detail/redirect-detail.component';
+import { CatNewsPageComponent } from './components/cat-news-page/cat-news-page.component';
+import { FirstNewsComponent } from './components/cat-news-page/first-news/first-news.component';
+import { ListNewsComponent } from './components/cat-news-page/list-news/list-news.component';
+import { RightListNewsComponent } from './components/cat-news-page/list-news/right-list-news/right-list-news.component';
+import { LeftListNewsComponent } from './components/cat-news-page/list-news/left-list-news/left-list-news.component';
+import { CategoryItemNewsComponent } from './components/cat-news-page/list-news/right-list-news/category-item-news/category-item-news.component';
+// import { LeftListNewsComponent } from './components/cat-news-page/list-news/right-list-news/left-list-news/left-list-news.component';
 
 
 
@@ -151,6 +158,13 @@ import { RedirectDetailComponent } from './components/redirect-detail/redirect-d
     ErrorComponent,
     RedirectDetailComponent,
     TrongNuocComponent,
+    CatNewsPageComponent,
+    FirstNewsComponent,
+    ListNewsComponent,
+    RightListNewsComponent,
+    LeftListNewsComponent,
+    CategoryItemNewsComponent,
+    // LeftListNewsComponent,
 
   ],
   imports: [
