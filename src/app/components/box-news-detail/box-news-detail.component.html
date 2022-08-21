@@ -32,12 +32,14 @@
   <div class="comment p-4">
     <h4 class="comment__title">Bình luận</h4>
     <div class="form-out p-4line p-4">
-      <textarea class="form-control" id="textArea" rows="4"></textarea>
+      <textarea class="form-control" id="textArea_comment" rows="4"></textarea>
       <label class="form-label" for="textArea">Message</label>
       <div class="comment__notice">
-        <div class="comment__reader--number">Có <span>n</span> nguời bình luận</div>
-        <button class="comment__btn">Gửi</button>
+        <div class="comment__reader--number">Có <span>{{dataComment.length}}</span> nguời bình luận</div>
+        <button class="comment__btn" (click)="sendComment()" >Gửi</button>
       </div>
+      <ng-container *ngIf="dataComment.length>0">
+        <ng-container *ngFor="let comment of dataComment">
       <div class="reader mt-4">
         <div class="comment-box__list-reader">
           <div class="comment-box__left">
@@ -45,20 +47,22 @@
              T
             </div>
           </div>
+
           <div class="comment-box__right">
            <div class="reader__info">
-             <h4 class="reader__name">Nguyen Van C</h4>
+             <h4 class="reader__name">{{comment['name']}}</h4>
              <span class="time">13:27</span>
            </div>
-            <p class="reader__comment">abc</p>
+            <p class="reader__comment">{{comment['comment']}}</p>
             <div class="reader__more">
               <button class="reader__btn-reply">Trả lời bình luận này</button>
               <button class="reader__btn-like"><i class="far fa-heart"></i> Yêu thích: <span>3</span></button>
             </div>
           </div>
-
         </div>
       </div>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 <!--  <app-box-same-category-news></app-box-same-category-news>-->
