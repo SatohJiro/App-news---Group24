@@ -2,63 +2,15 @@
 <div class="search">
   <div class="search--left">
     <h5 class="search__result-counter">
-      Khoảng <span class="counter">n</span> kết quả
+      Khoảng <span class="counter">{{listResult.length}}</span> kết quả
     </h5>
     <div class="separator"></div>
     <ul class="search__result-list">
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
-      </li>
-      <li class="search__result-item">
-        <a href="" class="result__link">This is link</a>
-        <span class="result__category">nld.com.vn > Suc khoe</span>
-        <p class="result__sapo">31 thg 8, 2021 ... (NLĐO) - Số ca mắc Covid-19 mới ghi nhận tại TP Đà Nẵng tăng gấp đôi so
-          với ngày hôm trước, trong ngày 31-8 ghi nhận thêm 123 ca mới và có ...</p>
+      <li class="search__result-item" *ngFor="let result of listResult">
+        <a [href]="result.link" class="result__link">{{result.title}}</a>
+        <span class="result__category">{{result.cite}}</span>
+        <p class="result__sapo">{{result.description.text}}</p>
+        <div class="separator"></div>
       </li>
     </ul>
   </div>
