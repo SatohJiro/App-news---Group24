@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 import {ActivatedRoute, Router} from "@angular/router";
 
 import {ParentData} from "../../services/parent-data";
 import {DetailData} from "../../services/detail-data";
+import {SocialAuthService} from "@abacritt/angularx-social-login";
 
 @Component({
   selector: 'app-box-news-detail',
@@ -11,7 +12,7 @@ import {DetailData} from "../../services/detail-data";
   styleUrls: ['./box-news-detail.component.scss']
 })
 
-export class BoxNewsDetailComponent implements OnInit {
+export class BoxNewsDetailComponent implements OnInit, OnChanges {
 
 
   dataPage: DetailData | null = null;
@@ -26,9 +27,11 @@ export class BoxNewsDetailComponent implements OnInit {
   dataRelated: [] = [];
   dataMostView: any[] = [];
   dataComment: [] = [];
+  loggedIn:boolean=false;
+  user:any=null;
 
 
-  constructor(private activatenRoute: ActivatedRoute, private router: Router, private dataParent: ParentData) {
+  constructor(private activatenRoute: ActivatedRoute, private router: Router, private dataParent: ParentData,public socialAuthService: SocialAuthService) {
 
   }
 
@@ -50,6 +53,12 @@ export class BoxNewsDetailComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.socialAuthService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
+    console.log(this.loggedIn);
+
     this.headerLoading = true;
     this.detailLoading = true;
     this.mostViewLoading = true;
@@ -87,7 +96,8 @@ export class BoxNewsDetailComponent implements OnInit {
     let time = new Date();
     let user = {
       idComment: this.makeid(6),
-      name: "Satoh Jiro",
+      name: this.user.name,
+      firstChar: this.user.name[0],
       timeComment: time.toLocaleString(),
       comment: (document.getElementById("textArea_comment") as HTMLInputElement).value,
       love: 0
@@ -108,6 +118,10 @@ export class BoxNewsDetailComponent implements OnInit {
   love(idComment: string, loved: boolean) {
     const love = !loved;
     this.dataParent.addLoveToCommentById(this.linkPage, idComment, love);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.ngOnInit();
   }
 }
 

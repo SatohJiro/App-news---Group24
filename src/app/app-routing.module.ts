@@ -11,12 +11,13 @@ import {RedirectDetailComponent} from "./components/redirect-detail/redirect-det
 import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
 import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 import {CanReadVipNewsGuard} from "./can-read-vip-news.guard";
+import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
 import {SearchComponent} from "./components/search/search.component";
+
 
 const routes: Routes = [
   {path: '', redirectTo:'trang-chu',pathMatch:'full'},
   {path: 'trang-chu', component:HomeComponent},
-  {path: 'trong-nuoc', component:TrongNuocComponent},
   {path: 'dang-nhap', component:LoginComponent},
   {path: 'chi-tiet/:link', component: BoxNewsDetailComponent},
   {path: 'chi-tiet/vip/:link', component: BoxNewsDetailComponent, canActivate: [CanReadVipNewsGuard]},
@@ -25,120 +26,23 @@ const routes: Routes = [
 
   {path: '**', component:ErrorComponent},
 
-  // { path: 'international', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // //cong doan
-  // { path: 'union', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // //ban doc
-  // { path: 'reader', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'economic', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'health', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'education', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'law', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'arts', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'entertainment', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'sport', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'technology', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'green-tour', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'women', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
-  // { path: 'real-estate', component:NewsComponent,
-  //   children :[
-  //     {
-  //       path: ':id',
-  //       component: NewsDetailComponent
-  //     }
-  //   ]
-  // },
+  {path: 'trong-nuoc', component:CatNewsPageComponent},
+  {path: 'quoc-te', component:CatNewsPageComponent},
+  {path: 'cong-doan', component:CatNewsPageComponent},
+  {path: 'ban-doc', component:CatNewsPageComponent},
+  {path: 'kinh-te', component:CatNewsPageComponent},
+  {path: 'suc-khoe', component:CatNewsPageComponent},
+  {path: 'giao-duc', component:CatNewsPageComponent},
+  {path: 'phap-luat', component:CatNewsPageComponent},
+  {path: 'van-nghe', component:CatNewsPageComponent},
+  {path: 'giai-tri', component:CatNewsPageComponent},
+  {path: 'the-thao', component:CatNewsPageComponent},
+  {path: 'cong-nghe', component:CatNewsPageComponent},
+  {path: 'du-lich-xanh', component:CatNewsPageComponent},
+  {path: 'phu-nu', component:CatNewsPageComponent},
+  {path: 'dia-oc', component:CatNewsPageComponent},
+
+
 ];
 
 @NgModule({
