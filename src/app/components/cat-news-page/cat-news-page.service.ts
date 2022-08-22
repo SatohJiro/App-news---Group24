@@ -54,4 +54,85 @@ export class CatNewsPageService {
     console.log(data)
     return data;
   }
+
+  getRightListNews_TinNoiBat(): any[] {
+    const ajax = new XMLHttpRequest();
+    let data: any[] = [];
+    // ajax.timeout = 3000;
+    const url = `${this.corsAnywhere}/${this.option2}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.list-video:first-child li').each((i, item) => {
+          // @ts-ignore
+          data.push({
+            id: i,
+            title: $(item).find(" a").attr("title"),
+            link: $(item).find(" a").attr('href'),
+            urlImg: $(item).find(' a img').attr('src')
+          });
+        })
+      }
+    }
+    console.log(data)
+    return data;
+  }
+
+
+  getRightListNews_XemNhieuNhat(): any[] {
+    const ajax = new XMLHttpRequest();
+    let data: any[] = [];
+    // ajax.timeout = 3000;
+    const url = `${this.corsAnywhere}/${this.option2}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        $('.list-video:nth-child(2) li').each((i, item) => {
+          // @ts-ignore
+          data.push({
+            id: i,
+            title: $(item).find(" a").attr("title"),
+            link: $(item).find(" a").attr('href'),
+
+          });
+        })
+      }
+    }
+    console.log(data)
+    return data;
+  }
+
+
+  getFirstNews(): any {
+    const ajax = new XMLHttpRequest();
+    let data: any= {};
+    // ajax.timeout = 3000;
+    const url = `${this.corsAnywhere}/${this.option}`;
+    const asyns = true;
+    const method = "GET";
+    ajax.open(method, url, asyns);
+    ajax.send();
+    // @ts-ignore
+    ajax.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const $ = cheerio.load(this.responseText);
+        data.title =  $('.box-cate-focus').find(" .news-info h3 a").attr("title")
+        data.link =  $('.box-cate-focus').find(" .news-info h3 a").attr("href")
+        data.content =  $('.box-cate-focus').find(" .news-info p").text()
+        data.urlImg =  $('.box-cate-focus').find(" .news-info > a img").attr("src")
+      }
+    }
+    console.log(data)
+    return data;
+  }
 }
