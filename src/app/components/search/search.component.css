@@ -1,0 +1,29 @@
+.search {
+  display: flex;
+  gap: 20px;
+}
+.search__result-item {
+  margin-bottom: 20px;
+}
+.search--left {
+  width: 810px;
+}
+.search--right {
+  flex: 1;
+}
+
+.result__link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #0a53be;
+}
+.result__category {
+  display: block;
+  font-size: 14px;
+  color: deepskyblue;
+}
+.result__sapo {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=search.component.css.map */
