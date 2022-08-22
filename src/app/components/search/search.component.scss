@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+  gap: 20px;
+  &__result-item {
+    margin-bottom: 20px;
+  }
+  &--left {
+    width: 810px;
+  }
+  &--right {
+    flex: 1;
+  }
+}
+
+.result {
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0a53be;
+  }
+
+  &__category {
+    display: block;
+    font-size: 14px;
+    color: deepskyblue;
+  }
+  &__sapo {
+    font-size: 14px;
+  }
+}
