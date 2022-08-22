@@ -8,7 +8,6 @@ import {ErrorComponent} from "./components/error/error.component";
 
 import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 import {RedirectDetailComponent} from "./components/redirect-detail/redirect-detail.component";
-import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
 import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 import {CanReadVipNewsGuard} from "./can-read-vip-news.guard";
 import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
@@ -44,10 +43,7 @@ const routes: Routes = [
     scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule],
-  providers: [{
-    provide: RouteReuseStrategy,
-    useClass: CustomRouteReuseStrategy,
-  }],
+  providers: [],
 })
 export class AppRoutingModule {
 }
