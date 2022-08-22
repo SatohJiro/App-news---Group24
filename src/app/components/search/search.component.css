@@ -2,7 +2,13 @@
   display: flex;
   gap: 20px;
 }
+.search__result-list {
+  max-width: 600px;
+}
 .search__result-item {
+  border-left: 1px solid #f0f0f0;
+  padding-left: 20px;
+
   margin-bottom: 20px;
 }
 .search--left {
