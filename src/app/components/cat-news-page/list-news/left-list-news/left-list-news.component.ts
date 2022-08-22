@@ -8,17 +8,18 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./left-list-news.component.scss']
 })
 export class LeftListNewsComponent implements OnInit {
-data:any[]=[];
+dataLeftList:any[]=[];
 linkRSS:string="";
+
   constructor(private listNewsLeft: CatNewsPageService,private activatenRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getLinkRSS();
-    this.data=this.listNewsLeft.getData(this.linkRSS);
+    this.dataLeftList=this.listNewsLeft.getData(this.linkRSS);
   }
   getLinkRSS() {
     this.activatenRoute.paramMap.subscribe(paramMap => {
-      this.linkRSS = String(paramMap.get('RSS'));
+      this.linkRSS = String(paramMap.get('RSS')+'.rss');
     })
   }
 }

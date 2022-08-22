@@ -9,7 +9,6 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CatNewsPageService {
   server = 'https://nld.com.vn';
-  option = 'cong-nghe.rss';
   corsAnywhere = 'https://mycorsproxy01.herokuapp.com';
   private listHomeNews: INews[] = []
   private text: string = '';
@@ -17,10 +16,9 @@ export class CatNewsPageService {
 
   // get data from rss
   getData(option: string): any[] {
-     this.option = option;
     let data: any[] = [];
     const ajax = new XMLHttpRequest();
-    const url = `${this.corsAnywhere}/${this.server}/${this.option}`;
+    const url = `${this.corsAnywhere}/${this.server}/${option}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
@@ -51,15 +49,14 @@ export class CatNewsPageService {
         })
       }
     }
-    console.log(data)
     return data;
   }
 
-  getRightListNews_TinNoiBat(): any[] {
+  getRightListNews_TinNoiBat(option: string): any[] {
     const ajax = new XMLHttpRequest();
     let data: any[] = [];
     // ajax.timeout = 3000;
-    const url = `${this.corsAnywhere}/${this.option2}`;
+    const url = `${this.corsAnywhere}/${this.server}/${option}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
@@ -68,7 +65,7 @@ export class CatNewsPageService {
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.list-video:first-child li').each((i, item) => {
+          $('.list-box-container .box-video:first-child ul li').each((i, item) => {
           // @ts-ignore
           data.push({
             id: i,
@@ -84,11 +81,11 @@ export class CatNewsPageService {
   }
 
 
-  getRightListNews_XemNhieuNhat(): any[] {
+  getRightListNews_XemNhieuNhat(option: string): any[] {
     const ajax = new XMLHttpRequest();
     let data: any[] = [];
     // ajax.timeout = 3000;
-    const url = `${this.corsAnywhere}/${this.option2}`;
+    const url = `${this.corsAnywhere}/${this.server}/${option}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
@@ -97,13 +94,13 @@ export class CatNewsPageService {
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.list-video:nth-child(2) li').each((i, item) => {
+        $('.list-box-container .box-video:nth-child(2) ul li').each((i, item) => {
           // @ts-ignore
           data.push({
             id: i,
             title: $(item).find(" a").attr("title"),
             link: $(item).find(" a").attr('href'),
-
+            urlImg: $(item).find(' a img').attr('src'),
           });
         })
       }
@@ -113,11 +110,11 @@ export class CatNewsPageService {
   }
 
 
-  getFirstNews(): any {
+  getFirstNews(option: string): any {
     const ajax = new XMLHttpRequest();
     let data: any= {};
     // ajax.timeout = 3000;
-    const url = `${this.corsAnywhere}/${this.option}`;
+    const url = `${this.corsAnywhere}/${this.server}/${option}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
@@ -127,12 +124,12 @@ export class CatNewsPageService {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
         data.title =  $('.box-cate-focus').find(" .news-info h3 a").attr("title")
-        data.link =  $('.box-cate-focus').find(" .news-info h3 a").attr("href")
+        data.link = 'https://nld.com.vn'+ $('.box-cate-focus').find(" .news-info h3 a").attr("href")
         data.content =  $('.box-cate-focus').find(" .news-info p").text()
-        data.urlImg =  $('.box-cate-focus').find(" .news-info > a img").attr("src")
+        data.urlImg =  $('.box-cate-focus').find("a img").attr("src")
+        data.alt= $('.box-cate-focus').find("a img").attr("alt")
       }
     }
-    console.log(data)
     return data;
   }
 }
