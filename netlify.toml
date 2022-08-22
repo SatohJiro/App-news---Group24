@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/ngft-standalone-netlify"
+  publish = "dist/mdb5-angular-ui-kit-pro-advanced"
   command = "ng build -c=production"
 [[redirects]]
   from = "/*"
