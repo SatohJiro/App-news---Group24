@@ -15,23 +15,24 @@ width: '800px',
           <span class="line-middle">| </span>
           <a href="/thoi-su.htm" title="Trong nước" class="cat fl">Trong nước</a>
         </p>
-       <div class="options">
-         <div class="fb">
-           <button class="share-like">
-             <h4><i class="fab fa-facebook"></i>Chia sẻ</h4>
-             <share-buttons theme="circles-dark"
-                            [include]="['facebook']"
-                            [showIcon]="false"
-                            [url]="url"
-                            class="d-flex"
-             >
-             </share-buttons>
-           </button>
-         </div>
-         <div class="audio">
-           <button class="audio__btn" (click)="playAudio('item.url')">Nghe tin bài<i class="fas fa-microphone"></i></button>
-         </div>
-       </div>
+        <div class="options">
+          <div class="fb">
+            <button class="share-like">
+              <h4><i class="fab fa-facebook"></i>Chia sẻ</h4>
+              <share-buttons theme="circles-dark"
+                             [include]="['facebook']"
+                             [showIcon]="false"
+                             [url]="url"
+                             class="d-flex"
+              >
+              </share-buttons>
+            </button>
+          </div>
+          <div class="audio">
+            <button class="audio__btn" (click)="playAudio('item.url')">Nghe tin bài<i class="fas fa-microphone"></i>
+            </button>
+          </div>
+        </div>
         <div class="clear-both"></div>
       </div>
 

@@ -37,7 +37,10 @@
   border-right: 1px solid #ddd;
   padding: 0 4px;
 }
-.social__send i, .social__facebook i {
+.social__send i {
+  color: #0959ab;
+}
+.social__facebook i {
   color: #1266f1;
 }
 .social__youtube i {
@@ -75,14 +78,14 @@
 
 .logo__img {
   font-size: 40px;
-  color: rgba(234, 34, 34, 0.92);
+  color: #F05454;
 }
 
 .option-link {
   width: 200px;
   display: flex;
   gap: 20px;
-  border: 2px solid #0b3d91;
+  border: 2px solid #0959ab;
   padding: 8px;
   position: relative;
 }
@@ -91,7 +94,7 @@
   position: absolute;
   width: 2px;
   height: 80%;
-  background-color: #0b3d91;
+  background-color: #0959ab;
   top: 50%;
   left: 50%;
   transform: translateY(-50%);
@@ -99,7 +102,7 @@
 .option-link h5 {
   font-size: 12px;
   text-transform: uppercase;
-  color: #0b3d91;
+  color: #0959ab;
   width: 50%;
   text-align: center;
 }
@@ -114,7 +117,7 @@
   cursor: pointer;
 }
 .user__name {
-  color: #0d47a1;
+  color: #0959ab;
 }
 .user__avatar {
   width: 30px;

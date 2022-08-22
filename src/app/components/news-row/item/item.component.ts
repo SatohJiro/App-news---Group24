@@ -6,11 +6,12 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  @Input() linkImage: String='';
-  @Input() description: String='';
+  @Input() linkImage: String = '';
+  @Input() description: String = '';
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

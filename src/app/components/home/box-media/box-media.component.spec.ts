@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BoxMediaComponent } from './box-media.component';
+import {BoxMediaComponent} from './box-media.component';
 
 describe('BoxMediaComponent', () => {
   let component: BoxMediaComponent;
@@ -8,9 +8,9 @@ describe('BoxMediaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxMediaComponent ]
+      declarations: [BoxMediaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

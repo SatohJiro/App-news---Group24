@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../home.service";
 
 @Component({
@@ -8,8 +8,10 @@ import {HomeService} from "../home.service";
 })
 export class BoxHomeNgangComponent implements OnInit {
   //@ts-ignore
-dataSub:any[];
-  constructor(private homeService: HomeService) { }
+  dataSub: any[];
+
+  constructor(private homeService: HomeService) {
+  }
 
   ngOnInit(): void {
     // this.dataSub = this.homeService.getListSubContent();

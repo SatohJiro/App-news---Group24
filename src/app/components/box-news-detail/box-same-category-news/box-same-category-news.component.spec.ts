@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BoxSameCategoryNewsComponent } from './box-same-category-news.component';
+import {BoxSameCategoryNewsComponent} from './box-same-category-news.component';
 
 describe('BoxSameCategoryNewsComponent', () => {
   let component: BoxSameCategoryNewsComponent;
@@ -8,9 +8,9 @@ describe('BoxSameCategoryNewsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxSameCategoryNewsComponent ]
+      declarations: [BoxSameCategoryNewsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

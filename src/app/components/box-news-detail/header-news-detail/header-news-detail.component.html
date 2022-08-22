@@ -6,7 +6,7 @@
 <ul class="sub-cate-detail">
   <li *ngFor="let item of data; let first= first">
     <a href="/ban-doc.htm" title="Bạn đọc" class="title-cate active" *ngIf="first ; else notFirst">
-   {{item.title}}</a>
+      {{item.title}}</a>
     <ng-template #notFirst>
       <a href="/ban-doc.htm" title="Bạn đọc" class="title-cate">
         {{item.title}}</a>

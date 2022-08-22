@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DomesticService} from "./domestic.service";
 import {HomeService} from "../home/home.service";
 
@@ -9,10 +9,12 @@ import {HomeService} from "../home/home.service";
 })
 export class TrongNuocComponent implements OnInit {
 
-  constructor(private domesticService: DomesticService,private homeService:HomeService) { }
+  constructor(private domesticService: DomesticService, private homeService: HomeService) {
+  }
+
   dataDomestic: any = {};
+
   ngOnInit(): void {
-    this.homeService.getListNews('tin-trong-nuoc.rss').subscribe(data => this.dataDomestic.listNews = data);
   }
 
 }

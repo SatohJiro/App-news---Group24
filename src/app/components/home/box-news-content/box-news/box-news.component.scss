@@ -1,6 +1,4 @@
 
-
-
 .item {
   width: 570px;
   height: 130px;
@@ -16,16 +14,18 @@
 
   .news-title {
 
-    .link1{
+    .link1 {
       font-weight: bold;
       font-size: 16px;
     }
+
     ul {
 
       li {
         font-size: 12px;
         padding-left: 10px;
         position: relative;
+
         &:before {
           position: absolute;
           content: "";

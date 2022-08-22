@@ -4,67 +4,67 @@
     'border-radius': 0
   }"></ngx-skeleton-loader>
   <ng-template #topLoaded>
-  <div class="box-content__header">
-    <div class="date">
-      {{dateTime | date:'fullDate'}}
+    <div class="box-content__header">
+      <div class="date">
+        {{dateTime | date:'fullDate'}}
+      </div>
+      <ul class="topics" *ngIf="tagsHotNews$ | async as tags">
+        <li class="topic">
+          <i class="fas fa-fire"></i>
+        </li>
+        <li class="topic" *ngFor="let tag of tags">
+          <a [href]="tag.link" class="topic__link" [title]="tag.title"># {{tag.title}}</a>
+        </li>
+      </ul>
     </div>
-    <ul class="topics">
-      <li class="topic">
-        <i class="fas fa-fire"></i>
-      </li>
-      <li class="topic" *ngFor="let tag of dataHome.tags">
-        <a [href]="tag.link" class="topic__link" [title]="tag.title"># {{tag.title}}</a>
-      </li>
-    </ul>
-  </div>
   </ng-template>
   <div class="box-content__top">
     <div class="box-content--left">
       <section class="hot-news">
         <div class="hot-news__content">
-          <ngx-skeleton-loader *ngIf="isLoading;else contentLoaded" appearance="line" [theme]="{
-          width:'800px',
-          height: '500px',
-          'border-radius': 0
-  }"></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            *ngIf="isLoading;else contentLoaded"
+            appearance="line"
+            [theme]="{
+            width:'800px',
+            height: '500px',
+          'border-radius': 0 }">
+          </ngx-skeleton-loader>
           <ng-template #contentLoaded>
             <div class="hot-news__content--left">
               <div class="top-news">
                 <div class="main-news">
-                  <div class="main-news__content">
-                    <div class="" *ngFor="let news of dataHome.listNews; first as isFirst">
-                      <ng-template [ngIf]="isFirst">
-                        <a href="" class="">
-                          <img [src]="news.description.url" [alt]="news.description.alt">
-                        </a>
-                        <h3 class="main-news__title">
-                          <a [routerLink]="['/chi-tiet',news.link]"
-                             class="main-news__link">{{news.title}}
-                          </a>
-                        </h3>
-                        <p class="main-news__sapo">
-                          {{news.description.text}}
-                        </p>
-                      </ng-template>
+                  <div class="main-news__content" *ngIf="listNews$ | async as listNews">
+                    <a href="" class="">
+                      <img [src]="listNews[0].description.url" [alt]="listNews[0].description.alt">
+                    </a>
+                    <h3 class="main-news__title">
+                      <a [routerLink]="['/chi-tiet',listNews[0].link]"
+                         class="main-news__link">{{listNews[0].title}}
+                      </a>
+                    </h3>
+                    <p class="main-news__sapo">
+                      {{listNews[0].description.text}}
+                    </p>
                     </div>
-                  </div>
                 </div>
                 <div class="list-news-thumb">
                   <mdb-tabs [justified]="true" [style]="'padding-bottom:20px'">
                     <mdb-tab title="Tin nóng">
                       <ng-template mdbTabContent>
-                        <ul class="list-news-thumb__list">
-                          <li class="list-news-thumb__item" *ngFor="let news of dataHome.listHotNews">
-                            <a [routerLink]="['/chi-tiet',news.link]" class="list-news-thumb__link"
+                        <ul class="list-news-thumb__list" *ngIf="listHotNews$ | async as listHotNews">
+                          <li class="list-news-thumb__item" *ngFor="let news of listHotNews">
+                            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="list-news-thumb__link"
                                [title]="news.title">{{news.title}}</a>
+                               {{news.time | date: 'mediumTime'}}
                           </li>
                         </ul>
                       </ng-template>
                     </mdb-tab>
                     <mdb-tab title="Tin mới">
                       <ng-template mdbTabContent>
-                        <ul class="list-news-thumb__list">
-                          <li class="list-news-thumb__item" *ngFor="let news of dataHome.listNews; first as isFirst">
+                        <ul class="list-news-thumb__list" *ngIf="listNews$ | async as listNews">
+                          <li class="list-news-thumb__item" *ngFor="let news of listNews">
                             <a [routerLink]="['/chi-tiet',news.link]" class="list-news-thumb__link"
                                [title]="news.title">{{news.title}}</a>
                           </li>
@@ -74,10 +74,8 @@
                   </mdb-tabs>
                 </div>
               </div>
-              <div class="news-horizontal">
-                <div class="" *ngFor="let news of dataHome.listNewsRow">
-                  <app-news-row [news]="news" [isHome]="true"></app-news-row>
-                </div>
+              <div class="news-horizontal" *ngIf="rowListNews$ | async as rowListNew">
+                  <app-news-row *ngFor="let news of rowListNew" [news]="news" [isHome]="true"></app-news-row>
               </div>
             </div>
           </ng-template>
@@ -89,22 +87,23 @@
     </div>
   </div>
 </div>
+
 <app-vip-news></app-vip-news>
 <div class="container">
   <div class="box-content__bottom">
     <div class="box-content--left">
       <app-weather-panel></app-weather-panel>
       <div class="box-content__body">
-        <ul class="news__list">
-          <li class="news__item" *ngFor="let news of dataHome.boxNewsList1">
-            <a [routerLink]="['/chi-tiet',news.link]" class="news__link">
+        <ul class="news__list" *ngIf="boxListNews$ | async as boxListNews">
+          <li class="news__item" *ngFor="let news of boxListNews">
+            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="news__link">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
-              <div class="news__info">
-                <h4 class="news__title">{{news.title}}</h4>
-                <a href="" class="news__sapo">{{news.infor.title1}}</a>
-                <a href="" class="news__sapo">{{news.infor.title2}}</a>
-              </div>
             </a>
+              <div class="news__info">
+                <h4 class="news__title"><a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">{{news.title}}</a></h4>
+                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link1]"class="news__sapo">{{news.infor.title1}}</a>
+                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link2]" class="news__sapo">{{news.infor.title2}}</a>
+              </div>
           </li>
         </ul>
         <div class="cate__list">
@@ -117,10 +116,10 @@
                 <a href="" class="cate__title"><i class="fas fa-comment-alt"></i> Nói thẳng</a>
                 <a href="" class="cate__view-all">Xem tất cả</a>
               </div>
-              <div class="" *ngFor="let news of dataHome.noithang">
-                <a [routerLink]="['/chi-tiet',news.link]" class="cate__content">
-                  <img [src]="news.description.imgUrl" [alt]="news.description.alt" class="cate__img">
-                  <a href="" class="cate__link">{{news.title}}</a>
+              <div class="" *ngIf="noiThangNews$ | async as news">
+                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+                  <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
+                  <a href="" class="cate__link">{{news[0].title}}</a>
                 </a>
               </div>
             </section>
@@ -131,10 +130,10 @@
                 <a href="" class="cate__title"><i class="fas fa-poo-storm"></i> Tin độc quyền</a>
                 <a href="" class="cate__view-all">Xem tất cả</a>
               </div>
-              <div class="" *ngFor="let news of dataHome.docquyen">
-                <a [routerLink]="['/chi-tiet',news.link]" class="cate__content">
-                  <img [src]="news.description.imgUrl" [alt]="news.description.alt" class="cate__img">
-                  <a href="" class="cate__link">{{news.title}}</a>
+              <div class="" *ngIf="docQuyenNews$ | async as news">
+                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+                  <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
+                  <a href="" class="cate__link">{{news[0].title}}</a>
                 </a>
               </div>
             </section>
@@ -145,206 +144,50 @@
         <div class="cate__item">
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/hoi-nong-dap-nhanh-ico-web.png"
                                        alt=""></a>
-          <div class="" *ngFor="let news of dataHome.hoinongdapnhanh">
-            <a class="cate__content" [routerLink]="['/chi-tiet',news.link]">
-              <img [src]="news.description.imgUrl" [alt]="news.description.alt">
-              <span class="cate__link">{{news.title}}</span>
+          <div class="" *ngIf="hoiNongDapNhanhNews$ | async as news">
+            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+              <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
+              <a href="" class="cate__link">{{news[0].title}}</a>
             </a>
           </div>
         </div>
         <div class="cate__item">
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/truy-vet-mang-xa-hoi-ico-web.png"
                                        alt=""></a>
-          <div class="" *ngFor="let news of dataHome.truyvetmangxahoi">
-            <a class="cate__content" [routerLink]="['/chi-tiet',news.link]">
-              <img [src]="news.description.imgUrl" [alt]="news.description.alt">
-              <span class="cate__link">{{news.title}}</span>
+          <div class="" *ngIf="truyVetMangXaHoiNews$ | async as news">
+            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+              <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
+              <a href="" class="cate__link">{{news[0].title}}</a>
             </a>
           </div>
         </div>
         <div class="cate__item">
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/goc-nhin-ico-web.png" alt=""></a>
-          <div class="" *ngFor="let news of dataHome.gocnhin">
-            <a class="cate__content" [routerLink]="['/chi-tiet',news.link]">
-              <img [src]="news.description.imgUrl" [alt]="news.description.alt">
-              <span class="cate__link">{{news.title}}</span>
-            </a>
-          </div>
+          < <div class="" *ngIf="gocNhinNews$ | async as news">
+          <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+            <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
+            <a href="" class="cate__link">{{news[0].title}}</a>
+          </a>
+        </div>
         </div>
       </div>
-      <!--      <div class="mutimedia"></div>-->
       <div class="box-content__body">
-        <ul class="news__list">
+        <ul class="news__list" *ngIf="listMostViewedNews$ | async as listMostViewedNews">
           <h3 class="news__label">Xem nhiều</h3>
-          <li class="news__item" *ngFor="let news of dataHome.xemnhieu">
-            <a href="" class="news__link" [routerLink]="['/chi-tiet',news.link]">
+          <li class="news__item" *ngFor="let news of listMostViewedNews">
+            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="news__link">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
-              <div class="news__info">
-                <h4 class="news__title">{{news.title}}</h4>
-                <a href="" class="news__sapo">{{news.infor.title1}}</a>
-                <a href="" class="news__sapo">{{news.infor.title2}}</a>
-              </div>
             </a>
+            <div class="news__info">
+              <h4 class="news__title"><a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">{{news.title}}</a></h4>
+              <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link1]"class="news__sapo">{{news.infor.title1}}</a>
+              <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link2]" class="news__sapo">{{news.infor.title2}}</a>
+            </div>
           </li>
         </ul>
         <app-advertisment [style]="'flex: 1'"></app-advertisment>
       </div>
-      <div class="box-location">`
-        <app-box-locations></app-box-locations>
-        <app-box-locations></app-box-locations>
-      </div>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>
-          <a href="" class="box-sub-cate__link">
-            <img
-              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"
-              alt="">
-            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>
-          </a>
-          <p class="box-sub-cate__sapo">
-            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn
-            lương, chi phí tăng hơn cả ...
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Quoc te
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Cong doan
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>
-          <a href="" class="box-sub-cate__link">
-            <img
-              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"
-              alt="">
-            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>
-          </a>
-          <p class="box-sub-cate__sapo">
-            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn
-            lương, chi phí tăng hơn cả ...
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Quoc te
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Cong doan
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>
-          <a href="" class="box-sub-cate__link">
-            <img
-              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"
-              alt="">
-            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>
-          </a>
-          <p class="box-sub-cate__sapo">
-            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn
-            lương, chi phí tăng hơn cả ...
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Quoc te
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Cong doan
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>
-          <a href="" class="box-sub-cate__link">
-            <img
-              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"
-              alt="">
-            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>
-          </a>
-          <p class="box-sub-cate__sapo">
-            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn
-            lương, chi phí tăng hơn cả ...
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Quoc te
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Cong doan
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Cong doan
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>
-          <a href="" class="box-sub-cate__link">
-            <img
-              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"
-              alt="">
-            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>
-          </a>
-          <p class="box-sub-cate__sapo">
-            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn
-            lương, chi phí tăng hơn cả ...
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Quoc te
-          </p>
-        </div>
-      </app-box-cate-home>
-      <app-box-cate-home>
-        <div class="box-sub-cate">
-          <p class="box-sub-cate__sapo">
-            Cong doan
-          </p>
-        </div>
-      </app-box-cate-home>
+
     </div>
     <div class="box-content--right">
       <app-advertisment></app-advertisment>
@@ -352,3 +195,160 @@
   </div>
 </div>
 
+<!--      <div class="box-location">`-->
+<!--        <app-box-locations></app-box-locations>-->
+<!--        <app-box-locations></app-box-locations>-->
+<!--      </div>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>-->
+<!--          <a href="" class="box-sub-cate__link">-->
+<!--            <img-->
+<!--              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"-->
+<!--              alt="">-->
+<!--            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>-->
+<!--          </a>-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn-->
+<!--            lương, chi phí tăng hơn cả ...-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Quoc te-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Cong doan-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>-->
+<!--          <a href="" class="box-sub-cate__link">-->
+<!--            <img-->
+<!--              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"-->
+<!--              alt="">-->
+<!--            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>-->
+<!--          </a>-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn-->
+<!--            lương, chi phí tăng hơn cả ...-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Quoc te-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Cong doan-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>-->
+<!--          <a href="" class="box-sub-cate__link">-->
+<!--            <img-->
+<!--              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"-->
+<!--              alt="">-->
+<!--            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>-->
+<!--          </a>-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn-->
+<!--            lương, chi phí tăng hơn cả ...-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Quoc te-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Cong doan-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>-->
+<!--          <a href="" class="box-sub-cate__link">-->
+<!--            <img-->
+<!--              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"-->
+<!--              alt="">-->
+<!--            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>-->
+<!--          </a>-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn-->
+<!--            lương, chi phí tăng hơn cả ...-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Quoc te-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Cong doan-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Cong doan-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <a href="" class="box-sub-cate__title">Thu nuoc ngoai</a>-->
+<!--          <a href="" class="box-sub-cate__link">-->
+<!--            <img-->
+<!--              src="https://nld.mediacdn.vn/zoom/208_130/291774122806476800/2022/7/30/16-thu-nuoc-ngoai-16591904992642051562503.jpg"-->
+<!--              alt="">-->
+<!--            <h3>Thu tu Nhat Ban: Khi dong yen giam gia</h3>-->
+<!--          </a>-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Đồng yen giảm giá đặc biệt ảnh hưởng tới cộng đồng người Việt Nam tại Nhật. Đối với những người làm công ăn-->
+<!--            lương, chi phí tăng hơn cả ...-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Quoc te-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <app-box-cate-home>-->
+<!--        <div class="box-sub-cate">-->
+<!--          <p class="box-sub-cate__sapo">-->
+<!--            Cong doan-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </app-box-cate-home>-->
+<!--      <div class="mutimedia"></div>-->

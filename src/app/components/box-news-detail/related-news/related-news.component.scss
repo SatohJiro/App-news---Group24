@@ -1,19 +1,21 @@
-.container{
-  .title{
+.container {
+  .title {
     display: flex;
     flex-direction: row;
     //align-items: center;
     margin-bottom: 15px;
-    div{
+
+    div {
       margin-right: 8px;
       height: 18px;
       width: 6px;
       background: #ff8503;
-      margin-top:5px;
+      margin-top: 5px;
     }
   }
-  .key-word{
-    margin-top:10px;
+
+  .key-word {
+    margin-top: 10px;
     font-size: 15px;
   }
 }

@@ -1,15 +1,18 @@
 .body-news {
   width: 800px;
+
   .title-content {
     color: #252121;
     font: bold 28px/normal Arial;
     line-height: 33px;
     padding-bottom: 22px;
   }
-  .top-share,.bot-share{
+
+  .top-share, .bot-share {
     padding-top: 5px;
     padding-bottom: 14px;
     border-bottom: 1px solid #e4e4e4;
+
     .dateandcat {
       margin-bottom: 15px;
 
@@ -26,6 +29,7 @@
     .fb {
       display: flex;
       justify-content: space-between;
+
       .share-like {
         display: flex;
         width: 100px;
@@ -33,6 +37,7 @@
         position: relative;
         background-color: #0a58ca;
         border-radius: 5px;
+
         h4 {
           display: flex;
           width: 100%;
@@ -41,21 +46,24 @@
           color: #fff;
           left: 50%;
           top: 50%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
           position: absolute;
         }
+
         .button {
           text-align: right;
           padding-right: 5px;
-          margin:0  10px 10px 10px;
+          margin: 0 10px 10px 10px;
           background-color: #0a58ca;
           color: white;
           font-weight: bold;
         }
-        .care-button{
+
+        .care-button {
           background-color: #0dcaf0;
         }
-        .print{
+
+        .print {
           margin-left: 20px;
           width: 20px;
           height: 20px;
@@ -65,39 +73,46 @@
     }
 
   }
-.options {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px;
-  .audio {
+
+  .options {
     display: flex;
-    gap: 4px;
-    align-items: center;
-    i {
-      margin-left: 4px;
-      color: #0dcaf0;
-      font-size: 16px;
-    }
-    &__btn {
-      padding: 10px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 500;
+    justify-content: space-between;
+    padding-right: 10px;
+
+    .audio {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      i {
+        margin-left: 4px;
+        color: #0dcaf0;
+        font-size: 16px;
+      }
+
+      &__btn {
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
     }
   }
-}
+
   .news_title-detail {
     color: #000;
     font-weight: bold;
     line-height: 24px;
     margin: 25px 0 20px;
   }
-  .news-content{
-    font: normal 16px/1.4 Arial,Helvetica,sans-serif;
+
+  .news-content {
+    font: normal 16px/1.4 Arial, Helvetica, sans-serif;
     margin-bottom: 13px;
     line-height: 25px;
     color: #252525;
-    .author{
+
+    .author {
       display: block;
       text-align: end;
       padding-right: 20px;
