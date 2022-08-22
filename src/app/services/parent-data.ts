@@ -9,8 +9,15 @@ export class ParentData {
 
 
   constructor() {
+    setInterval(() => {
+      this.clearCache();
+    }, 3600000);
   }
 
+  clearCache() {
+    this.data = [];
+
+  }
 
   addCommentByUrl(url: string, comment: {}) {
     for (let i = 0; i < this.data.length; i++) {
