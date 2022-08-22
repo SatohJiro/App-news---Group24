@@ -29,10 +29,10 @@
     </div>
   </div>
   <app-related-news [data]="dataRelated"></app-related-news>
+  <ng-container *ngIf="loggedIn">
   <div class="comment p-4">
     <h4 class="comment__title">Bình luận</h4>
     <div class="form-out p-4line p-4">
-
       <textarea class="form-control" id="textArea_comment" rows="4"></textarea>
       <label class="form-label" for="textArea">Message</label>
       <div class="comment__notice">
@@ -46,7 +46,7 @@
               <div class="comment-box__list-reader">
                 <div class="comment-box__left">
                   <div class="reader__avt">
-                    T
+                    {{comment['firstChar']}}
                   </div>
                 </div>
                 <div class="comment-box__right">
@@ -72,4 +72,5 @@
       </ng-container>
     </div>
   </div>
+  </ng-container>
 </div>
