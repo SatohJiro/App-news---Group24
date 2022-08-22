@@ -1,5 +1,4 @@
-
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules, RouteReuseStrategy} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {NewsDetailComponent} from "./components/news/news-detail/news-detail.component";
@@ -8,22 +7,23 @@ import {ErrorComponent} from "./components/error/error.component";
 
 import {BoxNewsDetailComponent} from "./components/box-news-detail/box-news-detail.component";
 import {RedirectDetailComponent} from "./components/redirect-detail/redirect-detail.component";
-import {CustomRouteReuseStrategy} from "./custom-route-reuse-strategy.service";
 import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 import {CanReadVipNewsGuard} from "./can-read-vip-news.guard";
 import {SearchComponent} from "./components/search/search.component";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
 
 const routes: Routes = [
-  {path: '', redirectTo:'trang-chu',pathMatch:'full'},
-  {path: 'trang-chu', component:HomeComponent},
-  {path: 'trong-nuoc', component:TrongNuocComponent},
-  {path: 'dang-nhap', component:LoginComponent},
+  {path: '', redirectTo: 'trang-chu', pathMatch: 'full'},
+  {path: 'trang-chu', component: HomeComponent},
+  {path: 'trong-nuoc', component: CatNewsPageComponent},
+  {path: 'dang-nhap', component: LoginComponent},
   {path: 'chi-tiet/:link', component: BoxNewsDetailComponent},
   {path: 'chi-tiet/vip/:link', component: BoxNewsDetailComponent, canActivate: [CanReadVipNewsGuard]},
   {path: 'mostView/:link', component: RedirectDetailComponent},
   {path: 'tim-kiem', component: SearchComponent},
 
-  {path: '**', component:ErrorComponent},
+  {path: '**', component: ErrorComponent},
 
   // { path: 'international', component:NewsComponent,
   //   children :[
@@ -147,10 +147,10 @@ const routes: Routes = [
     scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule],
-  providers: [{
-    provide: RouteReuseStrategy,
-    useClass: CustomRouteReuseStrategy,
-  }],
+  providers: [
+
+
+  ],
 })
 export class AppRoutingModule {
 }

@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
 import * as cheerio from "cheerio";
-import {delay, Observable, of} from "rxjs";
 import {INews} from "../news/news";
-import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +11,13 @@ export class CatNewsPageService {
   corsAnywhere = 'https://mycorsproxy01.herokuapp.com';
   private listHomeNews: INews[] = []
   private text: string = '';
-  constructor() { }
+
+  constructor() {
+  }
 
   // get data from rss
   getData(option: string): any[] {
-     this.option = option;
+    this.option = option;
     let data: any[] = [];
     const ajax = new XMLHttpRequest();
     const url = `${this.corsAnywhere}/${this.server}/${this.option}`;

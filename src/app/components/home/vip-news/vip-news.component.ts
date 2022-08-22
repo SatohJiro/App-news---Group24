@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../home.service";
 import {INews} from "../../news/news";
 
@@ -10,10 +10,12 @@ import {INews} from "../../news/news";
 export class VipNewsComponent implements OnInit {
   //@ts-ignore
   listVipNews: INews[] = [];
-  constructor(private homeService: HomeService) { }
+
+  constructor(private homeService: HomeService) {
+  }
 
   ngOnInit(): void {
-     this.homeService.getListVipNews().subscribe(data => this.listVipNews = data);
+    this.homeService.getListVipNews().subscribe(data => this.listVipNews = data);
   }
 
 }

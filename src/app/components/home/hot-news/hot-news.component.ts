@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {ServerService} from "../../../services/server.service";
+import {Component, Input, OnInit} from '@angular/core';
 import {HomeService} from "../home.service";
 
 @Component({
@@ -8,16 +7,18 @@ import {HomeService} from "../home.service";
   styleUrls: ['./hot-news.component.scss']
 })
 export class HotNewsComponent implements OnInit {
-  isLoading:boolean =true;
-  isLoadingTop:boolean =true;
-  list:number = 12;
-  dateTime:Date = new Date();
-  hotNewsTags:any[] =  [];
+  isLoading: boolean = true;
+  isLoadingTop: boolean = true;
+  list: number = 12;
+  dateTime: Date = new Date();
+  hotNewsTags: any[] = [];
   hotNewsData: any[] = [];
-  @Input() data:any[] = [];
+  @Input() data: any[] = [];
+
   //@ts-ignore
 
-  constructor(private homeService: HomeService) { }
+  constructor(private homeService: HomeService) {
+  }
 
   ngOnInit(): void {
     console.log(this.isLoading)

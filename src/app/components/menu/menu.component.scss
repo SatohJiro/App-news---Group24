@@ -1,3 +1,4 @@
+$primaryColor: #0959ab;
 //  menu
 .menu {
   &__list {
@@ -34,16 +35,18 @@
 .search {
   display: inline-block;
   position: relative;
+
   &__input {
     font-size: 14px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #fff;
-    color: #0d47a1;
+    color: $primaryColor;
     opacity: 0;
-    transition: all 0.45s cubic-bezier(0.68,-0.55,0.265,1.55);
+    transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
+
   &__input.active {
     opacity: 1;
     padding: 4px 40px 4px 10px;
@@ -62,18 +65,19 @@
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
-    color: #0b3d91;
+    color: $primaryColor;
     background-color: #ffffff;
-    transition: all 0.45s cubic-bezier(0.68,-0.55,0.265,1.55);
+    transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   }
+
   &__btn.active {
     left: unset;
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
     right: 5px;
-    background-color: #0b3d91;
+    background-color: $primaryColor;
     color: #fff;
   }
 
@@ -91,6 +95,7 @@
     background-color: transparent;
     opacity: 0;
     visibility: hidden;
+
     &.active {
       opacity: 1;
       visibility: visible;

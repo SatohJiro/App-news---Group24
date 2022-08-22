@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { BoxNewsDetailService } from './box-news-detail.service';
+import {BoxNewsDetailService} from './box-news-detail.service';
 
 describe('BoxNewsDetailService', () => {
   let service: BoxNewsDetailService;

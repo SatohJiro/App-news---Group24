@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -7,17 +7,19 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./redirect-detail.component.scss']
 })
 export class RedirectDetailComponent implements OnInit {
-  linkPage:string| null = null;
+  linkPage: string | null = null;
 
-  constructor(private activatenRoute: ActivatedRoute,private router:Router) {
+  constructor(private activatenRoute: ActivatedRoute, private router: Router) {
 
   }
+
   getLinkPage() {
     this.activatenRoute.paramMap.subscribe(paramMap => {
       this.linkPage = paramMap.get('link');
       console.log(this.linkPage);
     });
   }
+
   ngOnInit(): void {
     this.getLinkPage();
     this.router.navigate(['chi-tiet/', this.linkPage])

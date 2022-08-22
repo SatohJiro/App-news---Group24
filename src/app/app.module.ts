@@ -99,22 +99,22 @@ import {VipNewsComponent} from './components/home/vip-news/vip-news.component';
 
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
-import { TrongNuocComponent } from './components/trong-nuoc/trong-nuoc.component';
+import {TrongNuocComponent} from './components/trong-nuoc/trong-nuoc.component';
 
 import {OAuthModule} from "angular-oauth2-oidc";
 import {HttpClientModule} from "@angular/common/http";
 import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {ShareModule} from "ngx-sharebuttons";
-import { RedirectDetailComponent } from './components/redirect-detail/redirect-detail.component';
+import {RedirectDetailComponent} from './components/redirect-detail/redirect-detail.component';
 import {
   FacebookLoginProvider,
   GoogleLoginProvider,
   SocialAuthService,
   SocialAuthServiceConfig, SocialLoginModule
 } from "@abacritt/angularx-social-login";
-import { SearchComponent } from './components/search/search.component';
-
+import {SearchComponent} from './components/search/search.component';
+import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
 
 
 @NgModule({
@@ -153,6 +153,7 @@ import { SearchComponent } from './components/search/search.component';
     ErrorComponent,
     RedirectDetailComponent,
     TrongNuocComponent,
+    CatNewsPageComponent,
     SearchComponent,
 
   ],
@@ -215,7 +216,7 @@ import { SearchComponent } from './components/search/search.component';
 
 
   ],
-  providers: [ MdbCookiesManagementService, MdbStorageManagementService, ServerService, {
+  providers: [MdbCookiesManagementService, MdbStorageManagementService, ServerService, {
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
@@ -229,7 +230,7 @@ import { SearchComponent } from './components/search/search.component';
           provider: new GoogleLoginProvider("673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com")
         },
       ],
-      onError:(err)=> {
+      onError: (err) => {
         console.log(err)
       }
     } as SocialAuthServiceConfig

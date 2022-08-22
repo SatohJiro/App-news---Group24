@@ -1,5 +1,4 @@
-
-import {Component, Inject, INJECTOR, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 
 
@@ -10,7 +9,7 @@ import {DOCUMENT} from "@angular/common";
 })
 
 export class NewsDetailComponent implements OnInit {
-  @Input() url:string="";
+  @Input() url: string = "";
   @Input() data: any[] = [];
   @Input() detailLoading: boolean = true;
 
@@ -25,13 +24,14 @@ export class NewsDetailComponent implements OnInit {
       }, 6000);
     }
   }
-  playAudio(src:string) {
+
+  playAudio(src: string) {
     // const audio = new Audio(src);
     const audio = document.createElement('audio');
-    audio.setAttribute('src',src);
+    audio.setAttribute('src', src);
     audio.controls = true;
     // @ts-ignore
-    document.querySelector('.audio').insertBefore(audio,document.querySelector('.audio').children[0]);
+    document.querySelector('.audio').insertBefore(audio, document.querySelector('.audio').children[0]);
     // @ts-ignore
     document.querySelector('.audio__btn').classList.add('d-none');
     audio.play();

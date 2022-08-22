@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import * as cheerio from "cheerio";
 import {delay, Observable, of, throwError} from "rxjs";
 import {INews} from "../news/news";
@@ -13,7 +13,8 @@ export class BoxNewsDetailService {
   corsAnywhere = 'https://mycorsproxy01.herokuapp.com';
   private listHomeNews: INews[] = []
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getMostViewed(): any[] {
     const ajax = new XMLHttpRequest();

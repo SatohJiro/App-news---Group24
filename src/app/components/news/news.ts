@@ -1,12 +1,12 @@
-export interface  INews {
+export interface INews {
   id?: string,
   title?: string,
   link?: string,
-  guid?:string,
+  guid?: string,
   description?: {
     imgUrl?: string,
-    alt?:string,
+    alt?: string,
     text?: string,
   },
-  pubDate?:string
+  pubDate?: string
 }

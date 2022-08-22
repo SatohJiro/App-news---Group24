@@ -1,20 +1,19 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import * as cheerio from "cheerio";
-
-import * as axios from 'axios';
-import {delay, Observable, of, throwError} from "rxjs";
+import {delay, Observable, of} from "rxjs";
 import {INews} from "../components/news/news";
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class ServerService {
   server = 'https://nld.com.vn';
-  option ='tin-moi-nhat.rss';
-  corsAnywhere ='https://mycorsproxy01.herokuapp.com';
+  option = 'tin-moi-nhat.rss';
+  corsAnywhere = 'https://mycorsproxy01.herokuapp.com';
   listNews: INews[] = [];
-  data:any[] = [];
+  data: any[] = [];
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,9 +21,11 @@ export class ServerService {
       'Content-Type': 'application/json'
     })
   }
+
   constructor(private httpClient: HttpClient) {
   }
-  getTopics():Observable<any>{
+
+  getTopics(): Observable<any> {
     const ajax = new XMLHttpRequest();
     let topics: any[] = [];
     // ajax.timeout = 3000;
@@ -43,7 +44,7 @@ export class ServerService {
             id: i,
             title: $(topic).attr('title'),
             link: $(topic).attr('href'),
-            icon: $(topic).find('i') ? $(topic).find('i').attr('class'): $(topic).find('img').attr('src')
+            icon: $(topic).find('i') ? $(topic).find('i').attr('class') : $(topic).find('img').attr('src')
           });
         })
       }
@@ -149,50 +150,51 @@ export class ServerService {
 //     }
 //     return data;
 //   }
-  getDataDetail(urlInput:String):string[] {
+  getDataDetail(urlInput: String): string[] {
     const ajax = new XMLHttpRequest();
-    let topics:any[] = [];
+    let topics: any[] = [];
     // ajax.timeout = 3000;
-    const url= `${this.corsAnywhere}/${urlInput}`;
+    const url = `${this.corsAnywhere}/${urlInput}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
     // @ts-ignore
-    ajax.onreadystatechange = function() {
+    ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.nld-detail > .w520').each((i,title)=> {
+        $('.nld-detail > .w520').each((i, title) => {
           // @ts-ignore
           topics.push({
-            id:i,
+            id: i,
             title: $(title).find('h1').text(),
             title_detail: $(title).find("h2").text(),
             content: $(title).find("div .contentbody .content-news-detail1").html(),
-            author:$(title).find("div .author").text(),
+            author: $(title).find("div .author").text(),
           });
         });
       }
     }
     return topics;
   }
-  getDataHeaderDetail(urlInput:String):string[] {
+
+  getDataHeaderDetail(urlInput: String): string[] {
     const ajax = new XMLHttpRequest();
-    let topics:any[] = [];
+    let topics: any[] = [];
     // ajax.timeout = 3000;
-    const url= `${this.corsAnywhere}/${urlInput}`;
+    const url = `${this.corsAnywhere}/${urlInput}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
     // @ts-ignore
-    ajax.onreadystatechange = function() {
+    ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.nld-detail  > .sub-cate-detail > li > a').each((i,title)=> {
+        $('.nld-detail  > .sub-cate-detail > li > a').each((i, title) => {
           // @ts-ignore
           topics.push({
-            id:i,
+            id: i,
             title: $(title).text(),
           });
         });
@@ -201,23 +203,23 @@ export class ServerService {
     return topics;
   }
 
-  getDataRelatedDetail(urlInput:String):string[] {
+  getDataRelatedDetail(urlInput: String): string[] {
     const ajax = new XMLHttpRequest();
-    let topics:any[] = [];
+    let topics: any[] = [];
     // ajax.timeout = 3000;
-    const url= `${this.corsAnywhere}/${urlInput}`;
+    const url = `${this.corsAnywhere}/${urlInput}`;
     const asyns = true;
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
     // @ts-ignore
-    ajax.onreadystatechange = function() {
+    ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
-        $('.nld-detail  > .boxtinnoibat > ul > li').each((i,title)=> {
+        $('.nld-detail  > .boxtinnoibat > ul > li').each((i, title) => {
           // @ts-ignore
           topics.push({
-            id:i,
+            id: i,
             image: $(title).find("a img").attr("src"),
             description: $(title).find("a:nth-child(2)").text(),
           });

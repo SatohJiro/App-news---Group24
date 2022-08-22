@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ServerService} from "../../services/server.service";
 
 @Component({
@@ -8,7 +8,8 @@ import {ServerService} from "../../services/server.service";
 })
 export class AdvertismentComponent implements OnInit {
 
-  constructor(private http: ServerService) { }
+  constructor(private http: ServerService) {
+  }
 
   ngOnInit(): void {
 
