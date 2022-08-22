@@ -7,10 +7,10 @@
           <ul class="list-news-item" *ngFor="let item of data">
             <li>
               <div class="content-item">
-                <a [routerLink]="['chi-tiet/',item.link]"><img
+                <a [routerLink]="['/chi-tiet',item.link]"><img
                   [src]="item.urlImg"
                   alt=""></a>
-                <h5><a [routerLink]="['chi-tiet/',item.link]">{{item.title}}</a></h5>
+                <h5><a [routerLink]="['/chi-tiet',item.link]">{{item.title}}</a></h5>
               </div>
             </li>
           </ul>
@@ -29,11 +29,11 @@
             <li>
               <div class="content-item">
                 <ng-container *ngIf="first">
-                  <a [routerLink]="['chi-tiet/',item.link]"><img
+                  <a [routerLink]="['/chi-tiet',item.link]"><img
                     [src]="item.urlImg"
                     alt=""></a>
                 </ng-container>
-                <h5><a [routerLink]="['chi-tiet/',item.link]">{{item.title}}</a></h5>
+                <h5><a [routerLink]="['/chi-tiet',item.link]">{{item.title}}</a></h5>
               </div>
             </li>
           </ul>
