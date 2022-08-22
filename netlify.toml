@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/ngft-standalone-netlify"
+  publish = "dist/Nhom24-AppTinTuc_FE_Thu2Ca4_2022"
   command = "ng build -c=production"
 [[redirects]]
   from = "/*"
