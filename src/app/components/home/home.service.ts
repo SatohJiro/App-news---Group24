@@ -441,7 +441,7 @@ export class HomeService {
             id: i,
             title: $(item).find('a').attr('title'),
             // @ts-ignore
-            link: change($(item).find('a').attr('href')),
+            link: change($(item).find('a').attr('href')?.trim()),
             description: {
               imgUrl: $(item).find('a > img').attr('src'),
               alt: $(item).find('a > img').attr('alt')

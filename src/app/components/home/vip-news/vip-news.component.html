@@ -3,7 +3,7 @@
     <div class="paytit"><h3>Dành cho bạn đọc VIP</h3></div>
     <ul class="vip-news__list">
       <li class="vip-news__item" *ngFor="let news of listVipNews.slice(0,4)">
-        <a [routerLink]="['/chi-tiet/vip',news.title]" class="vip-news__link">
+        <a [routerLink]="['/chi-tiet/vip',news.link]" class="vip-news__link">
           <img [src]="news.description?.imgUrl" [alt]="news.description?.alt" class="vip-news__img">
           <p class="vip-news__title">{{news.title}}</p>
         </a>
