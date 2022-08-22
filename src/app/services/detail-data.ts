@@ -104,6 +104,9 @@ export class DetailData implements Idata {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -113,7 +116,8 @@ export class DetailData implements Idata {
           data.push({
             id: i,
             title: $(item).attr('title'),
-            link: $(item).attr('href'),
+            // @ts-ignore
+            link:change($(item).attr('href')) ,
             urlImg: $(item).find('img').attr('src') ? $(item).find('img').attr('src') : $(item).find('video').attr('poster')
           });
         })
@@ -132,6 +136,9 @@ export class DetailData implements Idata {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+       return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -141,12 +148,22 @@ export class DetailData implements Idata {
           data.push({
             id: i,
             title: $(item).find('a').attr('title'),
-            link: $(item).find('a').attr('href'),
+            // @ts-ignore
+            link: change($(item).find('a').attr('href')) ,
             urlImg: $(item).find('a > img').attr('src')
           });
         })
       }
     }
     return data;
+  }
+
+  changeUrlPattern(url: string): string {
+    let pattern: string = "https://nld.com.vn";
+    if (url.startsWith(pattern)) {
+      return url.replace(pattern, "");
+    }else{
+      return url;
+    }
   }
 }

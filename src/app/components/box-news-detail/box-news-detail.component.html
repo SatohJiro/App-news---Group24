@@ -14,12 +14,12 @@
         <ng-template #mostViewLoaded></ng-template>
         <ul class="box__list" *ngFor="let item of dataMostView">
           <li class="box__item">
-            <a [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" class="box__link">
+            <a [routerLink]="['/mostView/',item.link]" class="box__link">
               <img
                 [src]="item.urlImg"
                 alt="" class="box__image">
             </a>
-            <a [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" class="box__desc--title"
+            <a [routerLink]="['/mostView/',item.link]" class="box__desc--title"
                [title]="item.title">
               {{item.title}}
             </a>
@@ -29,10 +29,10 @@
     </div>
   </div>
   <app-related-news [data]="dataRelated"></app-related-news>
+  <ng-container *ngIf="loggedIn">
   <div class="comment p-4">
     <h4 class="comment__title">Bình luận</h4>
     <div class="form-out p-4line p-4">
-
       <textarea class="form-control" id="textArea_comment" rows="4"></textarea>
       <label class="form-label" for="textArea_comment">Message</label>
       <div class="comment__notice">
@@ -45,9 +45,7 @@
             <div class="reader mt-4">
               <div class="comment-box__list-reader">
                 <div class="comment-box__left">
-                  <div class="reader__avt">
-                    T
-                  </div>
+                    <img [src]="comment['linkAvatar']" class="reader__avt">
                 </div>
                 <div class="comment-box__right">
                   <div class="reader__info">
@@ -73,4 +71,5 @@
       </ng-container>
     </div>
   </div>
+  </ng-container>
 </div>
