@@ -23,6 +23,9 @@ export class CatNewsPageService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     const getImg = (text: string) => {
       const $ = cheerio.load(text, {xmlMode: true});
@@ -35,7 +38,7 @@ export class CatNewsPageService {
           data.push({
             id: i,
             title: $(item).find('title').text().trim(),
-            link: $(item).find('link').text().trim(),
+            link: change($(item).find('link').text().trim()) ,
             guid: $(item).find('guid').text().trim(),
             description: {
               // @ts-ignore
@@ -61,6 +64,9 @@ export class CatNewsPageService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -70,7 +76,8 @@ export class CatNewsPageService {
           data.push({
             id: i,
             title: $(item).find(" a").attr("title"),
-            link: $(item).find(" a").attr('href'),
+            // @ts-ignore
+            link: change($(item).find(" a").attr('href')),
             urlImg: $(item).find(' a img').attr('src')
           });
         })
@@ -90,6 +97,9 @@ export class CatNewsPageService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -99,7 +109,8 @@ export class CatNewsPageService {
           data.push({
             id: i,
             title: $(item).find(" a").attr("title"),
-            link: $(item).find(" a").attr('href'),
+            // @ts-ignore
+            link: change($(item).find(" a").attr('href')) ,
             urlImg: $(item).find(' a img').attr('src'),
           });
         })
@@ -119,17 +130,29 @@ export class CatNewsPageService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const $ = cheerio.load(this.responseText);
         data.title =  $('.box-cate-focus').find(" .news-info h3 a").attr("title")
-        data.link = 'https://nld.com.vn'+ $('.box-cate-focus').find(" .news-info h3 a").attr("href")
+        // @ts-ignore
+        data.link =change($('.box-cate-focus').find(" .news-info h3 a").attr("href")),
         data.content =  $('.box-cate-focus').find(" .news-info p").text()
         data.urlImg =  $('.box-cate-focus').find("a img").attr("src")
         data.alt= $('.box-cate-focus').find("a img").attr("alt")
       }
     }
     return data;
+  }
+  changeUrlPattern(url: string): string {
+    let pattern: string = "https://nld.com.vn";
+    if (url.startsWith(pattern)) {
+      return url.replace(pattern, "");
+    }else{
+      return url;
+    }
   }
 }

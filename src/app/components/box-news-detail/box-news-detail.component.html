@@ -14,12 +14,12 @@
         <ng-template #mostViewLoaded></ng-template>
         <ul class="box__list" *ngFor="let item of dataMostView">
           <li class="box__item">
-            <a [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" class="box__link">
+            <a [routerLink]="['/mostView/',item.link]" class="box__link">
               <img
                 [src]="item.urlImg"
                 alt="" class="box__image">
             </a>
-            <a [routerLink]="['/mostView/','https://nld.com.vn'+item.link]" class="box__desc--title"
+            <a [routerLink]="['/mostView/',item.link]" class="box__desc--title"
                [title]="item.title">
               {{item.title}}
             </a>

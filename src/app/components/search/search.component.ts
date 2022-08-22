@@ -17,13 +17,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateRoute.queryParamMap.subscribe((query)=> {
-      const {getListResult} = this.searchService;
       //@ts-ignore
       this.searchService.getListResult(query.get('keywords')).subscribe(data => this.listResult = data);
     })
-    // this.activateRoute.queryParamMap.pipe(map((querys)=> querys.get('keywords')),
-    //   // @ts-ignore
-    // switchMap((keywords)=> console.log(keywords)))
-    //   // switchMap((keywords)=> this.searchService.getListResult(keywords).subscribe(data => this.listResult = data)))
   }
 }

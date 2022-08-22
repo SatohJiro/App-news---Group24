@@ -27,6 +27,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     const data: any[] = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -36,7 +39,8 @@ export class HomeService {
           data.push({
             id: $(news).attr('data-newsid'),
             title: $(news).attr("title"),
-            link: $(news).attr("href"),
+            // @ts-ignore
+            link: change($(news).attr("href")),
           });
         })
       }
@@ -52,6 +56,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     const getImg = (text: string) => {
       const $ = cheerio.load(text, {xmlMode: true});
@@ -64,7 +71,7 @@ export class HomeService {
           data.push({
             id: i,
             title: $(item).find('title').text().trim(),
-            link: $(item).find('link').text().trim(),
+            link: change($(item).find('link').text().trim()),
             guid: $(item).find('guid').text().trim(),
             description: {
               // @ts-ignore
@@ -88,6 +95,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     const data: any[] = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -97,7 +107,8 @@ export class HomeService {
           data.push({
             id: $(news).attr('data-newsid'),
             title: $(news).attr("title"),
-            link: $(news).attr("href"),
+            // @ts-ignore
+            link:change($(news).attr("href")),
             description: {
               imgUrl: $(news).find('img').attr('src'),
               alt: $(news).find('img').attr('alt'),
@@ -116,6 +127,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     const data: any[] = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -125,16 +139,19 @@ export class HomeService {
           data.push({
             id: $(news).attr('data-newsid'),
             title: $(news).find('.img220x139').attr("title"),
-            link: $(news).find('.img220x139').attr("href"),
+            // @ts-ignore
+            link:change($(news).find('.img220x139').attr("href")),
             description: {
               imgUrl: $(news).find('.img220x139 > img').attr('src')? $(news).find('.img220x139 > img').attr('src'): $(news).find('.img220x139 > video').attr('poster'),
               alt: $(news).find('.img220x139 > img').attr('alt'),
             },
             infor: {
               title1: $(news).find('.news-info ul li:first-of-type > a').attr('title'),
-              link1: $(news).find('.news-info ul li:first-of-type > a').attr('href'),
+              // @ts-ignore
+              link1:change($(news).find('.news-info ul li:first-of-type > a').attr('href')),
               title2: $(news).find('.news-info ul li:last-of-type > a').attr('title'),
-              link2: $(news).find('.news-info ul li:last-of-type > a').attr('href'),
+              // @ts-ignore
+              link2: change($(news).find('.news-info ul li:last-of-type > a').attr('href')),
             }
           });
         })
@@ -150,6 +167,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     let data: any[] = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -159,7 +179,8 @@ export class HomeService {
           data.push({
             id: i + '',
             title: $(news).attr("title"),
-            link: $(news).attr("href"),
+            // @ts-ignore
+            link: change($(news).attr("href")),
             description: {
               imgUrl: $(news).find('img').attr('src'),
               alt: $(news).find('img').attr('alt'),
@@ -178,6 +199,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     let data: any = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -187,7 +211,8 @@ export class HomeService {
           data.push({
             id: i + '',
             title: $(news).attr("title"),
-            link: $(news).attr("href"),
+            // @ts-ignore
+            link:change($(news).attr("href")) ,
             description: {
               imgUrl: $(news).find('img').attr('src'),
               alt: $(news).find('img').attr('alt'),
@@ -206,6 +231,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     let data: any = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -215,7 +243,8 @@ export class HomeService {
           data.push({
             id: i + '',
             title: $(news).find('.box-hom-ngang-sub-content-thumb').attr("title"),
-            link: $(news).find('.box-hom-ngang-sub-content-thumb').attr("href"),
+            // @ts-ignore
+            link: change($(news).find('.box-hom-ngang-sub-content-thumb').attr("href")),
             description: {
               imgUrl: $(news).find('img').attr('src'),
               alt: $(news).find('img').attr('alt'),
@@ -234,6 +263,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     let data: any = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -243,7 +275,8 @@ export class HomeService {
           data.push({
             id: i + '',
             title: $(news).find('.box-hom-ngang-sub-content-thumb').attr("title"),
-            link: $(news).find('.box-hom-ngang-sub-content-thumb').attr("href"),
+            // @ts-ignore
+            link:change($(news).find('.box-hom-ngang-sub-content-thumb').attr("href")) ,
             description: {
               imgUrl: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('src'),
               alt: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('alt'),
@@ -262,6 +295,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     let data: any = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -271,7 +307,8 @@ export class HomeService {
           data.push({
             id: i + '',
             title: $(news).find('.box-hom-ngang-sub-content-thumb').attr("title"),
-            link: $(news).find('.box-hom-ngang-sub-content-thumb').attr("href"),
+            // @ts-ignore
+            link: change($(news).find('.box-hom-ngang-sub-content-thumb').attr("href")),
             description: {
               imgUrl: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('src'),
               alt: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('alt'),
@@ -290,6 +327,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     let data: any = [];
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -299,16 +339,19 @@ export class HomeService {
           data.push({
             id: $(news).attr('data-newsid'),
             title: $(news).find('.img220x139').attr("title"),
-            link: $(news).find('.img220x139').attr("href"),
+            // @ts-ignore
+            link: change($(news).find('.img220x139').attr("href")),
             description: {
               imgUrl: $(news).find('.img220x139 > img').attr('src')? $(news).find('.img220x139 > img').attr('src'): $(news).find('.img220x139 > video').attr('poster'),
               alt: $(news).find('.img220x139 > img').attr('alt'),
             },
             infor: {
               title1: $(news).find('.news-info ul li:first-of-type > a').attr('title'),
-              link1: $(news).find('.news-info ul li:first-of-type > a').attr('href'),
+              // @ts-ignore
+              link1: change($(news).find('.news-info ul li:first-of-type > a').attr('href')),
               title2: $(news).find('.news-info ul li:last-of-type > a').attr('title'),
-              link2: $(news).find('.news-info ul li:last-of-type > a').attr('href'),
+              // @ts-ignore
+              link2: change($(news).find('.news-info ul li:last-of-type > a').attr('href')),
             }
           });
         })
@@ -375,101 +418,6 @@ export class HomeService {
   }
 
 
-//  home - tinnong
-// @ts-ignore
-  getHotNewsData(): unknown[] {
-    const ajax = new XMLHttpRequest();
-    let data: any[] = [];
-    // ajax.timeout = 3000;
-    const url = `${this.corsAnywhere}/${this.server}`;
-    const asyns = true;
-    const method = "GET";
-    ajax.open(method, url, asyns);
-    ajax.send();
-    // @ts-ignore
-    ajax.onreadystatechange = function () {
-      if (this.readyState === 4 && this.status === 200) {
-        const $ = cheerio.load(this.responseText);
-        $('#content-newest .news-thumb-title > a').each((i, item) => {
-          // @ts-ignore
-          data.push({
-            id: i,
-            title: $(item).attr('title'),
-            link: $(item).attr('href'),
-          });
-        })
-      }
-      return data;
-    }
-  }
-
-//  home - tinmoinhat rss
-  getData(option: string): any[] {
-    this.option = option;
-    let data: any[] = [];
-    const ajax = new XMLHttpRequest();
-    const url = `${this.corsAnywhere}/${this.server}/${this.option}`;
-    const asyns = true;
-    const method = "GET";
-    ajax.open(method, url, asyns);
-    ajax.send();
-    // @ts-ignore
-    const getImg = (text: string) => {
-      const $ = cheerio.load(text, {xmlMode: true});
-      return $('img');
-    }
-    ajax.onreadystatechange = function () {
-      if (this.readyState === 4 && this.status === 200) {
-        const $ = cheerio.load(this.responseText, {xmlMode: true});
-        $('item').each((i, item) => {
-          data.push({
-            id: i,
-            title: $(item).find('title').text().trim(),
-            link: $(item).find('link').text().trim(),
-            guid: $(item).find('guid').text().trim(),
-            description: {
-              // @ts-ignore
-              url: getImg($(item).find('description').text().trim()).attr("src"),
-              alt: getImg($(item).find('description').text().trim()).attr("alt"),
-              // @ts-ignore
-              text: $(item).find('description').text().slice($(item).find('description').text().lastIndexOf(">") + 1).trim(),
-            },
-            pubDate: $(item).find('pubDate').text().trim(),
-          })
-        })
-      }
-    }
-    return data;
-  }
-
-  // getListVipNews(): any[] {
-  //   const ajax = new XMLHttpRequest();
-  //   let data: any[] = [];
-  //   // ajax.timeout = 3000;
-  //   const url = `${this.corsAnywhere}/${this.server}`;
-  //   const asyns = true;
-  //   const method = "GET";
-  //   ajax.open(method, url, asyns);
-  //   ajax.send();
-  //   // @ts-ignore
-  //   ajax.onreadystatechange = function () {
-  //     if (this.readyState === 4 && this.status === 200) {
-  //       const $ = cheerio.load(this.responseText);
-  //       $('.boxcatepay ul li').each((i, item) => {
-  //         // @ts-ignore
-  //         data.push({
-  //           id: i,
-  //           title: $(item).find('a').attr('title'),
-  //           link: $(item).find('a').attr('href'),
-  //           urlImg: $(item).find('a > img').attr('src')
-  //         });
-  //       })
-  //       // console.log(data);
-  //     }
-  //   }
-  //   return data;
-  // }
-
 
   getListVipNews(): Observable<INews[]> {
     const ajax = new XMLHttpRequest();
@@ -480,6 +428,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -489,7 +440,8 @@ export class HomeService {
           data.push({
             id: i,
             title: $(item).find('a').attr('title'),
-            link: $(item).find('a').attr('href'),
+            // @ts-ignore
+            link: change($(item).find('a').attr('href')),
             description: {
               imgUrl: $(item).find('a > img').attr('src'),
               alt: $(item).find('a > img').attr('alt')
@@ -511,6 +463,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -520,7 +475,8 @@ export class HomeService {
           data.push({
             id: i,
             title: $(item).attr('title'),
-            link: $(item).attr('href'),
+            // @ts-ignore
+            link:change($(item).attr('href')) ,
             urlImg: $(item).find('img').attr('src') ? $(item).find('img').attr('src') : $(item).find('video').attr('poster')
           });
         })
@@ -538,6 +494,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -546,10 +505,10 @@ export class HomeService {
         data.mainNews = {
           id: "main",
           title: $(mainNews).find('a').attr('title'),
-          link: $(mainNews).find('a').attr('href'),
+          // @ts-ignore
+          link:change($(mainNews).find('a').attr('href')) ,
           urlImg: $(mainNews).find('a > img').attr('src') ? $(mainNews).find('a > img').attr('src') : $(mainNews).find('a > video').attr('poster')
         }
-
         data.listSubNews = []
         $('.box-media .news-item').each((i, item) => {
           // @ts-ignore
@@ -557,7 +516,8 @@ export class HomeService {
             {
               id: i,
               title: $(item).find('a').attr('title'),
-              link: $(item).find('a').attr('href'),
+              // @ts-ignore
+              link: change($(item).find('a').attr('href')),
               urlImg: $(item).find('a > img').attr('src') ? $(item).find('a > img').attr('src') : $(item).find('a > video').attr('poster')
             }
           )
@@ -576,6 +536,9 @@ export class HomeService {
     const method = "GET";
     ajax.open(method, url, asyns);
     ajax.send();
+    const change=(temp:string)=>{
+      return this.changeUrlPattern(temp);
+    }
     // @ts-ignore
     ajax.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -587,12 +550,21 @@ export class HomeService {
             header: $(item).find(".box-hom-ngang-sub-title > i").css('background-image'),
             headerLink: $(item).find(".box-hom-ngang-sub-title").attr("href"),
             title: $(item).find(".box-hom-ngang-sub-content-title").attr("title"),
-            link: $(item).attr('href'),
+            // @ts-ignore
+            link: change($(item).attr('href')),
             url: $(item).find(".box-hom-ngang-sub-content-thumb").find('img').attr('src')
           });
         })
       }
     }
     return data;
+  }
+  changeUrlPattern(url: string): string {
+    let pattern: string = "https://nld.com.vn";
+    if (url.startsWith(pattern)) {
+      return url.replace(pattern, "");
+    }else{
+      return url;
+    }
   }
 }

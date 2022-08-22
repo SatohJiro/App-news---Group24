@@ -55,7 +55,7 @@
                       <ng-template mdbTabContent>
                         <ul class="list-news-thumb__list">
                           <li class="list-news-thumb__item" *ngFor="let news of dataHome.listHotNews">
-                            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="list-news-thumb__link"
+                            <a [routerLink]="['/chi-tiet',news.link]" class="list-news-thumb__link"
                                [title]="news.title">{{news.title}}</a>
                           </li>
                         </ul>
@@ -97,7 +97,7 @@
       <div class="box-content__body">
         <ul class="news__list">
           <li class="news__item" *ngFor="let news of dataHome.boxNewsList1">
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="news__link">
+            <a [routerLink]="['/chi-tiet',news.link]" class="news__link">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
               <div class="news__info">
                 <h4 class="news__title">{{news.title}}</h4>
@@ -118,7 +118,7 @@
                 <a href="" class="cate__view-all">Xem tất cả</a>
               </div>
               <div class="" *ngFor="let news of dataHome.noithang">
-                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="cate__content">
+                <a [routerLink]="['/chi-tiet',news.link]" class="cate__content">
                   <img [src]="news.description.imgUrl" [alt]="news.description.alt" class="cate__img">
                   <a href="" class="cate__link">{{news.title}}</a>
                 </a>
@@ -132,7 +132,7 @@
                 <a href="" class="cate__view-all">Xem tất cả</a>
               </div>
               <div class="" *ngFor="let news of dataHome.docquyen">
-                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="cate__content">
+                <a [routerLink]="['/chi-tiet',news.link]" class="cate__content">
                   <img [src]="news.description.imgUrl" [alt]="news.description.alt" class="cate__img">
                   <a href="" class="cate__link">{{news.title}}</a>
                 </a>
@@ -146,7 +146,7 @@
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/hoi-nong-dap-nhanh-ico-web.png"
                                        alt=""></a>
           <div class="" *ngFor="let news of dataHome.hoinongdapnhanh">
-            <a class="cate__content" [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">
+            <a class="cate__content" [routerLink]="['/chi-tiet',news.link]">
               <img [src]="news.description.imgUrl" [alt]="news.description.alt">
               <span class="cate__link">{{news.title}}</span>
             </a>
@@ -156,7 +156,7 @@
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/truy-vet-mang-xa-hoi-ico-web.png"
                                        alt=""></a>
           <div class="" *ngFor="let news of dataHome.truyvetmangxahoi">
-            <a class="cate__content" [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">
+            <a class="cate__content" [routerLink]="['/chi-tiet',news.link]">
               <img [src]="news.description.imgUrl" [alt]="news.description.alt">
               <span class="cate__link">{{news.title}}</span>
             </a>
@@ -165,7 +165,7 @@
         <div class="cate__item">
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/goc-nhin-ico-web.png" alt=""></a>
           <div class="" *ngFor="let news of dataHome.gocnhin">
-            <a class="cate__content" [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">
+            <a class="cate__content" [routerLink]="['/chi-tiet',news.link]">
               <img [src]="news.description.imgUrl" [alt]="news.description.alt">
               <span class="cate__link">{{news.title}}</span>
             </a>
@@ -177,7 +177,7 @@
         <ul class="news__list">
           <h3 class="news__label">Xem nhiều</h3>
           <li class="news__item" *ngFor="let news of dataHome.xemnhieu">
-            <a href="" class="news__link" [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">
+            <a href="" class="news__link" [routerLink]="['/chi-tiet',news.link]">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
               <div class="news__info">
                 <h4 class="news__title">{{news.title}}</h4>
