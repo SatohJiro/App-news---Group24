@@ -16,6 +16,7 @@ import {SearchComponent} from "./components/search/search.component";
 import {RedirectCategoryComponent} from "./components/redirect-category/redirect-category.component";
 
 
+
 const routes: Routes = [
   {path: '', redirectTo:'trang-chu',pathMatch:'full'},
   {path: 'trang-chu', component:HomeComponent},
@@ -26,22 +27,9 @@ const routes: Routes = [
   {path: 'tim-kiem', component: SearchComponent},
 
 
+
   {path: 'the-loai-redirect/:RSS', component:RedirectCategoryComponent},
   {path: 'the-loai/:RSS', component:CatNewsPageComponent},
-  // {path: 'quoc-te/:RSS', component:CatNewsPageComponent},
-  // {path: 'cong-doan/:RSS', component:CatNewsPageComponent},
-  // {path: 'ban-doc/:RSS', component:CatNewsPageComponent},
-  // {path: 'kinh-te/:RSS', component:CatNewsPageComponent},
-  // {path: 'suc-khoe/:RSS', component:CatNewsPageComponent},
-  // {path: 'giao-duc/:RSS', component:CatNewsPageComponent},
-  // {path: 'phap-luat/:RSS', component:CatNewsPageComponent},
-  // {path: 'van-nghe/:RSS', component:CatNewsPageComponent},
-  // {path: 'giai-tri/:RSS', component:CatNewsPageComponent},
-  // {path: 'the-thao/:RSS', component:CatNewsPageComponent},
-  // {path: 'cong-nghe/:RSS', component:CatNewsPageComponent},
-  // {path: 'du-lich-xanh/:RSS', component:CatNewsPageComponent},
-  // {path: 'phu-nu/:RSS', component:CatNewsPageComponent},
-  // {path: 'dia-oc/:RSS', component:CatNewsPageComponent},
 
   {path: '**', component:ErrorComponent},
 
