@@ -1,4 +1,4 @@
-import { DetailData } from './detail-data';
+import {DetailData} from './detail-data';
 
 describe('DetailData', () => {
   it('should create an instance', () => {

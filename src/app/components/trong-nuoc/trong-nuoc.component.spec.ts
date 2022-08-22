@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TrongNuocComponent } from './trong-nuoc.component';
+import {TrongNuocComponent} from './trong-nuoc.component';
 
 describe('TrongNuocComponent', () => {
   let component: TrongNuocComponent;
@@ -8,9 +8,9 @@ describe('TrongNuocComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrongNuocComponent ]
+      declarations: [TrongNuocComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,37 +1,45 @@
 .vietlott {
   width: 258px;
+
   &__box {
-    background-image: linear-gradient(to top,transparent,rgba(240,240,240,.7));
+    background-image: linear-gradient(to top, transparent, rgba(240, 240, 240, .7));
     padding: 20px;
   }
+
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
   }
+
   &__title {
     font-size: 12px;
     margin: 0;
   }
+
   &__img {
     width: 80px;
     height: 20px;
   }
+
   &__img img {
     max-width: 100%;
     object-fit: cover;
   }
+
   &__first-number {
     display: flex;
     gap: 6px;
     margin-top: 10px;
   }
+
   &__time {
     font-size: 12px;
     font-weight: bold;
     color: #333;
   }
+
   &__first-number--item {
     display: flex;
     justify-content: center;
@@ -44,14 +52,17 @@
     border: 1px solid #bfbfbf;
     color: #f00;
   }
-  &__value > *{
+
+  &__value > * {
     color: #666;
   }
+
   &__value-text {
     color: #f00;
     font-size: 11px;
     font-weight: bold;
   }
+
   &__link {
     font-weight: bold;
   }

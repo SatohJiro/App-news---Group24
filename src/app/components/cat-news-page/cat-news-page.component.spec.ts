@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CatNewsPageComponent } from './cat-news-page.component';
+import {CatNewsPageComponent} from './cat-news-page.component';
 
 describe('CatNewsPageComponent', () => {
   let component: CatNewsPageComponent;
@@ -8,9 +8,9 @@ describe('CatNewsPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CatNewsPageComponent ]
+      declarations: [CatNewsPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CatNewsPageComponent);
     component = fixture.componentInstance;

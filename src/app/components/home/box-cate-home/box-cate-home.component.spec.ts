@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BoxCateHomeComponent } from './box-cate-home.component';
+import {BoxCateHomeComponent} from './box-cate-home.component';
 
 describe('BoxCateHomeComponent', () => {
   let component: BoxCateHomeComponent;
@@ -8,9 +8,9 @@ describe('BoxCateHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxCateHomeComponent ]
+      declarations: [BoxCateHomeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

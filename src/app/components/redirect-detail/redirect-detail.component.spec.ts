@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RedirectDetailComponent } from './redirect-detail.component';
+import {RedirectDetailComponent} from './redirect-detail.component';
 
 describe('RedirectDetailComponent', () => {
   let component: RedirectDetailComponent;
@@ -8,9 +8,9 @@ describe('RedirectDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RedirectDetailComponent ]
+      declarations: [RedirectDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

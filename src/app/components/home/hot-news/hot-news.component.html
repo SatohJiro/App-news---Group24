@@ -1,52 +1,52 @@
 <div class="container">
   <section class="hot-news">
-      <div class="hot-news__content">
-        <div class="hot-news__content--left">
-          <div class="main-news">
-            <div class="main-news__content">
-              <a href="" class="">
-                <img [src]="data[0].description.url" [alt]="data[0].description.alt">
+    <div class="hot-news__content">
+      <div class="hot-news__content--left">
+        <div class="main-news">
+          <div class="main-news__content">
+            <a href="" class="">
+              <img [src]="data[0].description.url" [alt]="data[0].description.alt">
+            </a>
+            <h3 class="main-news__title">
+              <a [routerLink]="['/chi-tiet',data[0].id]"
+                 lass="main-news__link">{{data[0].title}}
               </a>
-              <h3 class="main-news__title">
-                <a [routerLink]="['/chi-tiet',data[0].id]"
-                   lass="main-news__link">{{data[0].title}}
-                </a>
-              </h3>
-              <p class="main-news__sapo">
-                {{data[0].description.text}}
-              </p>
-            </div>
-          </div>
-          <div class="list-news-thumb">
-            <mdb-tabs [justified]="true" [style]="'padding-bottom:20px'">
-              <mdb-tab title="Tin nóng">
-                <ng-template mdbTabContent>
-                  <ul class="list-news-thumb__list">
-                    <li class="list-news-thumb__item" *ngFor="let item of data">
-                      <a [routerLink]="['/chi-tiet',item.link]" class="list-news-thumb__link"
-                         [title]="item.title">{{item.title}}</a>
-                    </li>
-                  </ul>
-                </ng-template>
-              </mdb-tab>
-              <mdb-tab title="Tin mới">
-                <ng-template mdbTabContent>
-                  <ul class="list-news-thumb__list">
-                    <li class="list-news-thumb__item" *ngFor="let item of hotNewsData">
-                      <a [routerLink]="['/chi-tiet',item.link]" class="list-news-thumb__link"
-                         [title]="item.title">{{item.title}}</a>
-                    </li>
-                  </ul>
-                </ng-template>
-              </mdb-tab>
-            </mdb-tabs>
+            </h3>
+            <p class="main-news__sapo">
+              {{data[0].description.text}}
+            </p>
           </div>
         </div>
-        <div class="hot-news__content-right"></div>
+        <div class="list-news-thumb">
+          <mdb-tabs [justified]="true" [style]="'padding-bottom:20px'">
+            <mdb-tab title="Tin nóng">
+              <ng-template mdbTabContent>
+                <ul class="list-news-thumb__list">
+                  <li class="list-news-thumb__item" *ngFor="let item of data">
+                    <a [routerLink]="['/chi-tiet',item.link]" class="list-news-thumb__link"
+                       [title]="item.title">{{item.title}}</a>
+                  </li>
+                </ul>
+              </ng-template>
+            </mdb-tab>
+            <mdb-tab title="Tin mới">
+              <ng-template mdbTabContent>
+                <ul class="list-news-thumb__list">
+                  <li class="list-news-thumb__item" *ngFor="let item of hotNewsData">
+                    <a [routerLink]="['/chi-tiet',item.link]" class="list-news-thumb__link"
+                       [title]="item.title">{{item.title}}</a>
+                  </li>
+                </ul>
+              </ng-template>
+            </mdb-tab>
+          </mdb-tabs>
+        </div>
       </div>
-      <div class="hot-news__content--right">
-        <app-advertisment></app-advertisment>
-      </div>
+      <div class="hot-news__content-right"></div>
+    </div>
+    <div class="hot-news__content--right">
+      <app-advertisment></app-advertisment>
+    </div>
 
   </section>
 </div>

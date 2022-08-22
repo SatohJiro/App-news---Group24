@@ -7,16 +7,19 @@ import {ParentData} from "./services/parent-data";
   styleUrls: ['./app.component.scss'],
   providers: [ParentData]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'mdb5-angular-ui-kit-pro-advanced';
-  dataParent:ParentData=new ParentData();
+  dataParent: ParentData = new ParentData();
+
   // @ts-ignore
   ngOnInit() {
   }
-  scrollTop(){
-  window.scrollTo(0,0);
+
+  scrollTop() {
+    window.scrollTo(0, 0);
   }
-  onActive(){
+
+  onActive() {
     this.scrollTop();
   }
 }

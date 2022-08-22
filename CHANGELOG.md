@@ -38,7 +38,9 @@
 ### Breaking changes:
 
 - Added support for Angular 13, this Angular version is now required,
-- Sidenav - removed support for automatic item expansion based on an active link ([in our documentation](https://mdbootstrap.com/docs/b5/angular/navigation/sidenav/) you can find information on how to achieve this effect using methods provided by Angular Router).
+- Sidenav - removed support for automatic item expansion based on an active
+  link ([in our documentation](https://mdbootstrap.com/docs/b5/angular/navigation/sidenav/) you can find information on
+  how to achieve this effect using methods provided by Angular Router).
 
 ### Dependencies:
 
@@ -47,13 +49,16 @@
 ### Fixes and improvements:
 
 - Toasts/Alerts - resolved problem with positioning when stacking and position bottom options are used,
-- Select/Datepicker - resolved problems with input, label and icons styles when `form-white` class is used on `mdb-form-control` component,
-- Select - resolved problem with selection when multiple options have the same label (in some cases component incorrectly displayed option value instead of option label in input),
+- Select/Datepicker - resolved problems with input, label and icons styles when `form-white` class is used
+  on `mdb-form-control` component,
+- Select - resolved problem with selection when multiple options have the same label (in some cases component
+  incorrectly displayed option value instead of option label in input),
 - Datatable pagination - component will now display correct information when data source is empty.
 
 ### New features:
 
-- Tabs - added new `[navColumnClass]` and `[contentColumnClass]` inputs that allow to customize width of the navigation and content sections in vertical mode.
+- Tabs - added new `[navColumnClass]` and `[contentColumnClass]` inputs that allow to customize width of the navigation
+  and content sections in vertical mode.
 
 ---
 
@@ -69,7 +74,8 @@
 - Input - resolved problem with label position in input with type="date",
 - Datepicker/Timepicker - improved backdrop animation (removed unnecessary delay),
 - Datepicker - resolved problem with navigation using previous/next arrows when min and max date is specified,
-- Sidenav - animation of the collapsed item in slim mode will be now in sync with animation of the menu (previously there was unnecessary delay)
+- Sidenav - animation of the collapsed item in slim mode will be now in sync with animation of the menu (previously
+  there was unnecessary delay)
 - Select - list of filtered options will be now correctly reset after the dropdown menu is closed,
 - Treeview plugin - click on checkbox will no longer change collapsed state of the node,
 - Treeview plugin - checked state of the checkox in parent node will be now in sync with the checkboxes in child nodes.
@@ -89,12 +95,14 @@
 - Table - updated `dataSource` type to resolve problem with asynchronous data and async pipe,
 - File upload plugin - resolved problem with extensions handled by the `acceptedExtensions` input,
 - Popconfirm - target element will be now optional in modal display mode,
-- Sidenav - resolved problem with `child.querySelector is not a function` error when using `ngFor` directive to render sidenav items,
+- Sidenav - resolved problem with `child.querySelector is not a function` error when using `ngFor` directive to render
+  sidenav items,
 - Popover - `mdbPopover` input will now correctly accept value with `TemplateRef` type.
 
 ### New:
 
-- Dropdown - added new `closeOnOutsideClick`, `closeOnItemClick`, `closeOnEsc` inputs that allow to configure menu closing actions,
+- Dropdown - added new `closeOnOutsideClick`, `closeOnItemClick`, `closeOnEsc` inputs that allow to configure menu
+  closing actions,
 - File upload plugin - added a new `reset` method that allow to reset component state to default settings.
 
 ---
@@ -109,8 +117,10 @@
 - Sidenav - resolved problem with arrow rotation update when `[collapsed]="false"` is used,
 - Sidenav - removed focus trap in side and push modes,
 - Sidenav - default position will be now correctly set to `fixed`,
-- Input - resolved problem with border top gap recalculation when used inside a dynamically loaded component (such as tabs),
-- Overlay - resolved problem with z-index in components using overlay (e.g. modal, popconfirm, tooltip, components with dropdown menus). The components will be correctly displayed above the elements with sticky/fixed styles,
+- Input - resolved problem with border top gap recalculation when used inside a dynamically loaded component (such as
+  tabs),
+- Overlay - resolved problem with z-index in components using overlay (e.g. modal, popconfirm, tooltip, components with
+  dropdown menus). The components will be correctly displayed above the elements with sticky/fixed styles,
 - Charts - fixed default options and resolved problem with custom options merge.
 
 ### Vector maps 1.1.0:
@@ -186,7 +196,8 @@
 
 ## 1.0.0 (09.08.2021)
 
-In this version we introduced some breaking changes, please check `Breaking changes` section and update your application accordingly.
+In this version we introduced some breaking changes, please check `Breaking changes` section and update your application
+accordingly.
 
 ### Breaking changes:
 
@@ -218,11 +229,13 @@ In this version we introduced some breaking changes, please check `Breaking chan
 
 ## 1.0.0-beta8 (12.07.2021)
 
-In this version we introduced some breaking changes, please check `Breaking changes` section and update your application accordingly.
+In this version we introduced some breaking changes, please check `Breaking changes` section and update your application
+accordingly.
 
 ### Breaking changes:
 
-- Popover - `[template]` input will now accept value of type `TemplateRef` and can be used to display `ng-template` content.
+- Popover - `[template]` input will now accept value of type `TemplateRef` and can be used to display `ng-template`
+  content.
 
 ### Fixes and improvements:
 
@@ -240,13 +253,15 @@ In this version we introduced some breaking changes, please check `Breaking chan
 
 ### New features:
 
-- Popover - `[template]` input will now accept value of type `TemplateRef` and can be used to display `ng-template` content.
+- Popover - `[template]` input will now accept value of type `TemplateRef` and can be used to display `ng-template`
+  content.
 
 ---
 
 ## 1.0.0-beta7 (28.06.2021)
 
-In this version we introduced some breaking changes, please check `Breaking changes` section and update your application accordingly.
+In this version we introduced some breaking changes, please check `Breaking changes` section and update your application
+accordingly.
 
 ### Breaking changes:
 
@@ -275,7 +290,8 @@ In this version we introduced some breaking changes, please check `Breaking chan
 
 ## 1.0.0-beta6 (14.06.2021)
 
-In this version we introduced some breaking changes, please check `Breaking changes` section and update your application accordingly. The list of all individual modules and entry points can be found here:
+In this version we introduced some breaking changes, please check `Breaking changes` section and update your application
+accordingly. The list of all individual modules and entry points can be found here:
 
 [MDB Angular UI Kit Free Modules And Imports](https://mdbootstrap.com/docs/b5/angular/getting-started/modules-and-imports/)
 
@@ -284,8 +300,10 @@ In this version we introduced some breaking changes, please check `Breaking chan
 ### Breaking changes:
 
 - Updated Angular to v12 (this version is now required),
-- Components, modules and types can no longer be imported from `mdb-angular-ui-kit` entry point. Use the newly added secondary entry points, such as `mdb-angular-ui-kit/checkbox` to import individual elements,
-- Removed main `MdbModule`, import individual modules from its entry points, for example: `import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox'`,
+- Components, modules and types can no longer be imported from `mdb-angular-ui-kit` entry point. Use the newly added
+  secondary entry points, such as `mdb-angular-ui-kit/checkbox` to import individual elements,
+- Removed main `MdbModule`, import individual modules from its entry points, for
+  example: `import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox'`,
 - Renamed `MdbTimePickerComponent` to `MdbTimepickerComponent`,
 - Renamed `MdbTimePickerDirective` to `MdbTimepickerDirective`,
 - Renamed `MdbTimePickerModule` to `MdbTimepickerModule`,
@@ -293,9 +311,11 @@ In this version we introduced some breaking changes, please check `Breaking chan
 
 ### Components redesign:
 
-- Redesigned shadows for components: Cards, Dropdowns, Modal, Popover, Toasts, Buttons, Button Group, Navbar, Pagination, Pills, Sidenav,
+- Redesigned shadows for components: Cards, Dropdowns, Modal, Popover, Toasts, Buttons, Button Group, Navbar,
+  Pagination, Pills, Sidenav,
 - Redesigned padding for components: Alerts, Cards, List Group,
-- Redesigned border radius to 0.5rem for components: Alerts, Cards, Dropdowns, Modal, List group, Popover, Toasts, Dateipcker, Timepicker.
+- Redesigned border radius to 0.5rem for components: Alerts, Cards, Dropdowns, Modal, List group, Popover, Toasts,
+  Dateipcker, Timepicker.
 
 ### Fixes and improvements:
 
@@ -315,8 +335,10 @@ In this version we introduced some breaking changes, please check `Breaking chan
 ### New features:
 
 - Navbar - added a new `.navbar-nav-scroll` class to enable vertical scrolling when a collapsed navbar is opened,
-- Navbar - re-added `flex-grow` to the `.navbar-collapse` to restore the flexbox behaviors from v4 and prevent some content from being inadvertently squished,
-- List group - added a new `.list-group-numbered` variation to list groups that uses pseudo-elements for numbering list group items,
+- Navbar - re-added `flex-grow` to the `.navbar-collapse` to restore the flexbox behaviors from v4 and prevent some
+  content from being inadvertently squished,
+- List group - added a new `.list-group-numbered` variation to list groups that uses pseudo-elements for numbering list
+  group items,
 - Shadows - added a new styles design: shadows soft, shadows standard, shadows strong,
 - Added color-scheme mixin.
 
@@ -414,7 +436,8 @@ In this version we introduced some breaking changes, please check `Breaking chan
 
 ### New features:
 
-- Select - added new `displayedLabels` input that allows to change maximum number of comma-separated options labels displayed in the multiselect input,
+- Select - added new `displayedLabels` input that allows to change maximum number of comma-separated options labels
+  displayed in the multiselect input,
 - Select - added new `optionsSelectedLabel` input that allows to customize x options selected text,
 - Select - added new `filterDebounce` input that allows to add delay to the options list updates when using filter input
 

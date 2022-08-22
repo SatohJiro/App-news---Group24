@@ -5,7 +5,7 @@
         <div class="">Hotline:
           <span class="header__hotline-phone phone">01235</span>
         </div>
-        <div class="">Hotline phát hành:  <span class="header__hotline-phone phone__producer">
+        <div class="">Hotline phát hành: <span class="header__hotline-phone phone__producer">
       0123123123
     </span></div>
         <a href="" class="header__subscribe">Đặt mua báo</a>
@@ -44,26 +44,27 @@
         </ul>
       </div>
       <div class="header__option">
-         <ng-container *ngIf="!user; else userInfoTmpl">
-           <a routerLink="/dang-nhap" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="option-link">
-             <h5 class="signup">Đăng ký</h5>
-             <h5 class="login">Đăng nhập</h5>
-           </a>
-         </ng-container>
-          <ng-template #userInfoTmpl>
-            <div class="user__info">
-              <img [src]="user.photoUrl" alt="" class="user__avatar">
-              <h6 class="user__name">{{user.name}}</h6>
-            </div>
-            <h6 class="logout" (click)="logout()">Đăng xuất</h6>
-          </ng-template>
+        <ng-container *ngIf="!user; else userInfoTmpl">
+          <a routerLink="/dang-nhap" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+             class="option-link">
+            <h5 class="signup">Đăng ký</h5>
+            <h5 class="login">Đăng nhập</h5>
+          </a>
+        </ng-container>
+        <ng-template #userInfoTmpl>
+          <div class="user__info">
+            <img [src]="user.photoUrl" alt="" class="user__avatar">
+            <h6 class="user__name">{{user.name}}</h6>
+          </div>
+          <h6 class="logout" (click)="logout()">Đăng xuất</h6>
+        </ng-template>
       </div>
     </div>
   </div>
   <div class="header__menu">
-      <div class="menu menu__header">
-        <app-menu [isMenuTop]="true"></app-menu>
-      </div>
+    <div class="menu menu__header">
+      <app-menu [isMenuTop]="true"></app-menu>
+    </div>
   </div>
   <div class="header__ads">
     <div class="ads">

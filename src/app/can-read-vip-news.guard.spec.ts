@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { CanReadVipNewsGuard } from './can-read-vip-news.guard';
+import {CanReadVipNewsGuard} from './can-read-vip-news.guard';
 
 describe('CanReadVipNewsGuard', () => {
   let guard: CanReadVipNewsGuard;

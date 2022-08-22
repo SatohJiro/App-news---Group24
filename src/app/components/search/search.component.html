@@ -1,21 +1,22 @@
 <div class="container">
-<div class="search">
-  <div class="search--left">
-    <h5 class="search__result-counter">
-      Khoảng <span class="counter">{{listResult.length}}</span> kết quả
-    </h5>
-    <div class="separator"></div>
-    <ul class="search__result-list">
-      <li class="search__result-item" *ngFor="let result of listResult">
-        <a [routerLink]="['/chi-tiet',result.link]" class="result__link">{{result.title}}</a>
-        <span class="result__category">{{result.cite}}</span>
-        <p class="result__sapo">{{result.description.text}}</p>
-        <div class="separator"></div>
-      </li>
-    </ul>
+  <div class="search">
+    <div class="search--left">
+      <h5 class="search__result-counter" *ngIf="listResult$ | async as listResult">
+        Khoảng <span class="counter">{{listResult.length}}</span> kết quả
+      </h5>
+      <div class="separator"></div>
+      <ul class="search__result-list" *ngIf="listResult$ | async as listResult">
+        <li class="search__result-item" *ngFor="let result of listResult">
+          <a [href]="result.link" class="result__link">{{result.title}}</a>
+          <span class="result__category">{{result.cite}}</span>
+          <p class="result__sapo">{{result.description.text}}</p>
+          {{result.time | date:'mediumTime'}}
+          <div class="separator"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="search--right">
+      <app-advertisment></app-advertisment>
+    </div>
   </div>
-  <div class="search--right">
-    <app-advertisment></app-advertisment>
-  </div>
-</div>
 </div>

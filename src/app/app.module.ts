@@ -99,33 +99,22 @@ import {VipNewsComponent} from './components/home/vip-news/vip-news.component';
 
 
 import {NgxSkeletonLoaderModule} from "ngx-skeleton-loader";
-import { TrongNuocComponent } from './components/trong-nuoc/trong-nuoc.component';
+import {TrongNuocComponent} from './components/trong-nuoc/trong-nuoc.component';
 
 import {OAuthModule} from "angular-oauth2-oidc";
 import {HttpClientModule} from "@angular/common/http";
 import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {ShareModule} from "ngx-sharebuttons";
-import { RedirectDetailComponent } from './components/redirect-detail/redirect-detail.component';
+import {RedirectDetailComponent} from './components/redirect-detail/redirect-detail.component';
 import {
   FacebookLoginProvider,
   GoogleLoginProvider,
   SocialAuthService,
   SocialAuthServiceConfig, SocialLoginModule
 } from "@abacritt/angularx-social-login";
-import { SearchComponent } from './components/search/search.component';
-
+import {SearchComponent} from './components/search/search.component';
 import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
-import {FirstNewsComponent} from "./components/cat-news-page/first-news/first-news.component";
-import {ListNewsComponent} from "./components/cat-news-page/list-news/list-news.component";
-import {LeftListNewsComponent} from "./components/cat-news-page/list-news/left-list-news/left-list-news.component";
-import {RightListNewsComponent} from "./components/cat-news-page/list-news/right-list-news/right-list-news.component";
-import {
-  CategoryItemNewsComponent
-} from "./components/cat-news-page/list-news/right-list-news/category-item-news/category-item-news.component";
-import { RedirectCategoryComponent } from './components/redirect-category/redirect-category.component';
-
-
 
 
 @NgModule({
@@ -164,17 +153,8 @@ import { RedirectCategoryComponent } from './components/redirect-category/redire
     ErrorComponent,
     RedirectDetailComponent,
     TrongNuocComponent,
-    SearchComponent,
-
     CatNewsPageComponent,
-    FirstNewsComponent,
-    ListNewsComponent,
-    LeftListNewsComponent,
-    RightListNewsComponent,
-    CategoryItemNewsComponent,
-    RedirectCategoryComponent,
-
-
+    SearchComponent,
 
   ],
   imports: [
@@ -236,7 +216,7 @@ import { RedirectCategoryComponent } from './components/redirect-category/redire
 
 
   ],
-  providers: [ MdbCookiesManagementService, MdbStorageManagementService, ServerService, {
+  providers: [MdbCookiesManagementService, MdbStorageManagementService, ServerService, {
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
@@ -250,7 +230,7 @@ import { RedirectCategoryComponent } from './components/redirect-category/redire
           provider: new GoogleLoginProvider("673998932925-t5a5tat8u3f03886mbqqi8tlhguul6eb.apps.googleusercontent.com")
         },
       ],
-      onError:(err)=> {
+      onError: (err) => {
         console.log(err)
       }
     } as SocialAuthServiceConfig

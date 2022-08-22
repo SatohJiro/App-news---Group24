@@ -1,5 +1,6 @@
 export interface Idata {
-  url:string;
-  data:any[];
-  getData():void;
+  url: string;
+  data: any[];
+
+  getData(): void;
 }

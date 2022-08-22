@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../../home.service";
 
 @Component({
@@ -6,9 +6,10 @@ import {HomeService} from "../../../home.service";
   templateUrl: './vietlott.component.html',
   styleUrls: ['./vietlott.component.scss']
 })
-export class VietlottComponent implements OnInit{
+export class VietlottComponent implements OnInit {
 
-  constructor(private homeService:HomeService) { }
+  constructor(private homeService: HomeService) {
+  }
 
   ngOnInit(): void {
   }

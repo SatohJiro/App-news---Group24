@@ -1,11 +1,13 @@
 .box {
   margin-top: 10px;
   padding: 20px;
-  &__header,&__date {
+
+  &__header, &__date {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &__title {
     text-transform: uppercase;
     font-weight: bold;
@@ -13,9 +15,10 @@
     padding-left: 10px;
     color: #0b3d91;
     position: relative;
+
     &::before {
       position: absolute;
-      content:"";
+      content: "";
       left: 0;
       width: 5px;
       height: 16px;
@@ -23,35 +26,43 @@
       margin-top: 3px;
     }
   }
+
   &__date {
     gap: 10px;
   }
+
   &__date-label {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 500;
     color: #545454;
   }
-  &__select-day,&__select-month,&__select-year {
+
+  &__select-day, &__select-month, &__select-year {
     font-size: 14px;
     color: #434343;
     font-weight: 500;
     border: 1px solid #dddddd;
   }
+
   &__content {
     margin-top: 20px;
   }
+
   &__list {
     display: flex;
     gap: 20px;
   }
+
   &__first-news {
     width: 503px;
     height: 313px;
   }
+
   &__first-news > a {
     position: relative;
   }
+
   &__first-news .first-news__title {
     position: absolute;
     bottom: 0;
@@ -59,23 +70,28 @@
     color: #fff;
     padding: 20px;
   }
+
   &__second-news {
     width: 227px;
   }
+
   &__item-title {
     font-size: 16px;
     font-weight: bold;
   }
+
   &__item-image {
     display: block;
     margin-bottom: 15px;
   }
+
   &__item-sapo {
     font-size: 13px;
     font-weight: 500;
     margin-top: 10px;
   }
 }
+
 .box__third-news {
   .box {
     &__item {
@@ -87,6 +103,7 @@
     }
   }
 }
+
 .btn {
   &__search {
     width: 58px;
