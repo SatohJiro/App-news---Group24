@@ -7,7 +7,7 @@
     <div class="separator"></div>
     <ul class="search__result-list">
       <li class="search__result-item" *ngFor="let result of listResult">
-        <a [href]="result.link" class="result__link">{{result.title}}</a>
+        <a [routerLink]="['/chi-tiet',result.link]" class="result__link">{{result.title}}</a>
         <span class="result__category">{{result.cite}}</span>
         <p class="result__sapo">{{result.description.text}}</p>
         <div class="separator"></div>
