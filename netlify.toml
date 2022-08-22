@@ -1,7 +1,0 @@
-[build]
-  publish = "dist/Nhom24-AppTinTuc_FE_Thu2Ca4_2022"
-  command = "ng build -c=production"
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
