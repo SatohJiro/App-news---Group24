@@ -10,6 +10,7 @@ export class CatNewsPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

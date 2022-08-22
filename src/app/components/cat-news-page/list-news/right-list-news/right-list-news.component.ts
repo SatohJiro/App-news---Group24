@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CatNewsPageService} from "../../cat-news-page.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-right-list-news',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RightListNewsComponent implements OnInit {
 
-  constructor() { }
+  url:string="";
+  dataNoiBat:any;
+  dataXemNhieu:any;
+  constructor(private catNewsPageService: CatNewsPageService,private activatenRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.getUrl();
+    this.dataNoiBat=this.catNewsPageService.getRightListNews_TinNoiBat(this.url);
+    this.dataXemNhieu=this.catNewsPageService.getRightListNews_XemNhieuNhat(this.url);
+  }
+  getUrl() {
+    this.activatenRoute.paramMap.subscribe(paramMap => {
+      this.url= String(paramMap.get('RSS')+'.htm');
+    })
   }
 
 }

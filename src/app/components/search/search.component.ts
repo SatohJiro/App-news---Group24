@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+
 import {SearchService} from "./search.service";
 import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-search',
@@ -8,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+
   public listResult: any[] =[];
   constructor(private searchService: SearchService, private activateRoute: ActivatedRoute) {
   }
@@ -23,5 +26,4 @@ export class SearchComponent implements OnInit {
     // switchMap((keywords)=> console.log(keywords)))
     //   // switchMap((keywords)=> this.searchService.getListResult(keywords).subscribe(data => this.listResult = data)))
   }
-
 }

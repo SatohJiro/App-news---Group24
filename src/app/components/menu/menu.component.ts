@@ -8,6 +8,23 @@ import {Router} from "@angular/router";
 })
 export class MenuComponent implements OnInit {
   @Input() isMenuTop = true;
+
+  trongNuoc:string="thoi-su";
+  quocTe:string="thoi-su-quoc-te";
+  congDoan:string="cong-doan"
+  banDoc:string="ban-doc";
+  kinhTe:string="kinh-te";
+  sucKhoe:string="suc-khoe";
+  giaoDuc:string="giao-duc-khoa-hoc";
+  phapLuat:string="phap-luat";
+  vanNghe:string="van-nghe";
+  giaiTri:string="giai-tri";
+  theThao: string ="the-thao";
+  congNghe: string ="cong-nghe";
+  duLichXanh: string ="du-lich-xanh";
+  phuNu: string ="phunu";
+  diaOc: string= "diaoc";
+
   // @ts-ignore
   constructor(private serverService: ServerService,private route: Router) {
   }

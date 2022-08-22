@@ -115,6 +115,17 @@ import {
 } from "@abacritt/angularx-social-login";
 import { SearchComponent } from './components/search/search.component';
 
+import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
+import {FirstNewsComponent} from "./components/cat-news-page/first-news/first-news.component";
+import {ListNewsComponent} from "./components/cat-news-page/list-news/list-news.component";
+import {LeftListNewsComponent} from "./components/cat-news-page/list-news/left-list-news/left-list-news.component";
+import {RightListNewsComponent} from "./components/cat-news-page/list-news/right-list-news/right-list-news.component";
+import {
+  CategoryItemNewsComponent
+} from "./components/cat-news-page/list-news/right-list-news/category-item-news/category-item-news.component";
+import { RedirectCategoryComponent } from './components/redirect-category/redirect-category.component';
+
+
 
 
 @NgModule({
@@ -154,6 +165,16 @@ import { SearchComponent } from './components/search/search.component';
     RedirectDetailComponent,
     TrongNuocComponent,
     SearchComponent,
+
+    CatNewsPageComponent,
+    FirstNewsComponent,
+    ListNewsComponent,
+    LeftListNewsComponent,
+    RightListNewsComponent,
+    CategoryItemNewsComponent,
+    RedirectCategoryComponent,
+
+
 
   ],
   imports: [
