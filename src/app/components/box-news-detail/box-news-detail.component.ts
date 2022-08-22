@@ -99,6 +99,7 @@ export class BoxNewsDetailComponent implements OnInit, OnChanges {
       idComment: this.makeid(6),
       name: this.user.name,
       firstChar: this.user.name[0],
+      linkAvatar:this.user.photoUrl,
       timeComment: time.toLocaleString(),
       comment: (document.getElementById("textArea_comment") as HTMLInputElement).value,
       love: 0
