@@ -13,6 +13,7 @@ import {TrongNuocComponent} from "./components/trong-nuoc/trong-nuoc.component";
 import {CanReadVipNewsGuard} from "./can-read-vip-news.guard";
 import {CatNewsPageComponent} from "./components/cat-news-page/cat-news-page.component";
 import {SearchComponent} from "./components/search/search.component";
+import {RedirectCategoryComponent} from "./components/redirect-category/redirect-category.component";
 
 
 const routes: Routes = [
@@ -24,23 +25,27 @@ const routes: Routes = [
   {path: 'mostView/:link', component: RedirectDetailComponent},
   {path: 'tim-kiem', component: SearchComponent},
 
+
+  {path: 'the-loai-redirect/:RSS', component:RedirectCategoryComponent},
+  {path: 'the-loai/:RSS', component:CatNewsPageComponent},
+  // {path: 'quoc-te/:RSS', component:CatNewsPageComponent},
+  // {path: 'cong-doan/:RSS', component:CatNewsPageComponent},
+  // {path: 'ban-doc/:RSS', component:CatNewsPageComponent},
+  // {path: 'kinh-te/:RSS', component:CatNewsPageComponent},
+  // {path: 'suc-khoe/:RSS', component:CatNewsPageComponent},
+  // {path: 'giao-duc/:RSS', component:CatNewsPageComponent},
+  // {path: 'phap-luat/:RSS', component:CatNewsPageComponent},
+  // {path: 'van-nghe/:RSS', component:CatNewsPageComponent},
+  // {path: 'giai-tri/:RSS', component:CatNewsPageComponent},
+  // {path: 'the-thao/:RSS', component:CatNewsPageComponent},
+  // {path: 'cong-nghe/:RSS', component:CatNewsPageComponent},
+  // {path: 'du-lich-xanh/:RSS', component:CatNewsPageComponent},
+  // {path: 'phu-nu/:RSS', component:CatNewsPageComponent},
+  // {path: 'dia-oc/:RSS', component:CatNewsPageComponent},
+
   {path: '**', component:ErrorComponent},
 
-  {path: 'trong-nuoc', component:CatNewsPageComponent},
-  {path: 'quoc-te', component:CatNewsPageComponent},
-  {path: 'cong-doan', component:CatNewsPageComponent},
-  {path: 'ban-doc', component:CatNewsPageComponent},
-  {path: 'kinh-te', component:CatNewsPageComponent},
-  {path: 'suc-khoe', component:CatNewsPageComponent},
-  {path: 'giao-duc', component:CatNewsPageComponent},
-  {path: 'phap-luat', component:CatNewsPageComponent},
-  {path: 'van-nghe', component:CatNewsPageComponent},
-  {path: 'giai-tri', component:CatNewsPageComponent},
-  {path: 'the-thao', component:CatNewsPageComponent},
-  {path: 'cong-nghe', component:CatNewsPageComponent},
-  {path: 'du-lich-xanh', component:CatNewsPageComponent},
-  {path: 'phu-nu', component:CatNewsPageComponent},
-  {path: 'dia-oc', component:CatNewsPageComponent},
+
 
 
 ];

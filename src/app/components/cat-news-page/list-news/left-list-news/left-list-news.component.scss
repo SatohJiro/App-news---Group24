@@ -12,14 +12,16 @@
 }
 
 .new-info{
-  li{
-    margin-top:5px;
-  }
+  display: flex;
+  content: "";
+  align-items: center;
+  justify-items: center;
 }
 
-img{
-  width: 220px;
-  height: 139px;
+#image{
+  min-width: 220px;
+  max-width: 220px;
+  height: 120px;
 }
 
 li{
