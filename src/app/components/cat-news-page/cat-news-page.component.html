@@ -1,136 +1,80 @@
 
 <div class="container">
 <div class="box-content">
-  <section class="box-content--left">
+  <section class="box-content--left" *ngIf="subCateList$ | async as subCateList">
     <ul class="sub-cate__list">
-      <li class="sub-cate__item"><a class="sub-cate__link" href="">Trong nuoc</a></li>
-      <li class="sub-cate__item"><a class="sub-cate__link" href="">Trong nuoc</a></li>
-      <li class="sub-cate__item"><a class="sub-cate__link" href="">Trong nuoc</a></li>
-      <li class="sub-cate__item"><a class="sub-cate__link" href="">Trong nuoc</a></li>
-      <li class="sub-cate__item"><a class="sub-cate__link" href="">Trong nuoc</a></li>
+      <li class="sub-cate__item" *ngFor="let subCate of subCateList">
+        <a class="sub-cate__link" [routerLink]="['/chi-tiet']">{{subCate.title}}</a>
+      </li>
     </ul>
-<div class="news--focus">
-  <div class="news--info">
+<div class="news--focus" *ngIf="focusNews$ | async as news">
+  <div class="news--info" >
     <h3 class="news__title">
-      <a href="">Bão Ma-on có thể giật cấp 13 hướng vào khu vực phía Bắc</a>
+      <a [routerLink]="['/chi-tiet',news[0].link]">{{news[0].title}}</a>
     </h3>
-    <p class="news__sapo">(NLĐO)- Bão Ma-on đang giật cấp 10,
-      có thể giật cấp 13 đang di chuyển nhanh hướng vào khu vực phía Bắc nước ta.
-      Vùng biển phía Đông khu vực Bắc Biển Đông biển động mạnh, sóng biển cao từ 4-6 m</p>
+    <p class="news__sapo">
+      {{news[0].sapo}}
+    </p>
   </div>
-  <img src="https://nld.mediacdn.vn/zoom/435_273/291774122806476800/2022/8/22/dbqgxtnd202208221400-16611598474041189599299-16611598782901560283366.gif" alt="Bão Ma-on có thể giật cấp 13 hướng vào khu vực phía Bắc" class="news__image"/>
+  <a href="" class="news__link">
+    <img [src]="news[0].imgUrl" [alt]="news[0].imgAlt" class="news__image"/>
+  </a>
 </div>
     <div class="separator"></div>
     <div class="box-content__body">
-      <ul class="news__list">
-        <li class="news__item">
-          <a [routerLink]="['/chi-tiet','https://nld.com.vn']" class="news__link">
-            <img src="https://nld.mediacdn.vn/zoom/220_139/291774122806476800/2022/8/22/2998224376041557477861613172252575109298895n-1661179265077948041752.jpg" class="news__image"/>
+      <ul class="news__list"  *ngIf="listNews$| async as listNews" >
+        <li class="news__item" *ngFor="let news of listNews">
+          <a [routerLink]="['/chi-tiet', news.link]" class="news__link">
+            <img [src]="news.description.imgUrl" class="news__image"/>
           </a>
           <div class="news__info">
-            <h6 class="news__link text-medium"><a [routerLink]="['/chi-tiet','https://nld.com.vn']">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-              có thể giật cấp 13 đang di chuyển nhanh hướng vào khu vực phía Bắc nước ta.
-              Vùng biển phía Đông khu vực Bắc Biển Đông biển động mạnh, sóng biển cao từ 4-6 m
+            <h6 class="news__link text-medium"><a [routerLink]="['/chi-tiet',news.link]">
+             {{news.title}}
             </a></h6>
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn']"class="news__sapo">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
+            <a [routerLink]="['/chi-tiet',news.infor.link1]"class="news__sapo">
+              {{news.infor.title1}}
             </a>
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn']" class="news__sapo">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-            </a>
-          </div>
-        </li>
-        <li class="news__item">
-          <a [routerLink]="['/chi-tiet','https://nld.com.vn']" class="news__link">
-            <img src="https://nld.mediacdn.vn/zoom/220_139/291774122806476800/2022/8/22/2998224376041557477861613172252575109298895n-1661179265077948041752.jpg" class="news__image"/>
-          </a>
-          <div class="news__info">
-            <h6 class="news__link text-medium"><a [routerLink]="['/chi-tiet','https://nld.com.vn']">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-              có thể giật cấp 13 đang di chuyển nhanh hướng vào khu vực phía Bắc nước ta.
-              Vùng biển phía Đông khu vực Bắc Biển Đông biển động mạnh, sóng biển cao từ 4-6 m
-            </a></h6>
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn']"class="news__sapo">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-            </a>
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn']" class="news__sapo">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-            </a>
-          </div>
-        </li>
-        <li class="news__item">
-          <a [routerLink]="['/chi-tiet','https://nld.com.vn']" class="news__link">
-            <img src="https://nld.mediacdn.vn/zoom/220_139/291774122806476800/2022/8/22/2998224376041557477861613172252575109298895n-1661179265077948041752.jpg" class="news__image"/>
-          </a>
-          <div class="news__info">
-            <h6 class="news__link text-medium"><a [routerLink]="['/chi-tiet','https://nld.com.vn']">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-              có thể giật cấp 13 đang di chuyển nhanh hướng vào khu vực phía Bắc nước ta.
-              Vùng biển phía Đông khu vực Bắc Biển Đông biển động mạnh, sóng biển cao từ 4-6 m
-            </a></h6>
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn']"class="news__sapo">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
-            </a>
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn']" class="news__sapo">
-              (NLĐO)- Bão Ma-on đang giật cấp 10,
+            <a [routerLink]="['/chi-tiet',news.infor.link1]" class="news__sapo">
+              {{news.infor.title2}}
             </a>
           </div>
         </li>
       </ul>
-      <div class="cate__list">
-        <section class="tinnoibat">
-          <h4 class="tinnoibat__header">
-            Tin nổi bật
-          </h4>
-          <ul class="tinnoibat__list">
-            <li class="tinnoibat__item">
-              <a href="" class="tinnoibat__link"><img src="https://nld.mediacdn.vn/zoom/216_133/291774122806476800/2022/8/22/photo-1-16611630726401533261976.jpg" alt="" class="tinnoibat__image"></a>
-              <h6 class="tinnoibat__title">
-                <a href="">Campuchia bắt quản lý sòng bạc nơi 42 người Việt bỏ trốn</a>
-              </h6>
-            </li>
-            <li class="tinnoibat__item">
-              <a href="" class="tinnoibat__link"><img src="https://nld.mediacdn.vn/zoom/216_133/291774122806476800/2022/8/22/photo-1-16611630726401533261976.jpg" alt="" class="tinnoibat__image"></a>
-              <h6 class="tinnoibat__title">
-                <a href="">Campuchia bắt quản lý sòng bạc nơi 42 người Việt bỏ trốn</a>
-              </h6>
-            </li>
-            <li class="tinnoibat__item">
-              <a href="" class="tinnoibat__link"><img src="https://nld.mediacdn.vn/zoom/216_133/291774122806476800/2022/8/22/photo-1-16611630726401533261976.jpg" alt="" class="tinnoibat__image"></a>
-              <h6 class="tinnoibat__title">
-                <a href="">Campuchia bắt quản lý sòng bạc nơi 42 người Việt bỏ trốn</a>
-              </h6>
-            </li>
-          </ul>
-        </section>
-        <section class="xemnhieunhat">
-          <h4 class="tinnoibat__header">
-            Xem nhiều nhất
-          </h4>
-          <ul class="xemnhieunhat__list">
-            <li class="tinnoibat__item">
-              <a href="" class="tinnoibat__link"><img src="https://nld.mediacdn.vn/zoom/216_133/291774122806476800/2022/8/22/photo-1-16611630726401533261976.jpg" alt="" class="tinnoibat__image"></a>
-              <h6 class="tinnoibat__title">
-                <a href="">Campuchia bắt quản lý sòng bạc nơi 42 người Việt bỏ trốn</a>
-              </h6>
-            </li>
-            <li class="tinnoibat__item">
-              <!--            <a href="" class="tinnoibat__link"><img src="https://nld.mediacdn.vn/zoom/216_133/291774122806476800/2022/8/22/photo-1-16611630726401533261976.jpg" alt="" class="tinnoibat__image"></a>-->
-              <h6 class="tinnoibat__title">
-                <a href="">Campuchia bắt quản lý sòng bạc nơi 42 người Việt bỏ trốn</a>
-              </h6>
-            </li>
-            <li class="tinnoibat__item">
-              <!--          <a href="" class="tinnoibat__link"><img src="https://nld.mediacdn.vn/zoom/216_133/291774122806476800/2022/8/22/photo-1-16611630726401533261976.jpg" alt="" class="tinnoibat__image"></a>-->
-              <h6 class="tinnoibat__title">
-                <a href="">Campuchia bắt quản lý sòng bạc nơi 42 người Việt bỏ trốn</a>
-              </h6>
-            </li>
-          </ul>
-        </section>
-
-      </div>
+<!--      <div class="cate__list">-->
+<!--        <section class="tinnoibat">-->
+<!--          <h4 class="tinnoibat__header">-->
+<!--            Tin nổi bật-->
+<!--          </h4>-->
+<!--          <ul class="tinnoibat__list" *ngIf="listNoiBatNews$ | async as listNoiBatNews">-->
+<!--            <li class="tinnoibat__item" *ngFor="let news of listNoiBatNews">-->
+<!--              <a [routerLink]="['/chi-tiet', news.link]" class="tinnoibat__link"><img [src]="news.imgUrl" [alt]="news.imgAlt" class="tinnoibat__image"></a>-->
+<!--              <h6 class="tinnoibat__title">-->
+<!--                <a [routerLink]="['/chi-tiet', news.link]">{{news.title}}</a>-->
+<!--              </h6>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </section>-->
+<!--        <section class="xemnhieunhat">-->
+<!--          <h4 class="tinnoibat__header">-->
+<!--            Xem nhiều nhất-->
+<!--          </h4>-->
+<!--          <ul class="xemnhieunhat__list" *ngIf="listXemNhieuNhatNews$ | async as listXemNhieuNhatNews">-->
+<!--            <li class="xemnhieunhat__item" *ngFor="let news of listXemNhieuNhatNews; first as isFirst">-->
+<!--              <ng-container *ngIf="isFirst; else notFirst">-->
+<!--                <a [routerLink]="['/chi-tiet', news.link]" class="xemnhieunhat__link"><img [src]="news?.imgUrl" [alt]="news?.imgAlt" class="xemnhieunhat__image"></a>-->
+<!--                <h6 class="xemnhieunhat__title">-->
+<!--                  <a [routerLink]="['/chi-tiet', news.link]">{{news.title}}</a>-->
+<!--                </h6>-->
+<!--              </ng-container>-->
+<!--              <ng-template #notFirst>-->
+<!--                <h6 class="xemnhieunhat__title">-->
+<!--                  <a [routerLink]="['/chi-tiet', news.link]">{{news.title}}</a>-->
+<!--                </h6>-->
+<!--              </ng-template>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </section>-->
+<!--      </div>-->
     </div>
   </section>
   <section class="box-content--right">
