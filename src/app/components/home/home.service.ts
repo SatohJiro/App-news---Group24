@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import * as cheerio from "cheerio";
+
 import {BehaviorSubject, delay, Observable, of, shareReplay, switchMap} from "rxjs";
+
 import {INews} from "../news/news";
 import {HttpClient} from "@angular/common/http";
 
@@ -99,9 +101,11 @@ export class HomeService {
   );
   public listMostViewedNews$ = this._listMostViewedNews$.pipe(switchMap(() => this.apiListMostViewedNewsRequest$), shareReplay(1));
 
+
   constructor(private http: HttpClient) {
 
   }
+
 
   loadTagsHotNew(text: string) {
     const $ = cheerio.load(text);
@@ -109,18 +113,22 @@ export class HomeService {
     const change = (temp: string) => {
       return this.changeUrlPattern(temp);
     }
+
     $('.hot-news-item > a').each((i, tag) => {
       // @ts-ignore
       data.push({
         id: $(tag).attr(''),
         title: $(tag).attr("title"),
+
         // @ts-ignore
         link:change($(tag).attr("href")) ,
+
         time: new Date().toISOString()
       });
     })
     return of(data).pipe(delay(50))
   }
+
 
   loadListHotNews(text: string) {
     const $ = cheerio.load(text);
@@ -142,25 +150,31 @@ export class HomeService {
   }
 
   loadListNews(text: string) {
+
     const getImg = (text: string) => {
       const $ = cheerio.load(text, {xmlMode: true});
       return $('img');
     }
+
     const $ = cheerio.load(text, {xmlMode: true});
     let data: any[] = [];
     const change = (temp: string) => {
       return this.changeUrlPattern(temp);
     }
+
     $('item').each((i, item) => {
       data.push({
         id: i,
         title: $(item).find('title').text().trim(),
+
         link: change($(item).find('link').text().trim()),
+
         guid: $(item).find('guid').text().trim(),
         description: {
           // @ts-ignore
           url: getImg($(item).find('description').text().trim()).attr("src"),
           alt: getImg($(item).find('description').text().trim()).attr("alt"),
+
           // @ts-ignore
           text: $(item).find('description').text().slice($(item).find('description').text().lastIndexOf(">") + 1).trim(),
         },
@@ -235,10 +249,12 @@ export class HomeService {
         title: $(news).attr("title"),
         // @ts-ignore
         link: change($(news).attr("href")),
+
         description: {
           imgUrl: $(news).find('img').attr('src'),
           alt: $(news).find('img').attr('alt'),
         }
+
       })
     })
     return of(data).pipe(delay(50))
@@ -458,6 +474,7 @@ export class HomeService {
         // @ts-ignore
         title: change($(news).find('.box-hom-ngang-sub-content-thumb').attr("title")),
         link: $(news).find('.box-hom-ngang-sub-content-thumb').attr("href"),
+
         description: {
           imgUrl: $(news).find('img').attr('src'),
           alt: $(news).find('img').attr('alt'),
@@ -466,14 +483,41 @@ export class HomeService {
     })
     return of(data).pipe(delay(50))
   }
+  // getListHotNews(): Observable<INews[]> {
+  //   const url = `${this.corsAnywhere}/${this.server}`;
+  //   const ajax = new XMLHttpRequest();
+  //   const asyns = true;
+  //   let time = new Date().toISOString()
+  //   const method = "GET";
+  //   ajax.open(method, url, asyns);
+  //   ajax.send();
+  //   const data: any[] = [];
+  //   ajax.onreadystatechange = function () {
+  //     if (this.readyState === 4 && this.status === 200) {
+  //       const $ = cheerio.load(this.responseText);
+  //       $('.list-news-thumb .news-thumb-title > a').each((i, news) => {
+  //         // @ts-ignore
+  //         data.push({
+  //           id: $(news).attr('data-newsid'),
+  //           title: $(news).attr("title"),
+  //           link: $(news).attr("href"),
+  //           time: time
+  //         });
+  //       })
+  //     }
+  //   }
+  //   return of(data).pipe(delay(50),shareReplay(1));
+  // }
 
   // getHoiNongDapNhanh(): Observable<INews> {
   //   const url = `${this.corsAnywhere}/${this.server}`;
   //   const ajax = new XMLHttpRequest();
+
   //   const asyns = true;
   //   const method = "GET";
   //   ajax.open(method, url, asyns);
   //   ajax.send();
+
   //   let data: any = [];
   //   ajax.onreadystatechange = function () {
   //     if (this.readyState === 4 && this.status === 200) {
@@ -488,12 +532,14 @@ export class HomeService {
   //             imgUrl: $(news).find('img').attr('src'),
   //             alt: $(news).find('img').attr('alt'),
   //           }
+
   //         })
   //       })
   //     }
   //   }
   //   return of(data).pipe(delay(50));
   // }
+
   loadTruyVetMangXaHoiNews(text: string) {
     const $ = cheerio.load(text);
     let data: any[] = [];
@@ -517,12 +563,14 @@ export class HomeService {
   }
 
   // getTruyVetMangXaHoi(): Observable<INews> {
+
   //   const url = `${this.corsAnywhere}/${this.server}`;
   //   const ajax = new XMLHttpRequest();
   //   const asyns = true;
   //   const method = "GET";
   //   ajax.open(method, url, asyns);
   //   ajax.send();
+
   //   let data: any = [];
   //   ajax.onreadystatechange = function () {
   //     if (this.readyState === 4 && this.status === 200) {
@@ -538,11 +586,13 @@ export class HomeService {
   //             alt: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('alt'),
   //           }
   //         })
+
   //       })
   //     }
   //   }
   //   return of(data).pipe(delay(50));
   // }
+
   loadGocNhinNews(text: string) {
     const $ = cheerio.load(text);
     let data: any[] = [];
@@ -559,12 +609,98 @@ export class HomeService {
         description: {
           imgUrl: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('src'),
           alt: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('alt'),
+
         }
       })
     })
     return of(data).pipe(delay(50))
   }
+  // getNewsDocQuyen(): Observable<INews[]> {
+  //   const url = `${this.corsAnywhere}/${this.server}`;
+  //   const ajax = new XMLHttpRequest();
+  //   const asyns = true;
+  //   const method = "GET";
+  //   ajax.open(method, url, asyns);
+  //   ajax.send();
+  //   let data: any[] = [];
+  //   ajax.onreadystatechange = function () {
+  //     if (this.readyState === 4 && this.status === 200) {
+  //       const $ = cheerio.load(this.responseText);
+  //       $('.box-cate-list .box-docquyen .news-item > .img216x133').each((i, news) => {
+  //         // @ts-ignore
+  //         data.push({
+  //           id: i + '',
+  //           title: $(news).attr("title"),
+  //           link: $(news).attr("href"),
+  //           description: {
+  //             imgUrl: $(news).find('img').attr('src'),
+  //             alt: $(news).find('img').attr('alt'),
+  //           }
+  //         })
+  //       })
+  //     }
+  //   }
+  //   return of(data).pipe(delay(50));
+  // }
 
+
+  // getGocNhin(): Observable<INews> {
+
+  //   const url = `${this.corsAnywhere}/${this.server}`;
+  //   const ajax = new XMLHttpRequest();
+  //   const asyns = true;
+  //   const method = "GET";
+  //   ajax.open(method, url, asyns);
+  //   ajax.send();
+  //   let data: any = [];
+  //   ajax.onreadystatechange = function () {
+  //     if (this.readyState === 4 && this.status === 200) {
+  //       const $ = cheerio.load(this.responseText);
+  //       $('.box-goc-nhin').each((i, news) => {
+  //         // @ts-ignore
+  //         data.push({
+  //           id: i + '',
+  //           title: $(news).find('.box-hom-ngang-sub-content-thumb').attr("title"),
+  //           link: $(news).find('.box-hom-ngang-sub-content-thumb').attr("href"),
+  //           description: {
+  //             imgUrl: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('src'),
+  //             alt: $(news).find('.box-hom-ngang-sub-content-thumb > img').attr('alt'),
+  //           }
+  //         })
+  //       })
+  //     }
+  //   }
+  //   return of(data).pipe(delay(50));
+  // }
+
+  loadListMostViewedNews(text: string) {
+    const $ = cheerio.load(text);
+    let data: any[] = [];
+    const change = (temp: string) => {
+      return this.changeUrlPattern(temp);
+    }
+    $('.box-news-container .news-item').each((i, news) => {
+      // @ts-ignore
+      data.push({
+        id: $(news).attr('data-newsid'),
+        title: $(news).find('.img220x139').attr("title"),
+        // @ts-ignore
+        link: change($(news).find('.img220x139').attr("href")),
+        description: {
+          imgUrl: $(news).find('.img220x139 > img').attr('src') ? $(news).find('.img220x139 > img').attr('src') : $(news).find('.img220x139 > video').attr('poster'),
+          alt: $(news).find('.img220x139 > img').attr('alt'),
+        },
+        infor: {
+          title1: $(news).find('.news-info ul li:first-of-type > a').attr('title'),
+          link1: $(news).find('.news-info ul li:first-of-type > a').attr('href'),
+          title2: $(news).find('.news-info ul li:last-of-type > a').attr('title'),
+          link2: $(news).find('.news-info ul li:last-of-type > a').attr('href'),
+        }
+      });
+
+    })
+    return of(data).pipe(delay(50))
+  }
   // getGocNhin(): Observable<INews> {
   //   const url = `${this.corsAnywhere}/${this.server}`;
   //   const ajax = new XMLHttpRequest();
@@ -592,19 +728,15 @@ export class HomeService {
   //   }
   //   return of(data).pipe(delay(50));
   // }
-  loadListMostViewedNews(text: string) {
+  loadListMostViewedNews(text:string) {
     const $ = cheerio.load(text);
-    let data: any[] = [];
-    const change = (temp: string) => {
-      return this.changeUrlPattern(temp);
-    }
+    let data:any[] = [];
     $('.box-news-container .news-item').each((i, news) => {
       // @ts-ignore
       data.push({
         id: $(news).attr('data-newsid'),
         title: $(news).find('.img220x139').attr("title"),
-        // @ts-ignore
-        link: change($(news).find('.img220x139').attr("href")),
+        link: $(news).find('.img220x139').attr("href"),
         description: {
           imgUrl: $(news).find('.img220x139 > img').attr('src') ? $(news).find('.img220x139 > img').attr('src') : $(news).find('.img220x139 > video').attr('poster'),
           alt: $(news).find('.img220x139 > img').attr('alt'),
@@ -619,6 +751,39 @@ export class HomeService {
     })
     return of(data).pipe(delay(50))
   }
+  // getBoxMostViewed(): Observable<INews> {
+  //   const url = `${this.corsAnywhere}/${this.server}`;
+  //   const ajax = new XMLHttpRequest();
+  //   const asyns = true;
+  //   const method = "GET";
+  //   ajax.open(method, url, asyns);
+  //   ajax.send();
+  //   let data: any = [];
+  //   ajax.onreadystatechange = function () {
+  //     if (this.readyState === 4 && this.status === 200) {
+  //       const $ = cheerio.load(this.responseText);
+  //       $('.box-news-container .news-item').each((i, news) => {
+  //         // @ts-ignore
+  //         data.push({
+  //           id: $(news).attr('data-newsid'),
+  //           title: $(news).find('.img220x139').attr("title"),
+  //           link: $(news).find('.img220x139').attr("href"),
+  //           description: {
+  //             imgUrl: $(news).find('.img220x139 > img').attr('src') ? $(news).find('.img220x139 > img').attr('src') : $(news).find('.img220x139 > video').attr('poster'),
+  //             alt: $(news).find('.img220x139 > img').attr('alt'),
+  //           },
+  //           infor: {
+  //             title1: $(news).find('.news-info ul li:first-of-type > a').attr('title'),
+  //             link1: $(news).find('.news-info ul li:first-of-type > a').attr('href'),
+  //             title2: $(news).find('.news-info ul li:last-of-type > a').attr('title'),
+  //             link2: $(news).find('.news-info ul li:last-of-type > a').attr('href'),
+  //           }
+  //         });
+  //       })
+  //     }
+  //   }
+  //   return of(data).pipe(delay(50));
+  // }
 
   // getBoxMostViewed(): Observable<INews> {
   //   const url = `${this.corsAnywhere}/${this.server}`;
@@ -739,6 +904,7 @@ export class HomeService {
 //       return data;
 //     }
 //   }
+
 
 //  home - tinmoinhat rss
 //   getData(option: string): any[] {
@@ -943,4 +1109,5 @@ export class HomeService {
       return url;
     }
   }
+
 }

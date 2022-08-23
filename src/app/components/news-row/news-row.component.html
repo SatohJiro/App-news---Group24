@@ -3,7 +3,9 @@
     <div class="img_show">
       <img [src]="news.description?.imgUrl" [alt]="news.description?.alt" width="500" height="600">
     </div>
+
     <div class="news-title"><a [routerLink]="['/chi-tiet',news.link]" [title]="news.title">
+
       <h5>{{news.title}}</h5></a></div>
   </div>
 </ng-container>
@@ -15,7 +17,9 @@
           <div class="img_show">
             <img [src]="item.urlImg" width="500" height="600">
           </div>
+
           <div class="news-title"><a [routerLink]="['/mostView/',item.link]" [title]="item.title">
+
             <h5>{{item.title}}</h5></a></div>
         </div>
       </div>
