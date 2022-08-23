@@ -46,7 +46,7 @@
                     <p class="main-news__sapo">
                       {{listNews[0].description.text}}
                     </p>
-                    </div>
+                  </div>
                 </div>
                 <div class="list-news-thumb">
                   <mdb-tabs [justified]="true" [style]="'padding-bottom:20px'">
@@ -54,9 +54,9 @@
                       <ng-template mdbTabContent>
                         <ul class="list-news-thumb__list" *ngIf="listHotNews$ | async as listHotNews">
                           <li class="list-news-thumb__item" *ngFor="let news of listHotNews">
-                            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="list-news-thumb__link"
+                            <a [routerLink]="['/chi-tiet',news.link]" class="list-news-thumb__link"
                                [title]="news.title">{{news.title}}</a>
-                               {{news.time | date: 'mediumTime'}}
+                            {{news.time | date: 'mediumTime'}}
                           </li>
                         </ul>
                       </ng-template>
@@ -75,7 +75,7 @@
                 </div>
               </div>
               <div class="news-horizontal" *ngIf="rowListNews$ | async as rowListNew">
-                  <app-news-row *ngFor="let news of rowListNew" [news]="news" [isHome]="true"></app-news-row>
+                <app-news-row *ngFor="let news of rowListNew" [news]="news" [isHome]="true"></app-news-row>
               </div>
             </div>
           </ng-template>
@@ -96,14 +96,14 @@
       <div class="box-content__body">
         <ul class="news__list" *ngIf="boxListNews$ | async as boxListNews">
           <li class="news__item" *ngFor="let news of boxListNews">
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="news__link">
+            <a [routerLink]="['/chi-tiet',news.link]" class="news__link">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
             </a>
-              <div class="news__info">
-                <h4 class="news__title"><a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">{{news.title}}</a></h4>
-                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link1]"class="news__sapo">{{news.infor.title1}}</a>
-                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link2]" class="news__sapo">{{news.infor.title2}}</a>
-              </div>
+            <div class="news__info">
+              <h4 class="news__title"><a [routerLink]="['/chi-tiet',news.link]">{{news.title}}</a></h4>
+              <a [routerLink]="['/chi-tiet',news.infor.link1]"class="news__sapo">{{news.infor.title1}}</a>
+              <a [routerLink]="['/chi-tiet',news.infor.link2]" class="news__sapo">{{news.infor.title2}}</a>
+            </div>
           </li>
         </ul>
         <div class="cate__list">
@@ -117,7 +117,7 @@
                 <a href="" class="cate__view-all">Xem tất cả</a>
               </div>
               <div class="" *ngIf="noiThangNews$ | async as news">
-                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+                <a [routerLink]="['/chi-tiet',news[0].link]" class="cate__content">
                   <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
                   <a href="" class="cate__link">{{news[0].title}}</a>
                 </a>
@@ -131,7 +131,7 @@
                 <a href="" class="cate__view-all">Xem tất cả</a>
               </div>
               <div class="" *ngIf="docQuyenNews$ | async as news">
-                <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+                <a [routerLink]="['/chi-tiet',news[0].link]" class="cate__content">
                   <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
                   <a href="" class="cate__link">{{news[0].title}}</a>
                 </a>
@@ -145,7 +145,7 @@
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/hoi-nong-dap-nhanh-ico-web.png"
                                        alt=""></a>
           <div class="" *ngIf="hoiNongDapNhanhNews$ | async as news">
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+            <a [routerLink]="['/chi-tiet',news[0].link]" class="cate__content">
               <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
               <a href="" class="cate__link">{{news[0].title}}</a>
             </a>
@@ -155,7 +155,7 @@
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/truy-vet-mang-xa-hoi-ico-web.png"
                                        alt=""></a>
           <div class="" *ngIf="truyVetMangXaHoiNews$ | async as news">
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+            <a [routerLink]="['/chi-tiet',news[0].link]" class="cate__content">
               <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
               <a href="" class="cate__link">{{news[0].title}}</a>
             </a>
@@ -164,7 +164,7 @@
         <div class="cate__item">
           <a class="cate__header"><img src="https://static.mediacdn.vn/nld/Images/goc-nhin-ico-web.png" alt=""></a>
           < <div class="" *ngIf="gocNhinNews$ | async as news">
-          <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news[0].link]" class="cate__content">
+          <a [routerLink]="['/chi-tiet',news[0].link]" class="cate__content">
             <img [src]="news[0].description.imgUrl" [alt]="news[0].description.alt" class="cate__img">
             <a href="" class="cate__link">{{news[0].title}}</a>
           </a>
@@ -175,13 +175,13 @@
         <ul class="news__list" *ngIf="listMostViewedNews$ | async as listMostViewedNews">
           <h3 class="news__label">Xem nhiều</h3>
           <li class="news__item" *ngFor="let news of listMostViewedNews">
-            <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]" class="news__link">
+            <a [routerLink]="['/chi-tiet',news.link]" class="news__link">
               <img [src]="news.description.imgUrl" alt="" class="news__img">
             </a>
             <div class="news__info">
-              <h4 class="news__title"><a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.link]">{{news.title}}</a></h4>
-              <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link1]"class="news__sapo">{{news.infor.title1}}</a>
-              <a [routerLink]="['/chi-tiet','https://nld.com.vn'+news.infor.link2]" class="news__sapo">{{news.infor.title2}}</a>
+              <h4 class="news__title"><a [routerLink]="['/chi-tiet',news.link]">{{news.title}}</a></h4>
+              <a [routerLink]="['/chi-tiet',news.infor.link1]"class="news__sapo">{{news.infor.title1}}</a>
+              <a [routerLink]="['/chi-tiet',news.infor.link2]" class="news__sapo">{{news.infor.title2}}</a>
             </div>
           </li>
         </ul>

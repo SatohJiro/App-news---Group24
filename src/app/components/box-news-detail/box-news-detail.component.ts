@@ -39,7 +39,7 @@ export class BoxNewsDetailComponent implements OnInit, OnChanges {
   getLinkPage() {
     this.activatenRoute.paramMap.subscribe(paramMap => {
       this.linkPage ='https://nld.com.vn/'+String(paramMap.get('link'))+'';
-      console.log(this.linkPage);
+      // console.log(this.linkPage);
     })
   }
 
