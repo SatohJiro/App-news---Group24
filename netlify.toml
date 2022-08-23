@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/mdb5-angular-ui-kit-pro-advanced"
+  command = "ng build -c=production"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
